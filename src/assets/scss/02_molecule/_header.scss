@@ -1,4 +1,31 @@
 .m-header {
-    background: blue; 
-    color: white; 
+    @include clearfix(); 
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 40px 0; 
+
+    @include breakpoints("tablet") {
+        padding: 50px 0; 
+    }
+
+    &__logo {
+        display: block;
+        float: left;
+        width: 80px; 
+
+        @include breakpoints("tablet") {
+            width: 100px; 
+        }
+    }
+
+    &__navigation {
+        float: right;
+        margin-top: 14px;
+    }
+    
+    a {
+        color: get-color("primary", "fresh"); 
+        font-family: $font-primary;
+    }
 }

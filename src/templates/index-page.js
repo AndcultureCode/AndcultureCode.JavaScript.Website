@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-
+import TextLoop from "react-text-loop"
 import Layout from '../components/Layout'
 import '../assets/scss/app.scss'
 import CaseStudyList from '../components/organisms/CaseStudyList'
@@ -11,19 +11,17 @@ export const IndexPageTemplate = ({
   secondaryTitle,
   subTitle,
 }) => (
-  <div>
-    <div>
-      <h1>{ title }</h1>
-      <h2>{ title }</h2>
-      <h3>{ title }</h3>
-      <h4>{ title }</h4>
-      <h5>{ title }</h5>
-      <h6>{ title }</h6>
+  <div className = "o-hero">
+    <div className = "o-rhythm__container">
+      <div className = "o-hero__titles">
+        <TextLoop>
+          <h1 className = "-after">{ title }</h1>
+          <h1 className = "-before">{ secondaryTitle }</h1>
+        </TextLoop>
+        <h3>{ subTitle }</h3>
+      </div>
+      <h6>A Design Company</h6>
     </div>
-    <div>
-      { secondaryTitle }
-    </div>
-    { subTitle }
   </div>
 )
 

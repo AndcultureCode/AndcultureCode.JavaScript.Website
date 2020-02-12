@@ -1,4 +1,57 @@
 .m-footer {
-    @include font-size(18px); 
-    color: get-color("neutral", "light-gray"); 
+    padding: 66px 0;
+
+    a {
+        @include font-size(18px);
+        color: get-color("neutral", "light-gray");
+        font-family: $font-primary;
+    }
+
+    &__left,
+    &__right {
+
+    }
+
+    &__left {
+
+        img {
+            width: 120px; 
+        }
+    }
+
+    &__right {
+        text-align: right;
+    }
+
+    &__contact, 
+    &__social {
+        display: inline-block;
+    }
+
+    &__contact {
+        position: relative;
+        margin-right: 20px;
+
+        &:after {
+            content: ''; 
+            width: 2px; 
+            height: 100%; 
+            display: block; 
+            position: absolute;
+            top: 0;
+            right: -10px; 
+            background: get-color("primary", "fresh"); 
+        }
+    }
+
+    &__social {
+        vertical-align: middle;
+
+        a {
+            display: inline-block;
+            width: 20px; 
+            height: 20px; 
+            margin-right: 20px;
+        }
+    }
 }

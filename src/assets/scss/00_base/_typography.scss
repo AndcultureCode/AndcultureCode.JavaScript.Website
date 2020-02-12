@@ -1,8 +1,19 @@
 body {
     font-family: $font-primary;
-    font-weight: 200;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+    font-weight: 200;
+    margin: 0;
+}
 
 h1 {
     @include font-size(44px); 
@@ -81,4 +92,12 @@ p {
         @include font-size(20px); 
         @include line-height(32px); 
     }
+}
+
+a {
+    @include font-size("medium-large"); 
+    font-family: $font-secondary;
+    letter-spacing: .05em;
+    font-weight: 500;
+    text-decoration: none;
 }

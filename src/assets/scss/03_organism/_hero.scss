@@ -1,0 +1,57 @@
+.o-hero {
+    position: relative;
+    min-height: 100vh;
+
+    .o-rhythm__container {
+        position: relative;
+    }
+
+    &__titles {
+        margin-top: 60px;
+        padding-left: 160px;
+        max-width: 800px; 
+
+        .x5 {
+            white-space: normal;
+        }
+
+        * {
+            max-width: 100%; 
+            overflow-wrap: break-word;
+        }
+    }
+
+    h1 {
+        width: 800px; 
+
+        &.-after {
+
+            &:after {
+                content: '*'; 
+                display: inline-block;
+            }
+        }
+
+        &.-before {
+
+            &:before {
+                content: '*'; 
+                display: inline-block;
+            }
+        }
+    }
+
+    h3 {
+        margin: 280px 0;
+    }
+
+    h6 {
+        color: get-color("neutral", "light-gray"); 
+        position: absolute;
+        writing-mode: tb-rl;
+        transform: rotate(-180deg);
+        top: 50%; 
+        left: 0;
+        height: 124px; 
+    }
+}

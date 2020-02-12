@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: TITLE TITLE TITLE TITLE
-secondaryTitle: SECONDARY TITLE
-subTitle: subtitle subtitle
+title: designing the world around us
+secondaryTitle: one experience at a time
+subTitle: We welcome forward-thinking partners who need someone to design a solution.
 ---
