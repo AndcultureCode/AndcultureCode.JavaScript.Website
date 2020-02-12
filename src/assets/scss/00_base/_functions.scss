@@ -44,6 +44,14 @@
     @return map-get($font-sizes, $size);
 }
 
+@function get-line-height($size: "base") {
+    @if not map-has-key($line-heights, $size) {
+        @return $size;
+    }
+
+    @return map-get($font-sizes, $size);
+}
+
 @function get-heading-size($priority: "h1") {
     @if not map-has-key($heading-sizes, $priority) {
         @return $size;

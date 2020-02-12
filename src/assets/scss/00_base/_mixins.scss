@@ -74,6 +74,10 @@
     @include rem-fallback(font-size, get-font-size($size));
 }
 
+@mixin line-height($size: "base") {
+    @include rem-fallback(line-height, get-line-height($size));
+}
+
 @mixin heading-size($size: "h1") {
     @include rem-fallback(font-size, get-heading-size($size));
 }
@@ -92,23 +96,85 @@
     }
 }
 
-@mixin respond-to($media) {
-    @if map-has-key($breakpoints, $media) {
-        @media (max-width: map-get($breakpoints, $media)) {
-            @content;
-        }
-    } @else if $media == non-retina {
-        @media screen and (-webkit-max-device-pixel-ratio: 1) {
-            @content;
-        }
-    } @else if $media == retina {
-        @include retina();
-    } @else {
-        @media only screen and (max-width: #{$media}px) {
-            @content;
-        }
+@mixin breakpoints($from: none, $to: none, $media: all) {
+    // Set some empty min + max values
+    $min-width: null;
+    $max-width: null;
+  
+    // Determine 'from' min-width value
+    @if (type-of($from) == string) and (map-has-key($breakpoints, $from)) {
+      // If value is a string listed in the named breakpoints map
+      $min-width: map-get($breakpoints, $from);
     }
-}
+    @else if ((type-of($from) == number) and (unitless($from) == false)) {
+      // If value is a number with a unit
+      $min-width: $from;
+    }
+    @else if ($from == none) {
+      // If the value is blank
+      $min-width: false;
+    }
+    @else {
+      // If none are true, display compile error
+      @error '`breakpoints()` min-width value `#{$from}` was not found.';
+    }
+  
+    // Determine 'to' max-width value
+    @if (type-of($to) == string) and (map-has-key($breakpoints, $to)) {
+      // If value is a string listed in the named breakpoints map
+      $max-width: map-get($breakpoints, $to);
+    }
+    @else if ((type-of($to) == number) and (unitless($to) == false)) {
+      // If value is a number with a unit
+      $max-width: $to;
+    }
+    @else if ($to == none) {
+      // If the value is blank
+      $max-width: false;
+    }
+    @else {
+      // If none are true, display compile error
+      @error '`breakpoints()` max-width value `#{$to}` was not found.';
+    }
+  
+    // If both min-width & max-width values:
+    @if ($min-width != false) AND ($max-width != false) {
+      // Increment min-width value by 1px
+      $min-width: $min-width + 1px;
+      @media #{$media} and (min-width: #{$min-width}) and (max-width: #{$max-width}) {
+        // breakpoint mixin content:
+        @content;
+      }
+    }
+    // If only the min-width value is set:
+    @else if ($min-width != false) {
+      // Increment min-width value by 1px
+      $min-width: $min-width + 1px;
+      @media #{$media} and (min-width: #{$min-width}) {
+        // breakpoint mixin content:
+        @content;
+      }
+    }
+    // If only the max-width value is set:
+    @else if ($max-width != false) {
+      @media #{$media} and (max-width: #{$max-width}) {
+        // breakpoint mixin content:
+        @content;
+      }
+    }
+    // If min-width & max-width are empty, but special media type set:
+    @else if ($media != all) {
+      @media #{$media} {
+        // breakpoint mixin content:
+        @content;
+      }
+    }
+    // If no custom media query values are set:
+    @else {
+      // Thanks for playing
+      @content;
+    }
+  }
 
 @mixin retina {
     @media only screen and (-webkit-min-device-pixel-ratio: 2),

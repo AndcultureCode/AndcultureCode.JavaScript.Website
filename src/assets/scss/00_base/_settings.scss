@@ -7,6 +7,7 @@
 \*------------------------------------*/
 
 @import "andculturecode.scss.rhythm";
+@import url("https://use.typekit.net/hmr7xrp.css");
 
 $no-gutter-grid: (
     columns: 12,
@@ -22,3 +23,30 @@ $breakpoints: (
     "sm-desktop": 1080px,
     "desktop": 1180px,
 );
+
+$font-sizes: (
+    "largest": 56px,
+    "larger": 42px,
+    "large": 32px,
+    "medium-large": 24px,
+    "base": 16px,
+    "medium-small": 14px,
+    "small": 12px,
+    "smaller": 10px,
+    "smallest": 8px,
+);
+
+$line-heights: (
+    "largest": 56px,
+    "larger": 42px,
+    "large": 32px,
+    "medium-large": 24px,
+    "base": 16px,
+    "medium-small": 14px,
+    "small": 12px,
+    "smaller": 10px,
+    "smallest": 8px,
+);
+
+$font-primary: din-2014, sans-serif;
+$font-secondary: din-2014-narrow, sans-serif;

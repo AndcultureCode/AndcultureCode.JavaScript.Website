@@ -1,0 +1,84 @@
+body {
+    font-family: $font-primary;
+    font-weight: 200;
+}
+
+
+h1 {
+    @include font-size(44px); 
+    @include line-height(48px); 
+    color: get-color("neutral", "gray"); 
+
+    @include breakpoints("tablet") {
+        @include font-size(85px); 
+        @include line-height(100px); 
+    }
+}
+
+h2 {
+    @include font-size(36px); 
+    @include line-height(40px); 
+    color: get-color("neutral", "gray"); 
+
+    @include breakpoints("tablet") {
+        @include font-size(53px); 
+        @include line-height(65px); 
+    }
+}
+
+h3 {
+    @include font-size(20px); 
+    @include line-height(24px); 
+    color: get-color("neutral", "light-gray"); 
+
+    @include breakpoints("tablet") {
+        @include font-size(36px); 
+        @include line-height(47px); 
+    }
+}
+
+h4 {
+    @include font-size(25px); 
+    @include line-height(32px); 
+    color: get-color("primary", "fresh"); 
+
+    @include breakpoints("tablet") {
+        @include font-size(40px); 
+        @include line-height(50px); 
+    }
+}
+
+h5 {
+    @include font-size(18px); 
+    @include line-height(20px); 
+    color: get-color("neutral", "light-gray"); 
+
+    @include breakpoints("tablet") {
+        @include font-size(22px); 
+        @include line-height(32px); 
+    }
+}
+
+h6 {
+    @include font-size(14px); 
+    @include line-height(16px); 
+    color: get-color("primary", "after-hours"); 
+    font-family: $font-secondary; 
+    text-transform: uppercase;
+
+    @include breakpoints("tablet") {
+        @include font-size(16px); 
+        @include line-height(24px); 
+    }
+}
+
+p {
+    @include font-size(16px); 
+    @include line-height(24px); 
+    color: get-color("neutral", "medium-gray"); 
+
+    @include breakpoints("tablet") {
+        @include font-size(20px); 
+        @include line-height(32px); 
+    }
+}

@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React from 'react';
 
 const Footer = class extends React.Component {
   constructor(props) {

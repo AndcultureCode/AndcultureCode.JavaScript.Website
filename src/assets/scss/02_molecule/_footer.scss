@@ -1,4 +1,4 @@
 .m-footer {
-    background: green; 
-    color: white; 
+    @include font-size(18px); 
+    color: get-color("neutral", "light-gray"); 
 }

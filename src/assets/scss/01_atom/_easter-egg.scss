@@ -1,0 +1,9 @@
+.a-easter-egg {
+    @include font-size(14px); 
+    @include line-height(20px); 
+    color: get-color("neutral", "light-gray"); 
+
+    &:after {
+        content: '*'; 
+    }
+}
