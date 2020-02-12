@@ -27,70 +27,70 @@ h1 {
 }
 
 h2 {
-    @include font-size(36px); 
-    @include line-height(40px); 
+    @include font-size("medium-large"); 
+    @include line-height("medium-small"); 
     color: get-color("neutral", "gray"); 
 
     @include breakpoints("tablet") {
-        @include font-size(53px); 
-        @include line-height(65px); 
+        @include font-size("larger"); 
+        @include line-height("larger"); 
     }
 }
 
 h3 {
-    @include font-size(20px); 
-    @include line-height(24px); 
+    @include font-size("small"); 
+    @include line-height("smaller"); 
     color: get-color("neutral", "light-gray"); 
 
     @include breakpoints("tablet") {
-        @include font-size(36px); 
-        @include line-height(47px); 
+        @include font-size("medium-large"); 
+        @include line-height("medium-large"); 
     }
 }
 
 h4 {
-    @include font-size(25px); 
-    @include line-height(32px); 
+    @include font-size("medium"); 
+    @include line-height("small"); 
     color: get-color("primary", "fresh"); 
 
     @include breakpoints("tablet") {
-        @include font-size(40px); 
-        @include line-height(50px); 
+        @include font-size("large"); 
+        @include line-height("large"); 
     }
 }
 
 h5 {
-    @include font-size(18px); 
-    @include line-height(20px); 
+    @include font-size("smaller"); 
+    @include line-height("smallest"); 
     color: get-color("neutral", "light-gray"); 
 
     @include breakpoints("tablet") {
-        @include font-size(22px); 
-        @include line-height(32px); 
+        @include font-size("medium-small"); 
+        @include line-height("small"); 
     }
 }
 
 h6 {
-    @include font-size(14px); 
-    @include line-height(16px); 
+    @include font-size("smallest"); 
+    @include line-height("base"); 
     color: get-color("primary", "after-hours"); 
     font-family: $font-secondary; 
     text-transform: uppercase;
 
     @include breakpoints("tablet") {
-        @include font-size(16px); 
-        @include line-height(24px); 
+        @include font-size("base"); 
+        @include line-height("smaller"); 
     }
 }
 
 p {
-    @include font-size(16px); 
-    @include line-height(24px); 
+    @include font-size("base"); 
+    @include line-height("smaller"); 
     color: get-color("neutral", "medium-gray"); 
 
     @include breakpoints("tablet") {
-        @include font-size(20px); 
-        @include line-height(32px); 
+        @include font-size("small"); 
+        @include line-height("small"); 
     }
 }
 
