@@ -7,9 +7,12 @@ const Header = class extends React.Component {
 
   render() {
     return (
-      <nav className="m-header" role="navigation" aria-label="main-navigation">
-        Header
-      </nav>
+      <header className="m-header">
+        <nav role="navigation" aria-label="main-navigation">
+          <a href="">contact us</a>
+        </nav>
+      </header>
+     
     )
   }
 }
