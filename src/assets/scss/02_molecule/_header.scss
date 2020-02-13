@@ -25,7 +25,12 @@
     }
     
     a {
+        @include font-size("base"); 
         color: get-color("primary", "fresh"); 
         font-family: $font-primary;
+
+        @include breakpoints("tablet") {
+            @include font-size(24px);
+        }
     }
 }

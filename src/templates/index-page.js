@@ -13,11 +13,15 @@ export const IndexPageTemplate = ({
 }) => (
   <div className = "o-hero">
     <div className = "o-rhythm__container">
-      <div className = "o-hero__titles">
-        <TextLoop>
-          <h1 className = "-after">{ title }</h1>
-          <h1 className = "-before">{ secondaryTitle }</h1>
-        </TextLoop>
+      <div className = "o-hero__top">
+        <div className = "o-hero__titles">
+          <TextLoop>
+            <h1 className = "-after">{ title }</h1>
+            <h1 className = "-before">{ secondaryTitle }</h1>
+          </TextLoop>
+        </div>
+      </div>
+      <div className = "o-hero__subtitles">
         <h3>{ subTitle }</h3>
       </div>
       <h6>A Design Company</h6>

@@ -2,9 +2,13 @@
     padding: 66px 0;
 
     a {
-        @include font-size(18px);
+        @include font-size("base");
         color: get-color("neutral", "light-gray");
         font-family: $font-primary;
+
+        @include breakpoints("tablet") {
+            @include font-size(18px);
+        }
     }
 
     &__left,
@@ -20,7 +24,10 @@
     }
 
     &__right {
-        text-align: right;
+
+        @include breakpoints("tablet") {
+            text-align: right;
+        }
     }
 
     &__contact, 
@@ -30,17 +37,21 @@
 
     &__contact {
         position: relative;
-        margin-right: 20px;
+        margin: 40px 0;
 
-        &:after {
-            content: ''; 
-            width: 2px; 
-            height: 100%; 
-            display: block; 
-            position: absolute;
-            top: 0;
-            right: -10px; 
-            background: get-color("primary", "fresh"); 
+        @include breakpoints("tablet") {
+            margin: 0 20px 0 0;
+
+            &:after {
+                content: ''; 
+                width: 2px; 
+                height: 100%; 
+                display: block; 
+                position: absolute;
+                top: 0;
+                right: -10px; 
+                background: get-color("primary", "fresh"); 
+            }
         }
     }
 
