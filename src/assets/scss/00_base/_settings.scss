@@ -15,37 +15,39 @@ $no-gutter-grid: (
 );
 
 $breakpoints: (
-    "phone": 480px,
-    "sm-tablet": 600px,
-    "tablet": 768px,
-    "laptop": 940px,
-    "lg-laptop": 980px,
+    "phone":      480px,
+    "sm-tablet":  600px,
+    "tablet":     768px,
+    "laptop":     940px,
+    "lg-laptop":  980px,
     "sm-desktop": 1080px,
-    "desktop": 1180px,
+    "desktop":    1180px,
 );
 
 $font-sizes: (
-    "largest": 56px,
-    "larger": 42px,
-    "large": 32px,
-    "medium-large": 24px,
-    "base": 16px,
-    "medium-small": 14px,
-    "small": 12px,
-    "smaller": 10px,
-    "smallest": 8px,
+    "largest":      85px,
+    "larger":       53px,
+    "largish":      44px,
+    "large":        40px,
+    "medium-large": 36px,
+    "medium":       25px,
+    "medium-small": 22px,
+    "small":        20px,
+    "smaller":      18px,
+    "smallest":     14px,
+    "base":         16px,
 );
 
 $line-heights: (
-    "largest": 56px,
-    "larger": 42px,
-    "large": 32px,
-    "medium-large": 24px,
-    "base": 16px,
-    "medium-small": 14px,
-    "small": 12px,
-    "smaller": 10px,
-    "smallest": 8px,
+    "largest":      100px,
+    "larger":       65px,
+    "large":        50px,
+    "medium-large": 48px,
+    "medium-small": 40px,
+    "small":        32px,
+    "smaller":      24px,
+    "smallest":     20px,
+    "base":         16px,
 );
 
 $font-primary: din-2014, sans-serif;
