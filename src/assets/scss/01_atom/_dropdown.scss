@@ -1,0 +1,24 @@
+.a-dropdown {
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 1px solid get-color("neutral", "light-gray"); 
+    font-weight: 200;
+
+    select {
+        @include font-size("small"); 
+        color: get-color("primary", "fresh");
+        background: get-color("primary", "after-hours");;
+        font-family: $font-primary;
+        width: 100%; 
+        border: none; 
+        outline: none; 
+        appearance: none;
+    }
+
+    &:after {
+        content: ' \25BC';
+        position: absolute; 
+        right: 0;
+        color: get-color("primary", "fresh");
+    }
+}

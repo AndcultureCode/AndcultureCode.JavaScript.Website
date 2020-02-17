@@ -1,5 +1,12 @@
 fieldset {
+    position: relative;
     border: none;
     outline: none;
-    padding: 20px 40px;
+    padding: 0;
+    margin: 60px 0;
+
+    &.-space {
+        padding: 0 40px;
+        margin: 20px 0;
+    }
 }

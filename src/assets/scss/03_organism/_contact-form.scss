@@ -1,6 +1,65 @@
 .o-contact-form {
-    height: 100vh;
-    background: get-color("primary", "after-hours"); 
+    @include clearfix(); 
+    position: relative; 
+
+    &__container {
+        position: relative;
+        padding: 0 0 80px 0;
+        background: get-color("primary", "after-hours");
+    }
+
+    &__submitted {
+
+        h1 {
+            color: get-color("primary", "white");
+        }
+
+        p {
+            color: get-color("neutral", "light-gray");
+        }
+    }
+
+    &__buttons {
+        margin-top: 80px;
+
+        &.-space {
+            padding: 0 56px;
+        }
+
+        a {
+
+            &:first-of-type {
+                margin-right: 60px;
+            }
+        }
+    }
+
+    &__progress {
+        background: get-color("primary", "fresh"); 
+        position: absolute;
+        top: 0;
+        left: 0; 
+        height: 4px; 
+        width: 100%; 
+        -webkit-transition: width 1s ease-in-out;
+        -moz-transition: width 1s ease-in-out;
+        -o-transition: width 1s ease-in-out;
+        transition: width 1s ease-in-out;
+    }
+
+    h6 {
+        color: get-color("primary", "fresh"); 
+        margin: 118px 0 80px 0;
+    }
+
+    header {
+        @include font-size("medium-large"); 
+        color: get-color("primary", "white"); 
+    }
+    
+    .o-rhythm__container {
+        overflow: hidden;
+    }
 
     .typeform-widget {
         height: 100vh; 
@@ -11,3 +70,33 @@
         background: get-color("primary", "after-hours"); 
     }
 }
+
+.animate-appear {
+    opacity: 0.01;
+}
+
+.animate-appear.animate-appear-active {
+    opacity: 1;
+    transition: opacity .5s ease-in;
+}
+
+.animate-enter {
+    position: relative;
+    opacity: 0.01;
+    left: -100%;
+  }
+  
+  .animate-enter.animate-enter-active {
+    opacity: 1;
+    transition: all 500ms ease-in;
+    left: 0;
+  }
+  
+  .animate-leave {
+    opacity: 1;
+  }
+  
+  .animate-leave.animate-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+  }

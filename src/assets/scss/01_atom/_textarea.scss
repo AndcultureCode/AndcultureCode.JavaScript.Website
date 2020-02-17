@@ -1,0 +1,32 @@
+.a-textarea {
+    @include font-size("small"); 
+    color: get-color("primary", "fresh");
+    background: get-color("primary", "after-hours");;
+    position: relative;
+    font-family: $font-primary;
+    border: none; 
+    outline: none; 
+    padding: 10px 0;
+    border-bottom: 1px solid get-color("neutral", "light-gray"); 
+    font-weight: 200;
+    z-index: 1;
+    width: 100%; 
+    height: 200px; 
+
+    &:focus {
+        border-color: get-color("primary", "fresh");
+    }
+
+    &::-webkit-input-placeholder {
+        color: get-color("primary", "fresh");
+    }
+    &::-moz-placeholder { 
+        color: get-color("primary", "fresh");
+    }
+    &:-ms-input-placeholder { 
+        color: get-color("primary", "fresh");
+    }
+    &:-moz-placeholder { 
+        color: get-color("primary", "fresh");
+    }
+}

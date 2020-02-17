@@ -1,10 +1,10 @@
 .a-radio {
     position: absolute; 
     opacity: 0;
-      
+
     &:checked + label {
         color: white; 
-        
+
         &:before, 
         &:after {
             content: "";
@@ -24,7 +24,7 @@
 
         &:after {
             right: -19px;
-            top: 0; 
+            top: 12px; 
             width: 16px;
             height: 16px;
             border-right: 2px solid get-color("primary", "fresh");
@@ -34,10 +34,12 @@
     }
 
     & + label {
+        @include font-size(32px); 
         position: relative;
         padding: 0 16px;
         background: get-color("primary", "after-hours"); 
-        z-index: 1; 
+        color: get-color("neutral", "light-gray"); 
+        z-index: 1;
 
         &:hover {
 
@@ -60,7 +62,7 @@
     
             &:after {
                 right: -19px;
-                top: 0; 
+                top: 12px; 
                 width: 16px;
                 height: 16px;
                 border-right: 2px solid get-color("primary", "fresh");

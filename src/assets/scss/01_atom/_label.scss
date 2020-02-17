@@ -1,0 +1,20 @@
+.a-label {
+    color: get-color("neutral", "light-gray");
+    font-family: $font-secondary;
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    transition: top 150ms ease-in;
+
+    &.-static {
+        position: relative;
+    }
+
+
+    &.-field-active {
+        top: -20px;
+    }
+}

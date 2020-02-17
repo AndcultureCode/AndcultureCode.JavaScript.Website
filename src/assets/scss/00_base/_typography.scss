@@ -76,6 +76,7 @@ h6 {
     color: get-color("primary", "after-hours"); 
     font-family: $font-secondary; 
     text-transform: uppercase;
+    font-weight: 500;
 
     @include breakpoints("tablet") {
         @include font-size("base"); 
