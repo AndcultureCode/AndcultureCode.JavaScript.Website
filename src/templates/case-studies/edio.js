@@ -155,7 +155,7 @@ const Edio = class extends React.Component {
                     </div>
                     <div className="-content">
                         <div className="m-case-study__header">PA CareerLink®</div>
-                        <p>vulnerability and optimism in uncertain times</p>
+                        <p>designing for optimism in uncertain times</p>
                         <a href="/case-studies/pa-career-link/" className="a-button">See Next Case Study</a>
                     </div>
                 </div>
