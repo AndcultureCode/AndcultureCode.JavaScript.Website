@@ -6,7 +6,7 @@ seo:
   metaDescription: ""
   socialShareCopy: ""
 ---
-andculture (“us,” “we,” or “our”) operates the [www.andculture.com](https://www.andculture.com) website (hereinafter referred to as the “Service”). The effective date of this policy (the “Privacy Policy”) is May 1, 2020.
+andculture (“us,” “we,” or “our”) operates the [www.andculture.com](/) website (hereinafter referred to as the “Service”). The effective date of this policy (the “Privacy Policy”) is May 1, 2020.
 
 This page informs you of our policies regarding the collection, use and disclosure of personal data when you use our Service and the choices you have associated with that data. This Privacy Policy applies to information we collect through the Service or in any email, text and other electronic messages between you and the Service.
 
@@ -15,7 +15,7 @@ We use your data to provide and improve the Service. Please read this Privacy Po
 ## Definitions
 
 ### Service
-Service is the [www.andculture.com](https://www.andculture.com) website operated by andculture.
+Service is the [www.andculture.com](/) website operated by andculture.
 
 ### Personal Data
 Personal Data means data about a living individual who can be identified from those data (or from those and other information either in our possession or likely to come into our possession).

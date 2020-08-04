@@ -27,11 +27,11 @@ const Footer = class extends React.Component {
               </a>
             </div>
             <div className = "m-footer__center">
-              <a href="/contact">contact us</a>
+              <a href="/contact/">contact us</a>
               <a
                 aria-label = "Phone 7 1 7. 2 3 3. 2 8 8 1."
                 href       = "tel:7172332881">717.233.2881</a>
-              <a href="/privacy-policy">privacy policy</a>
+              <a href="/privacy-policy/">privacy policy</a>
             </div>
             <div className = "m-footer__right">
               <div className = "m-footer__social">
