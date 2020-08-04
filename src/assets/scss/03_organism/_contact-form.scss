@@ -93,7 +93,7 @@
     }
 
     &__buttons {
-        margin-top: 80px;
+        margin-top: 40px;
         margin-bottom: 4px;
 
         &.-space {
@@ -141,7 +141,7 @@
 
         @include breakpoints("tablet") {
             @include font-size("medium-large");
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         &.-light {
