@@ -6,7 +6,7 @@ partnerName: edio
 date: 2013-01-02T15:04:10.000Z
 featuredpost: false
 featuredimage: /img/case-studies/edio/edio-hero.png
-homeimage: /img/case-studies/edio/edio-hero.png
+homeimage: /img/case-studies/edio/edio-hero-revised.png
 texture: img/cca-shape-triangle.png
 color: '#3D5CC2'
 secondaryLayout: true
