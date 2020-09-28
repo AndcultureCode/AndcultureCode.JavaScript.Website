@@ -16,6 +16,10 @@
         }
     }
 
+    div.slick-cloned:focus {
+        outline: initial;
+    }
+
     .expanded-team-member {
         align-items: center;
         background: rgba(get-color-primary("fresh"), 0);
