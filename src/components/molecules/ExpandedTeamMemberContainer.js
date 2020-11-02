@@ -33,7 +33,7 @@ const ExpandedTeamMemberContainer = (props) => {
     }, []);
 
     const escFunction = (e) => {
-        if (e.keyCode === 27) {
+        if (e.key === "Escape") {
             props.handleCollapse();
         }
     };
