@@ -80,7 +80,7 @@ export const BlogPageTemplate = ({
                 isp:      data.asn.name,
                 country:  data.continent_name,
 
-              }, 'about-page');
+              }, 'blog-page');
 
               setFingerprint(true);
             });

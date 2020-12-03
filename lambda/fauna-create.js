@@ -11,10 +11,9 @@ const client = new faunadb.Client({
 export const postFingerprint = async (data, page) => {
     const fingerprint = await checkFingerprint(data);
 
-   console.log('data ip', data.ip);
-   console.log('fingerprint ip', fingerprint.value.data.ip);
-
-    if(fingerprint.matchCount > 8 && data.ip === fingerprint.value.data.ip){
+    if( fingerprint.value !== null &&
+        fingerprint.matchCount > 8 &&
+        data.ip === fingerprint.value.data.ip){
         addSiteHistory(fingerprint.value.data, { page, date: new Date().toISOString(), action: 'landed on page' });
         return null;
     }

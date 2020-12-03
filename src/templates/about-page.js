@@ -25,10 +25,7 @@ const AboutPage = ({ data }) => {
     if (window.requestIdleCallback && fingerprint === false) {
         requestIdleCallback(() => {
           json().then(data => {
-  console.log(data.ip);
-  console.log(data);
   Fingerprint2.get( (components) => {
-    console.log('components', components);
     postFingerprint({
       visitHistory: [],
       userAgent: components[0].value,
