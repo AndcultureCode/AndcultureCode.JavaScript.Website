@@ -12,8 +12,8 @@ import useComponentSize                       from '@rehooks/component-size';
 import { postFingerprint }                    from '../../lambda/fauna-create';
 import Fingerprint2                           from '@fingerprintjs/fingerprintjs';
 import 'resize-observer-polyfill';
-import IPData from 'ipdata';
-const ipdata = new IPData('8ed5ac6c21f6b51557bdb60c5ec26f2d371856cc1b674913c106c475');
+// import IPData from 'ipdata';
+// const ipdata = new IPData('8ed5ac6c21f6b51557bdb60c5ec26f2d371856cc1b674913c106c475');
 const ipdataUrl = `https://api.ipdata.co?api-key=8ed5ac6c21f6b51557bdb60c5ec26f2d371856cc1b674913c106c475`;
 
 const json = () => {

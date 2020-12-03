@@ -1,5 +1,5 @@
 import faunadb from 'faunadb' /* Import faunaDB sdk */
-
+import _ from "lodash";
 /* configure faunaDB Client with our secret */
 const q = faunadb.query;
 
@@ -11,8 +11,10 @@ const client = new faunadb.Client({
 export const postFingerprint = async (data, page) => {
     const fingerprint = await checkFingerprint(data);
 
+   console.log('data ip', data.ip);
+   console.log('fingerprint ip', fingerprint.value.data.ip);
 
-    if(fingerprint.matchCount > 7 && data.ip === fingerprint.ip){
+    if(fingerprint.matchCount > 8 && data.ip === fingerprint.value.data.ip){
         addSiteHistory(fingerprint.value.data, { page, date: new Date().toISOString(), action: 'landed on page' });
         return null;
     }
@@ -40,15 +42,31 @@ export const checkFingerprint = async (createFingerprintDto) => {
           )
     );
 
+//     const ipCheck = returnedQueryResults.data.find((val) => val.data.ip === fingerprint.ip);
+
+// if(ipCheck !== undefined){
+//     return {value: ipCheck, matchCount: 1, ip: fingerprint.ip}
+// }
+
+    // const finalResult = returnedQueryResults.data.reduce((prevValue, curVal) => {
+    //     const matches = keys.map(k => curVal[k] === fingerprint[k]);
+    //     if (matches.length > prevValue.matchCount) {
+    //         console.log('curval', curVal);
+    //         return {value: curVal, matchCount: matches.length, ip: curVal.data.ip};
+    //     }
+    //     return prevValue;
+    // }, {value: null, matchCount: 0, ip: null});
+
     const finalResult = returnedQueryResults.data.reduce((prevValue, curVal) => {
-        const matches = keys.map(k => curVal[k] === fingerprint[k]);
-        if (matches.length > prevValue.matchCount) {
-            console.log('curval', curVal);
-            return {value: curVal, matchCount: matches.length, ip: curVal.data.ip};
+        const curData = curVal.data;
+        const matches = keys.map(k => _.isEqual(curData[k], fingerprint[k]));
+        const numMatch = matches.filter(m => m === true).length;
+        if (numMatch > prevValue.matchCount) {
+            return {value: curVal, matchCount: numMatch};
         }
         return prevValue;
-    }, {value: null, matchCount: 0, ip: null});
-
+    }, {value: null, matchCount: 0});
+     console.log('final result', finalResult);
     return finalResult;
 }
 
