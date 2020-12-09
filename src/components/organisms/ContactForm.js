@@ -1,7 +1,6 @@
-import * as React from 'react';
-import ProjectForm from '../molecules/ProjectForm';
-import InfoForm from '../molecules/InfoForm';
-import JobForm from '../molecules/JobForm';
+import * as React    from 'react';
+import ProjectForm   from '../molecules/ProjectForm';
+import InfoForm      from '../molecules/InfoForm';
 import CatamaranForm from '../molecules/CatamaranForm';
 
 
@@ -11,10 +10,10 @@ const ContactForm = class extends React.Component {
         super(props);
 
         this.state = {
-            activeForm: '',
-            formActive: false,
+            activeForm:      '',
+            formActive:      false,
+            isSubmitted:     false,
             percentComplete: 0,
-            isSubmitted: false,
         }
 
         this._onFormTypeChange  = this._onFormTypeChange.bind(this);
@@ -99,7 +98,9 @@ const ContactForm = class extends React.Component {
 
         let buttonClass = "a-button";
         buttonClass += this.props.lightTheme ? " -light " : "";
-        var progressBarWidth = {
+        buttonClass += this.state.activeForm === "" ? " -disabled" : "";
+
+        const progressBarWidth = {
             width: this.state.percentComplete + "%",
         };
 
@@ -155,13 +156,12 @@ const ContactForm = class extends React.Component {
                                 </fieldset>
                                 <div className = "o-contact-form__buttons -space">
                                     <a
-                                        onClick = { this._deactiveForm }
+                                        onClick   = { this._deactiveForm }
                                         className = { `${buttonClass} -disabled` }>
                                         Go Back
                                     </a>
                                     <a
-                                        disabled = { true }
-                                        onClick = { this._activateForm }
+                                        onClick   = { this._activateForm }
                                         className = { buttonClass} >
                                         Next
                                     </a>
