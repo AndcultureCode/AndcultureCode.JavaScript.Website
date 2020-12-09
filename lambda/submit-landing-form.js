@@ -1,13 +1,12 @@
-import faunadb from 'faunadb' /* Import faunaDB sdk */
-import _ from "lodash";
-/* configure faunaDB Client with our secret */
-const q = faunadb.query;
-
-const client = new faunadb.Client({
-  secret: 'fnAD8ACvJ0ACAjhiL19AsuZeNvadoPoy1hHCMpa0',
-});
-
 module.exports.handler = async function(event, context) {
+    import faunadb from 'faunadb' /* Import faunaDB sdk */
+    import _ from "lodash";
+/* configure faunaDB Client with our secret */
+   const q = faunadb.query;
+
+   const client = new faunadb.Client({
+      secret: 'fnAD8ACvJ0ACAjhiL19AsuZeNvadoPoy1hHCMpa0',
+    });
     //methods needed
     const checkFingerprint = async (createFingerprintDto) => {
         const fingerprint = {...createFingerprintDto};
