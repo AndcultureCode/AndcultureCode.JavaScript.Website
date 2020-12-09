@@ -205,7 +205,14 @@ const BlogPost = ({ data }) => {
               isp:      data.asn.name,
               country:  data.continent_name,
             };
-            postFingerprint(obj, 'specific blog');
+            fetch("/.netlify/functions/post-fingerprint",
+    {
+      method: 'POST',
+      body: JSON.stringify({data: obj, page: 'specific blog'})
+    })
+    .then(response => response.json())
+    .then(console.log);
+           // postFingerprint(obj, 'specific blog');
             setFingerprintObject(obj)
             setFingerprint(true);
           });

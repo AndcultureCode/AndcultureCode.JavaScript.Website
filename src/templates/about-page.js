@@ -26,22 +26,45 @@ const AboutPage = ({ data }) => {
         requestIdleCallback(() => {
           json().then(data => {
   Fingerprint2.get( (components) => {
-    postFingerprint({
-      visitHistory: [],
-      userAgent: components[0].value,
-      webdriver: components[1].value,
-      language: components[2].value,
-      screenRes: components[6].value,
-      timezone: components[9].value,
-      platform: components[16].value,
-      ip:       data.ip,
-      city:     data.city,
-      state:    data.region_code,
-      postal:   data.postal,
-      isp:      data.asn.name,
-      country:  data.continent_name,
+    fetch("/.netlify/functions/post-fingerprint",
+    {
+      method: 'POST',
+      body: JSON.stringify({data: {
+        visitHistory: [],
+        userAgent: components[0].value,
+        webdriver: components[1].value,
+        language: components[2].value,
+        screenRes: components[6].value,
+        timezone: components[9].value,
+        platform: components[16].value,
+        ip:       data.ip,
+        city:     data.city,
+        state:    data.region_code,
+        postal:   data.postal,
+        isp:      data.asn.name,
+        country:  data.continent_name,
 
-    }, 'about-page');
+      }, page: 'about-page'})
+    })
+    .then(response => response.json())
+    .then(console.log);
+
+    // postFingerprint({
+    //   visitHistory: [],
+    //   userAgent: components[0].value,
+    //   webdriver: components[1].value,
+    //   language: components[2].value,
+    //   screenRes: components[6].value,
+    //   timezone: components[9].value,
+    //   platform: components[16].value,
+    //   ip:       data.ip,
+    //   city:     data.city,
+    //   state:    data.region_code,
+    //   postal:   data.postal,
+    //   isp:      data.asn.name,
+    //   country:  data.continent_name,
+
+    // }, 'about-page');
 
     setFingerprint(true);
   });
