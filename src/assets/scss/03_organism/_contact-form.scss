@@ -32,6 +32,10 @@
 
         fieldset .a-radio + label {
             color: get-color-primary("white");
+
+            &:hover {
+                cursor: pointer;
+            }
         }
 
         &.-light {
