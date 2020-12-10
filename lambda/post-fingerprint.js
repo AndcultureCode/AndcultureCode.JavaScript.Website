@@ -53,7 +53,7 @@ module.exports.handler = async function(event, context) {
 
     if( fingerprint.value !== null &&
         fingerprint.matchCount > 8 &&
-        data.ip === fingerprint.value.data.ip){
+        event.body.data.ip === fingerprint.value.data.ip){
         addSiteHistory(fingerprint.value.data, { page: event.body.page, date: new Date().toISOString(), action: 'landed on page' });
         return null;
     }
