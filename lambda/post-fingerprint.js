@@ -7,7 +7,7 @@ module.exports.handler = async function(event, context) {
     const _ = require("lodash");
     /* configure faunaDB Client with our secret */
     const q = faunadb.query;
-    console.log('event ', event);
+
     const client = new faunadb.Client({
       secret: 'fnAD8ACvJ0ACAjhiL19AsuZeNvadoPoy1hHCMpa0',
     });
@@ -32,7 +32,7 @@ module.exports.handler = async function(event, context) {
             }
             return prevValue;
         }, {value: null, matchCount: 0});
-         console.log('final result', finalResult);
+
         return finalResult;
     }
 
@@ -45,37 +45,37 @@ module.exports.handler = async function(event, context) {
         )
         .then((ret) => console.log(ret))
         .catch((err) => console.log(err));
-
+        
     }
 
-    console.log(JSON.parse(event.body));
-    console.log(JSON.parse(event.body).data);
-    console.log(JSON.parse(event.body).data.page);
-    const parsedData = JSON.parse(JSON.parse(event.body).data);
-    const fingerprint = await checkFingerprint(parsedData);
+    const parsedBody = JSON.parse(event.body);
+    const fingerprint = await checkFingerprint(parsedBody.data);
 
     if( fingerprint.value !== null &&
         fingerprint.matchCount > 8 &&
-        parsedData.ip === fingerprint.value.data.ip){
-        addSiteHistory(fingerprint.value.data, { page: parsedData.page, date: new Date().toISOString(), action: 'landed on page' });
-        return null;
+        parsedBody.data.ip === fingerprint.value.data.ip){
+        addSiteHistory(fingerprint.value.data, { page: parsedBody.page, date: new Date().toISOString(), action: 'landed on page' });
+        return {
+            statusCode: 200,
+            body: JSON.stringify({message: "Updated Site History"})
+        };
     }
 
     client.query(
       q.Create(
         q.Collection('fingerprints'),
-        { data: parsedData },
+        { data: parsedBody.data },
       )
     )
     .then((ret) => {
-        addSiteHistory(ret.data, { page: parsedData.page, date: new Date().toISOString(), action: 'landed on page'  });
-        return {
-            // return null to show no errors
-            statusCode: 200, // http status code
-          }
+        addSiteHistory(ret.data, { page: parsedBody.page, date: new Date().toISOString(), action: 'landed on page'  });
     })
     .catch((err) => console.log(err));
 
+    return {
+        statusCode: 200,
+        body: JSON.stringify({message: "Successful Fingerprint Post"})
+    };
 }
 
 // export const checkFingerprint = async (createFingerprintDto) => {

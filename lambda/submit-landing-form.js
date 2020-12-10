@@ -55,7 +55,9 @@ module.exports.handler = async function(event, context) {
         .catch((err) => console.log(err));
     }
 
-    const probFingerprint = await checkFingerprint(event.data.fingerprint);
+    const parsedBody = JSON.parse(event.body);
+
+    const probFingerprint = await checkFingerprint(parsedBody.data.fingerprint);
       //check language, long, lat, ip, city, postal, timezone, rather than whole fingerprint, highlight higher rated qualities rather than underrated weighted
       //check long lat with certian ranges to specify within a certian degree is it the same person
 
@@ -69,10 +71,15 @@ module.exports.handler = async function(event, context) {
     const theUser = allUsers.data.find((user) => user.data.fingerprintId === probFingerprint.value.ref.value.id);
 
     if (theUser == null) {
-        await createUser({ email: event.data.email, fingerprintId: probFingerprint.value.ref.value.id, marketingMatchCount: probFingerprint.matchCount });
+        await createUser({ email: parsedBody.data.email, fingerprintId: probFingerprint.value.ref.value.id, marketingMatchCount: probFingerprint.matchCount });
     }
 
-    await addSiteHistory(probFingerprint.value.data, {date: new Date().toISOString(), page:'blog-page', action: 'submit form' })
+    await addSiteHistory(probFingerprint.value.data, {date: new Date().toISOString(), page:'blog-page', action: 'submit form' });
+
+    return {
+        statusCode: 200,
+        body: JSON.stringify({message: "Landing Form Submission Tracked"})
+    };
 }
 
 // export const checkFingerprint = async (createFingerprintDto) => {
