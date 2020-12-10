@@ -48,7 +48,8 @@ module.exports.handler = async function(event, context) {
 
     }
 
-
+    console.log(event.body.data);
+    console.log(event.body.data.page);
     const parsedData = JSON.parse(event.body.data);
     const fingerprint = await checkFingerprint(parsedData);
 
