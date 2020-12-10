@@ -7,7 +7,7 @@ module.exports.handler = async function(event, context) {
     const _ = require("lodash");
     /* configure faunaDB Client with our secret */
     const q = faunadb.query;
-    console.log('event data ', event.data);
+    console.log('event ', event);
     const client = new faunadb.Client({
       secret: 'fnAD8ACvJ0ACAjhiL19AsuZeNvadoPoy1hHCMpa0',
     });
