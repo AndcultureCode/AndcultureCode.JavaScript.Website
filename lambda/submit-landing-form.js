@@ -1,6 +1,7 @@
 module.exports.handler = async function(event, context) {
-    import faunadb from 'faunadb' /* Import faunaDB sdk */
-    import _ from "lodash";
+
+    const faunadb = require('faunadb'); /* Import faunaDB sdk */
+    const _ = require("lodash");
 /* configure faunaDB Client with our secret */
    const q = faunadb.query;
 
