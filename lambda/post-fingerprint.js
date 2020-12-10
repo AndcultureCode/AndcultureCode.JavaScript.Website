@@ -49,23 +49,24 @@ module.exports.handler = async function(event, context) {
     }
 
 
-    const fingerprint = await checkFingerprint(event.body.data);
+    const parsedData = JSON.parse(event.body.data);
+    const fingerprint = await checkFingerprint(parsedData);
 
     if( fingerprint.value !== null &&
         fingerprint.matchCount > 8 &&
-        event.body.data.ip === fingerprint.value.data.ip){
-        addSiteHistory(fingerprint.value.data, { page: event.body.page, date: new Date().toISOString(), action: 'landed on page' });
+        parsedData.ip === fingerprint.value.data.ip){
+        addSiteHistory(fingerprint.value.data, { page: parsedData.page, date: new Date().toISOString(), action: 'landed on page' });
         return null;
     }
 
     client.query(
       q.Create(
         q.Collection('fingerprints'),
-        { data: event.body.data },
+        { data: parsedData },
       )
     )
     .then((ret) => {
-        addSiteHistory(ret.data, { page: event.body.page, date: new Date().toISOString(), action: 'landed on page'  });
+        addSiteHistory(ret.data, { page: parsedData.page, date: new Date().toISOString(), action: 'landed on page'  });
         return {
             // return null to show no errors
             statusCode: 200, // http status code
