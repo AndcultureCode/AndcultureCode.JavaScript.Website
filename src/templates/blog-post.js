@@ -12,6 +12,13 @@ import useComponentSize                       from '@rehooks/component-size';
 import { postFingerprint }                    from '../../lambda/fauna-create';
 import Fingerprint2                           from '@fingerprintjs/fingerprintjs';
 import 'resize-observer-polyfill';
+// import IPData from 'ipdata';
+// const ipdata = new IPData('8ed5ac6c21f6b51557bdb60c5ec26f2d371856cc1b674913c106c475');
+const ipdataUrl = `https://api.ipdata.co?api-key=8ed5ac6c21f6b51557bdb60c5ec26f2d371856cc1b674913c106c475`;
+
+const json = () => {
+  return fetch(ipdataUrl).then(res => res.json());
+}
 
 export const BlogPostTemplate = (props) => {
   const properties                                      = props.properties;
@@ -179,7 +186,10 @@ const BlogPost = ({ data }) => {
 
     if (window.requestIdleCallback && fingerprint === false) {
       requestIdleCallback(() => {
+        json().then(data => {
+
           Fingerprint2.get( (components) => {
+
             const obj = {
               visitHistory: [],
               userAgent: components[0].value,
@@ -188,11 +198,25 @@ const BlogPost = ({ data }) => {
               screenRes: components[6].value,
               timezone: components[9].value,
               platform: components[16].value,
+              ip:       data.ip,
+              city:     data.city,
+              state:    data.region_code,
+              postal:   data.postal,
+              isp:      data.asn.name,
+              country:  data.continent_name,
             };
-            // postFingerprint(obj, 'specific blog');
+            fetch("/.netlify/functions/post-fingerprint",
+    {
+      method: 'POST',
+      body: JSON.stringify({data: obj, page: 'specific blog'})
+    })
+    .then(response => response.json())
+    .then(console.log);
+           // postFingerprint(obj, 'specific blog');
             setFingerprintObject(obj)
             setFingerprint(true);
           });
+        });
       })
   } else {
       setTimeout( () => {

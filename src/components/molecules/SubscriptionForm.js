@@ -20,8 +20,15 @@ const SubscriptionForm = class extends React.Component {
         if (!this.state.formIsValid) {
             return;
         }
-
-        //submitLandingFormOne(this.state.formData.email, this.props.fingerprint);
+        fetch("/.netlify/functions/submit-landing-form",
+        {
+          method: 'POST',
+          body: JSON.stringify({data: {email: this.state.formData.email, fingerprint: this.props.fingerprint},
+                                page: 'about-page'})
+        })
+        .then(response => response.json())
+        .then(console.log);
+       // submitLandingFormOne(this.state.formData.email, this.props.fingerprint);
         this.setState({ submitted: true });
     }
 

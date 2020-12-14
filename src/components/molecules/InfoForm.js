@@ -21,30 +21,30 @@ const InfoForm = class extends React.Component {
         this._onNextClick       = this._onNextClick.bind(this);
         this._onBackClick       = this._onBackClick.bind(this);
         this._onSubmitClick     = this._onSubmitClick.bind(this);
-        this._caclulateProgress = this._caclulateProgress.bind(this);
+        this._calculateProgress = this._calculateProgress.bind(this);
         this._setInputValue     = this._setInputValue.bind(this);
     }
 
     _onNextClick() {
         if (this.state.activeQuestion === this.state.totalQuestions) {
-            this._caclulateProgress(1);
+            this._calculateProgress(1);
             return;
         }
 
         this.setState({
             activeQuestion:  this.state.activeQuestion + 1,
-        }, this._caclulateProgress(1));
+        }, this._calculateProgress(1));
     }
 
     _onBackClick() {
         if (this.state.activeQuestion === 1) {
-            this._caclulateProgress(0);
+            this._calculateProgress(0);
             return;
         }
 
         this.setState({
             activeQuestion:  this.state.activeQuestion  - 1,
-        }, this._caclulateProgress(0));
+        }, this._calculateProgress(0));
     }
 
     _onSubmitClick(e) {
@@ -54,7 +54,7 @@ const InfoForm = class extends React.Component {
             body: encode({ "form-name": "contact-info", ...this.state.formData })
         })
             .then(() =>
-                this._caclulateProgress(1)
+                this._calculateProgress(1)
             )
             .catch(error => alert(error));
 
@@ -78,7 +78,7 @@ const InfoForm = class extends React.Component {
         return true;
     }
 
-    _caclulateProgress(direction) {
+    _calculateProgress(direction) {
         let percentComplete = this.state.activeQuestion / this.state.totalQuestions * 100;
         if (this.state.activeQuestion === this.state.totalQuestions && direction === 1) {
             this.props.isSubmittedCallback(true);
@@ -159,25 +159,31 @@ const InfoForm = class extends React.Component {
                             lightTheme         = { this.props.lightTheme }
                             id                 = "info-message" />
                         <div className = "o-contact-form__buttons">
-                            <a
+                            <button
+                                className = { buttonClass }
                                 onClick   = { this._onBackClick }
-                                className = { buttonClass }>
+                                type      = "button">
                                 Go Back
-                            </a>
+                            </button>
                             {  // if
                                 this.state.activeQuestion !== this.state.totalQuestions &&
-                                <a
+                                <button
+                                    className = { nextButtonClass }
+                                    id        = "next-button"
                                     onClick   = { this._onNextClick }
-                                    className = { nextButtonClass }>
+                                    type      = "button">
                                     Next
-                                </a>
+                                </button>
                             }
-                            <button
-                                type      = "submit"
-                                onClick   = { this._onSubmitClick }
-                                className = { buttonClass }>
-                                Submit
-                            </button>
+                            {
+                                this.state.activeQuestion === this.state.totalQuestions &&
+                                <button
+                                    className = { buttonClass }
+                                    onClick   = { this._onSubmitClick }
+                                    type      = "submit">
+                                    Submit
+                                </button>
+                            }
                         </div>
                     </div>
                 </div>
