@@ -21,30 +21,40 @@ const ProjectForm = class extends React.Component {
         this._onNextClick       = this._onNextClick.bind(this);
         this._onBackClick       = this._onBackClick.bind(this);
         this._onSubmitClick     = this._onSubmitClick.bind(this);
-        this._caclulateProgress = this._caclulateProgress.bind(this);
+        this._calculateProgress = this._calculateProgress.bind(this);
         this._setInputValue     = this._setInputValue.bind(this);
     }
 
-    _onNextClick() {
+    _onNextClick(e) {
+        // document.getElementById("next-button").blur();
+        console.log(document.querySelectorAll("fieldset.-active input")[0]);
+        // document.querySelectorAll("fieldset.-active input")[0].focus();
+
+        // prevent processing with keyboard when form input is invalid
+        if (this._validateFormData()) {
+            e.preventDefault();
+            return;
+        }
+
         if (this.state.activeQuestion === this.state.totalQuestions) {
-            this._caclulateProgress(1);
+            this._calculateProgress(1);
             return;
         }
 
         this.setState({
             activeQuestion:  this.state.activeQuestion + 1,
-        }, this._caclulateProgress(1));
+        }, this._calculateProgress(1));
     }
 
-    _onBackClick() {
+    _onBackClick(){
         if (this.state.activeQuestion === 1) {
-            this._caclulateProgress(0);
+            this._calculateProgress(0);
             return;
         }
 
         this.setState({
             activeQuestion:  this.state.activeQuestion  - 1,
-        }, this._caclulateProgress(0));
+        }, this._calculateProgress(0));
     }
 
     _onSubmitClick(e) {
@@ -54,7 +64,7 @@ const ProjectForm = class extends React.Component {
             body: encode({ "form-name": "contact-project", ...this.state.formData })
         })
             .then(() =>
-                this._caclulateProgress(1)
+                this._calculateProgress(1)
             )
             .catch(error => alert(error));
 
@@ -82,8 +92,8 @@ const ProjectForm = class extends React.Component {
         return true;
     }
 
-    _caclulateProgress(direction) {
-        let percentComplete = this.state.activeQuestion / this.state.totalQuestions * 100;
+    _calculateProgress(direction) {
+        let percentComplete = (this.state.activeQuestion / this.state.totalQuestions) * 100;
         if (this.state.activeQuestion === this.state.totalQuestions && direction === 1) {
             this.props.isSubmittedCallback(true);
         }
@@ -93,7 +103,7 @@ const ProjectForm = class extends React.Component {
         }
 
         if (direction === 0) {
-            percentComplete = (this.state.activeQuestion - 2) / this.state.totalQuestions * 100;
+            percentComplete = ((this.state.activeQuestion - 2) / this.state.totalQuestions) * 100;
         }
 
         this._sendData(percentComplete);
@@ -115,11 +125,6 @@ const ProjectForm = class extends React.Component {
         buttonClass += this.props.lightTheme ? ' -light ' : '';
 
         let nextButtonClass = 'a-button';
-        formClass += this.props.isActive ? ' -active' : '';
-
-        if (this.state.activeQuestion === this.state.totalQuestions) {
-            buttonClass += ' -active'
-        }
 
         if (this._validateFormData()) {
             nextButtonClass += ' -disabled'
@@ -192,25 +197,31 @@ const ProjectForm = class extends React.Component {
                             value              = { this.state.formData.message }
                             id                 = "project-message" />
                         <div className = "o-contact-form__buttons">
-                            <a
+                            <button
+                                className = { buttonClass }
                                 onClick   = { this._onBackClick }
-                                className = { buttonClass }>
+                                type      = "button">
                                 Go Back
-                            </a>
+                            </button>
                             {  // if
                                 this.state.activeQuestion !== this.state.totalQuestions &&
-                                <a
+                                <button
+                                    className = { nextButtonClass }
+                                    id        = "next-button"
                                     onClick   = { this._onNextClick }
-                                    className = { nextButtonClass }>
+                                    type      = "button">
                                     Next
-                                </a>
+                                </button>
                             }
-                            <button
-                                type      = "submit"
-                                onClick   = { this._onSubmitClick }
-                                className = { buttonClass }>
-                                Submit
-                            </button>
+                            {
+                                this.state.activeQuestion === this.state.totalQuestions &&
+                                <button
+                                    className = { buttonClass }
+                                    onClick   = { this._onSubmitClick }
+                                    type      = "submit">
+                                    Submit
+                                </button>
+                            }
                         </div>
                     </div>
                 </div>

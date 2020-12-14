@@ -18,7 +18,7 @@ const Input = class extends React.Component {
     }
 
     _activateField() {
-        this.setState({
+         this.setState({
             fieldActive:      true,
             placeholderValue: '',
         })
