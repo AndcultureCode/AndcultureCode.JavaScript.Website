@@ -120,14 +120,6 @@
                 cursor: default;
             }
         }
-
-        button {
-            //display: none;
-
-            &.-active {
-                display: inline-block;
-            }
-        }
     }
 
     &__progress {

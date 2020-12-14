@@ -1,90 +1,3 @@
-fieldset .a-radio {
-    position: absolute;
-    opacity: 0;
-
-    //&:checked + label {
-    //    color: white;
-    //
-    //    &:before,
-    //    &:after {
-    //        content: "";
-    //        position: absolute;
-    //        display: inline-block;
-    //        z-index: -1;
-    //        top: 50%;
-    //        transform: translateY(-50%);
-    //    }
-    //
-    //    &:before {
-    //        background: url('../../../static/img/arrow-front.svg') no-repeat center center / contain;
-    //        width: 50px;
-    //        height: 6px;
-    //        left: -20px;
-    //
-    //        @include breakpoints("phone") {
-    //            left: -50px;
-    //        }
-    //    }
-    //
-    //    &:after {
-    //        background: url('../../../static/img/arrow.svg') no-repeat center center / contain;
-    //        width: 60px;
-    //        height: 18px;
-    //    }
-    //}
-    //
-    //&:checked.-light + label {
-    //    color: get-color("primary", "after-hours");
-    //}
-
-    & + label {
-        @include font-size(22px);
-        position: relative;
-        padding: 0 16px;
-        background: get-color("primary", "after-hours");
-        color: get-color-primary("after-hours");
-        z-index: 1;
-
-        @include breakpoints("tablet") {
-            @include font-size(32px);
-        }
-
-        &:hover {
-
-            &:before,
-            &:after {
-                content: "";
-                position: absolute;
-                display: inline-block;
-                z-index: -1;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-
-            &:before {
-                background: url('../../../static/img/arrow-front.svg') no-repeat center center / contain;
-                width: 50px;
-                height: 6px;
-                left: -20px;
-
-                @include breakpoints("phone") {
-                    left: -50px;
-                }
-            }
-
-            &:after {
-                background: url('../../../static/img/arrow.svg') no-repeat center center / contain;
-                width: 60px;
-                height: 18px;
-            }
-        }
-    }
-
-    &.-light + label {
-        background: get-color("primary", "white");
-    }
-}
-
 fieldset {
     legend {
         display: none;
@@ -92,7 +5,8 @@ fieldset {
 
     button.form-button {
         @include font-size(22px);
-        background-color: inherit;
+        background: get-color-primary("after-hours");
+        color: get-color-primary("white");
         position: relative;
         padding: 0 16px;
         margin: 10px 0;
@@ -100,7 +14,11 @@ fieldset {
         border: none;
         font-weight: inherit;
         font-family: inherit;
-        //color: get-color-primary("white");
+
+        &.-light {
+            background: get-color("primary", "white");
+            color: get-color-primary("after-hours");
+        }
 
         @include breakpoints("tablet") {
             @include font-size(32px);
@@ -135,10 +53,5 @@ fieldset {
                 height: 18px;
             }
         }
-    }
-
-    &.-light + button.form-button {
-        background: get-color("primary", "white");
-        color: get-color-primary("after-hours");
     }
 }

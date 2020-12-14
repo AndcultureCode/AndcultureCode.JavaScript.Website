@@ -26,9 +26,8 @@ const ProjectForm = class extends React.Component {
     }
 
     _onNextClick(e) {
-        // document.getElementById("next-button").blur();
-        console.log(document.querySelectorAll("fieldset.-active input")[0]);
-        // document.querySelectorAll("fieldset.-active input")[0].focus();
+        // get the focus to the active input on the form on tab key press
+        document.querySelectorAll("fieldset.-active input")[0].focus();
 
         // prevent processing with keyboard when form input is invalid
         if (this._validateFormData()) {
