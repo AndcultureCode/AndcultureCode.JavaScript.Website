@@ -26,7 +26,16 @@ const CatamaranForm = class extends React.Component {
         this._setInputValue     = this._setInputValue.bind(this);
     }
 
-    _onNextClick() {
+    _onNextClick(e) {
+        // get the focus to the active input on the form on tab key press
+        document.querySelectorAll("fieldset.-active input")[2].focus();
+
+        // prevent processing with keyboard when form input is invalid
+        if (this._validateFormData()) {
+            e.preventDefault();
+            return;
+        }
+
         if (this.state.activeQuestion === this.state.totalQuestions) {
             this._calculateProgress(1);
             return;
@@ -84,7 +93,7 @@ const CatamaranForm = class extends React.Component {
     }
 
     _calculateProgress(direction) {
-        let percentComplete = this.state.activeQuestion / this.state.totalQuestions * 100;
+        let percentComplete = (this.state.activeQuestion / this.state.totalQuestions) * 100;
         if (this.state.activeQuestion === this.state.totalQuestions && direction === 1) {
             this.props.isSubmittedCallback(true);
         }
@@ -94,7 +103,7 @@ const CatamaranForm = class extends React.Component {
         }
 
         if (direction === 0) {
-            percentComplete = (this.state.activeQuestion - 2) / this.state.totalQuestions * 100;
+            percentComplete = ((this.state.activeQuestion - 2) / this.state.totalQuestions) * 100;
         }
 
         this._sendData(percentComplete);
@@ -116,11 +125,6 @@ const CatamaranForm = class extends React.Component {
         buttonClass += this.props.lightTheme ? ' -light ' : '';
 
         let nextButtonClass = 'a-button';
-        formClass += this.props.isActive ? ' -active' : '';
-
-        if (this.state.activeQuestion === this.state.totalQuestions) {
-            buttonClass += ' -active'
-        }
 
         if (this._validateFormData()) {
             nextButtonClass += ' -disabled'
@@ -180,13 +184,12 @@ const CatamaranForm = class extends React.Component {
                                 this.state.activeQuestion !== this.state.totalQuestions &&
                                 <button
                                     className = { nextButtonClass }
-                                    id        = "next-button"
                                     onClick   = { this._onNextClick }
                                     type      = "button">
                                     Next
                                 </button>
                             }
-                            {
+                            { // if
                                 this.state.activeQuestion === this.state.totalQuestions &&
                                 <button
                                     className = { buttonClass }

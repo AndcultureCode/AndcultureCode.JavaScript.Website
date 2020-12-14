@@ -206,13 +206,12 @@ const ProjectForm = class extends React.Component {
                                 this.state.activeQuestion !== this.state.totalQuestions &&
                                 <button
                                     className = { nextButtonClass }
-                                    id        = "next-button"
                                     onClick   = { this._onNextClick }
                                     type      = "button">
                                     Next
                                 </button>
                             }
-                            {
+                            { // if
                                 this.state.activeQuestion === this.state.totalQuestions &&
                                 <button
                                     className = { buttonClass }
