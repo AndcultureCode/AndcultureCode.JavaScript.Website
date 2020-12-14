@@ -15,6 +15,10 @@ fieldset {
         font-weight: inherit;
         font-family: inherit;
 
+        &:hover {
+            cursor: pointer;
+        }
+
         &.-light {
             background: get-color("primary", "white");
             color: get-color-primary("after-hours");
