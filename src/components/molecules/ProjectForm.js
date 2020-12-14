@@ -27,10 +27,10 @@ const ProjectForm = class extends React.Component {
 
     _onNextClick(e) {
         // get the focus to the active input on the form on tab key press
-        document.querySelectorAll("fieldset.-active input")[0].focus();
+        document.querySelectorAll(".o-contact-form fieldset.-active input")[0].focus();
 
         // prevent processing with keyboard when form input is invalid
-        if (this._validateFormData()) {
+        if (this._isFormDataInvalid()) {
             e.preventDefault();
             return;
         }
@@ -70,7 +70,7 @@ const ProjectForm = class extends React.Component {
         e.preventDefault();
     }
 
-    _validateFormData() {
+    _isFormDataInvalid() {
         const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (this.state.activeQuestion === 1 && this.state.formData.name && this.state.formData.name !== "") {
             return false;
@@ -125,7 +125,7 @@ const ProjectForm = class extends React.Component {
 
         let nextButtonClass = 'a-button';
 
-        if (this._validateFormData()) {
+        if (this._isFormDataInvalid()) {
             nextButtonClass += ' -disabled'
         }
 

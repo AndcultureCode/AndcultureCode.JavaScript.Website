@@ -25,10 +25,9 @@
 
     &__container {
         @include clearfix();
+        @include padding(80px, 0, 50px, 0);
         position: relative;
         background: get-color("primary", "after-hours");
-        padding: 80px 0 50px 0;
-        padding-left: 0;
 
         &.-light {
             background: get-color("primary", "white");
@@ -49,15 +48,15 @@
         .o-contact-form__wrapper__heading {
             @include font-size("smallest");
             @include line-height("base");
+            @include margin(0, 0, 40px);
             color: get-color-primary("white");
-            margin: 0 0 40px;
             font-weight: 600;
             font-family: $font-secondary;
             letter-spacing: .2em;
             text-transform: uppercase;
 
             @include breakpoints("tablet") {
-                margin: 0 0 80px;
+                @include margin(0, 0, 80px);
             }
         }
 
@@ -89,23 +88,23 @@
     }
 
     &__buttons {
-        margin-top: 40px;
-        margin-bottom: 4px;
+        @include margin-top(40px);
+        @include margin-bottom(4px);
 
         &.-space {
-            padding: 0 30px;
+            @include padding(0, 30px);
 
             @include breakpoints("sm-tablet") {
-                padding: 0 56px;
+                @include padding(0, 56px);
             }
         }
 
         .a-button {
-            margin-right: 30px;
+            @include margin-right(30px);
             cursor: pointer;
 
             @include breakpoints("phone") {
-                margin-right: 60px;
+                @include margin-right(60px);
             }
 
             &.-disabled {
@@ -115,11 +114,11 @@
     }
 
     &__progress {
+        @include rem-fallback(height, 4px);
         background: get-color("primary", "fresh");
         position: absolute;
         top: 0;
         left: 0;
-        height: 4px;
         width: 100%;
         -webkit-transition: width 1s ease-in-out;
         -moz-transition: width 1s ease-in-out;
@@ -133,7 +132,7 @@
 
         @include breakpoints("tablet") {
             @include font-size("medium-large");
-            margin-bottom: 40px;
+            @include margin-bottom(40px);
         }
 
         &.-light {

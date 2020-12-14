@@ -5,11 +5,11 @@ fieldset {
 
     button.form-button {
         @include font-size(22px);
+        @include padding(0, 16px);
+        @include margin(10px, 0);
         background: get-color-primary("after-hours");
         color: get-color-primary("white");
         position: relative;
-        padding: 0 16px;
-        margin: 10px 0;
         z-index: 1;
         border: none;
         font-weight: inherit;
@@ -41,10 +41,10 @@ fieldset {
             }
 
             &:before {
+                @include rem-fallback(width, 50px);
+                @include rem-fallback(height, 6px);
+                @include rem-fallback(left, -20px);
                 background: url('../../../static/img/arrow-front.svg') no-repeat center center / contain;
-                width: 50px;
-                height: 6px;
-                left: -20px;
 
                 @include breakpoints("phone") {
                     left: -50px;
@@ -52,9 +52,9 @@ fieldset {
             }
 
             &:after {
+                @include rem-fallback(width, 60px);
+                @include rem-fallback(height, 18px);
                 background: url('../../../static/img/arrow.svg') no-repeat center center / contain;
-                width: 60px;
-                height: 18px;
             }
         }
     }
