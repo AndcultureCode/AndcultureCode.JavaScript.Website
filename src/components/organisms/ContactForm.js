@@ -1,9 +1,13 @@
-import * as React from 'react';
-import ProjectForm from '../molecules/ProjectForm';
-import InfoForm from '../molecules/InfoForm';
-import JobForm from '../molecules/JobForm';
+import * as React    from 'react';
+import ProjectForm   from '../molecules/ProjectForm';
+import InfoForm      from '../molecules/InfoForm';
 import CatamaranForm from '../molecules/CatamaranForm';
 
+const FORMVALUES = {
+    Project:   "project",
+    QuickInfo: "quick-info",
+    StartUps:  "start-ups",
+}
 
 const ContactForm = class extends React.Component {
 
@@ -11,39 +15,23 @@ const ContactForm = class extends React.Component {
         super(props);
 
         this.state = {
-            activeForm: '',
-            formActive: false,
+            activeForm:      '',
+            formActive:      false,
+            isSubmitted:     false,
             percentComplete: 0,
-            isSubmitted: false,
         }
 
         this._onFormTypeChange  = this._onFormTypeChange.bind(this);
-        this._deactiveFormBack  = this._deactiveForm.bind(this);
-        this._activateForm      = this._activateForm.bind(this);
         this._returnForm        = this._returnForm.bind(this);
         this._updateProgressBar = this._updateProgressBar.bind(this);
         this._isSubmitted       = this._isSubmitted.bind(this);
     }
 
-    _onFormTypeChange(e) {
-        this.setState({ activeForm: e.target.value });
-    }
-
-    _deactiveForm(e) {
-        e.preventDefault();
+    _onFormTypeChange(value) {
         this.setState({
-            formActive: false,
-            activeForm: '',
+            activeForm: value,
+            formActive: true
         });
-    }
-
-    _activateForm(e) {
-        e.preventDefault();
-        if (this.state.activeForm) {
-            this.setState({
-                formActive: true,
-            });
-        }
     }
 
     _updateProgressBar(percentComplete) {
@@ -63,6 +51,7 @@ const ContactForm = class extends React.Component {
                 isSubmitted: isSubmitted,
                 formActive: false,
                 percentComplete: 0,
+                activeForm: '',
             });
         }
     }
@@ -71,17 +60,17 @@ const ContactForm = class extends React.Component {
         return (
             <div>
                 <ProjectForm
-                    isActive            = { this.state.activeForm === "project" }
+                    isActive            = { this.state.activeForm === FORMVALUES.Project }
                     progressCallback    = { this._updateProgressBar }
                     isSubmittedCallback = { this._isSubmitted }
                     lightTheme          = { this.props.lightTheme } />
                 <InfoForm
-                    isActive            = { this.state.activeForm === "quick-info" }
+                    isActive            = { this.state.activeForm === FORMVALUES.QuickInfo }
                     progressCallback    = { this._updateProgressBar }
                     isSubmittedCallback = { this._isSubmitted }
                     lightTheme          = { this.props.lightTheme } />
                 <CatamaranForm
-                    isActive            = { this.state.activeForm === "start-ups" }
+                    isActive            = { this.state.activeForm === FORMVALUES.StartUps }
                     progressCallback    = { this._updateProgressBar }
                     isSubmittedCallback = { this._isSubmitted }
                     lightTheme          = { this.props.lightTheme } />
@@ -94,12 +83,10 @@ const ContactForm = class extends React.Component {
         formContainerClass += this.state.formActive ? " -active " : "";
         formContainerClass += this.props.lightTheme ? " -light " : "";
 
-        let radioInputClass = "a-radio";
-        radioInputClass += this.props.lightTheme ? " -light " : "";
-
-        let buttonClass = "a-button";
+        let buttonClass = "form-button";
         buttonClass += this.props.lightTheme ? " -light " : "";
-        var progressBarWidth = {
+
+        const progressBarWidth = {
             width: this.state.percentComplete + "%",
         };
 
@@ -119,53 +106,31 @@ const ContactForm = class extends React.Component {
                         this.state.isSubmitted === false &&
                         <div className = "o-rhythm__container">
                             <div className = "o-contact-form__wrapper">
-                                <header className = {headerClass} aria-label="Contact form header">what can we help you with?</header>
+                                <header
+                                    aria-label = "Contact form header"
+                                    className  = { headerClass }>
+                                    what can we help you with?
+                                </header>
                                 <fieldset className = "-space">
-                                    <input
-                                        onChange  = { this._onFormTypeChange }
-                                        checked   = { this.state.activeForm === "project" }
-                                        className = { radioInputClass }
-                                        type      = "radio"
-                                        name      = "type"
-                                        value     = "project"
-                                        id        = "project"/>
-                                    <label htmlFor="project">start a project together</label>
+                                    <legend>what can we help you with?</legend>
+                                    <button
+                                        className = { buttonClass }
+                                        onClick   = { () => this._onFormTypeChange(FORMVALUES.Project) }>
+                                        start a project together
+                                    </button>
+                                    <br/>
+                                    <button
+                                        className = { buttonClass }
+                                        onClick   = { () => this._onFormTypeChange(FORMVALUES.QuickInfo) }>
+                                        get quick info
+                                    </button>
+                                    <br/>
+                                    <button
+                                        className = { buttonClass }
+                                        onClick   = { () => this._onFormTypeChange(FORMVALUES.StartUps) }>
+                                        talk start-ups (catamaran)
+                                    </button>
                                 </fieldset>
-                                <fieldset className = "-space">
-                                    <input
-                                        onChange  = { this._onFormTypeChange }
-                                        checked   = { this.state.activeForm === "quick-info" }
-                                        className = { radioInputClass }
-                                        type      = "radio"
-                                        name      = "type"
-                                        value     = "quick-info"
-                                        id        = "quick-info"/>
-                                    <label htmlFor="quick-info">get quick info</label>
-                                </fieldset>
-                                <fieldset className = "-space">
-                                    <input
-                                        onChange  = { this._onFormTypeChange }
-                                        checked   = { this.state.activeForm === "start-ups" }
-                                        className = { radioInputClass }
-                                        type      = "radio"
-                                        name      = "type"
-                                        value     = "start-ups"
-                                        id        = "start-ups"/>
-                                    <label htmlFor="start-ups">talk start-ups (catamaran)</label>
-                                </fieldset>
-                                <div className = "o-contact-form__buttons -space">
-                                    <a
-                                        onClick = { this._deactiveForm }
-                                        className = { `${buttonClass} -disabled` }>
-                                        Go Back
-                                    </a>
-                                    <a
-                                        disabled = { true }
-                                        onClick = { this._activateForm }
-                                        className = { buttonClass} >
-                                        Next
-                                    </a>
-                                </div>
                             </div>
                         </div>
                     }

@@ -7,3 +7,7 @@ public/
 static/admin/*.bundle.*
 .DS_Store
 yarn-error.log
+
+
+# Jetbrains Rider auto-generated files
+.idea/
