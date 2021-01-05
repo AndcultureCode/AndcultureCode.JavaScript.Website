@@ -117,41 +117,41 @@
 
         &.-spaced {
             .o-hero__title {
-                padding-top: 60px;
+                @include padding-top(100px);
 
                 @include breakpoints("tablet") {
-                    padding-bottom: 125px;
-                    padding-top: 100px;
+                    @include padding-bottom(125px);
                 }
             }
 
             .o-hero__meta {
-                padding-bottom: 60px;
+                @include padding-bottom(60px);
 
                 @include breakpoints("tablet") {
-                    padding-bottom: 130px;
+                    @include padding-bottom(130px);
                 }
             }
 
             .o-hero__image {
                 @include breakpoints("tablet") {
-                    margin-top: 40px;
+                    @include margin-top(40px);
                 }
             }
         }
 
         .o-hero__title {
-            padding-top: 72px;
+            @include padding-top(100px);
 
             @include breakpoints("tablet") {
                 @include span-col(5);
                 @include push-col(1);
-                padding-top: 150px;
+                @include padding-top(150px);
+                @include padding-bottom(120px);
             }
 
             @include breakpoints("desktop") {
                 @include push-col(1);
-                padding-top: 220px;
+                @include padding-top(220px);
             }
 
             @include breakpoints("lg-desktop") {
