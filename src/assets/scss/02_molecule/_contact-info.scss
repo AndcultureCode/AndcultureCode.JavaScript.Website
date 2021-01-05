@@ -80,7 +80,11 @@
     &__directions {
         @include span-col(12);
         max-width: 786px;
-        width: calc(100% - 80px);
+        width: calc(100% - 20px);
+
+            @include breakpoints("tablet") {
+                width: calc(100% - 80px);
+            }
 
         p {
             @include line-height(32px);
