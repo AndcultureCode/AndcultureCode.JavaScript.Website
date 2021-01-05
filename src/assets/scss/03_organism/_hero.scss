@@ -117,11 +117,10 @@
 
         &.-spaced {
             .o-hero__title {
-                padding-top: 60px;
+                padding-top: 100px;
 
                 @include breakpoints("tablet") {
                     padding-bottom: 125px;
-                    padding-top: 100px;
                 }
             }
 
@@ -141,12 +140,13 @@
         }
 
         .o-hero__title {
-            padding-top: 72px;
+            padding-top: 100px;
 
             @include breakpoints("tablet") {
                 @include span-col(5);
                 @include push-col(1);
                 padding-top: 150px;
+                padding-bottom: 120px;
             }
 
             @include breakpoints("desktop") {
