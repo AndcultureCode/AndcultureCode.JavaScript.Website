@@ -9,7 +9,7 @@ export default function Header(props) {
 
   if (props.pageTitle === "home") {
     titleClass += " -home";
-  } else if (props.pageTitle === "Work") {
+  } else if (props.pageTitle === "work") {
     titleClass += " -work";
   }
 
