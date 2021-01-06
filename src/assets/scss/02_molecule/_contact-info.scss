@@ -79,7 +79,7 @@
 
     &__directions {
         @include span-col(12);
-        max-width: 786px;
+        @include rem-fallback(max-width, 786px);
         width: calc(100% - 20px);
 
             @include breakpoints("tablet") {
