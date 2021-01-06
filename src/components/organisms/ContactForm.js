@@ -86,6 +86,9 @@ const ContactForm = class extends React.Component {
         let buttonClass = "form-button";
         buttonClass += this.props.lightTheme ? " -light " : "";
 
+        let contactFormButtonClass = 'a-button -disabled';
+        contactFormButtonClass += this.props.lightTheme ? ' -light ' : '';
+
         const progressBarWidth = {
             width: this.state.percentComplete + "%",
         };
@@ -131,6 +134,18 @@ const ContactForm = class extends React.Component {
                                         talk start-ups (catamaran)
                                     </button>
                                 </fieldset>
+                                <div className = "o-contact-form__buttons">
+                                    <button
+                                        className = { contactFormButtonClass }
+                                        type      = "button">
+                                        Go Back
+                                    </button>
+                                    <button
+                                        className = { contactFormButtonClass }
+                                        type      = "button">
+                                        Next
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     }
