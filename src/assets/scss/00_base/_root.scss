@@ -52,6 +52,14 @@ address {
     }
 }
 
+.-mobile-and-tablet-only {
+    display: block;
+
+    @include breakpoints("tablet") {
+        display: none !important;
+    }
+}
+
 .-tablet-and-desktop-only {
     display: none;
 
