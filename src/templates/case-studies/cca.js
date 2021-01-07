@@ -81,7 +81,7 @@ const CCA = class extends React.Component {
                 </div>
                 <CustomSlider images = { sliderImages } />
                 <div className = "o-rhythm__container">
-                    <div className = "m-case-study-page-content__copy-section -image-right -cca">
+                    <div className = "m-case-study-page-content__copy-section -image-right -cca-synthesis">
                         <div className = "content__header -mobile-only">Synthesis</div>
                         <header className = "-push-three">we pulled all of that sweet research together and made a plan.</header>
                         <div className = "o-rhythm__row">
