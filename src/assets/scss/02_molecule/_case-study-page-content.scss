@@ -248,6 +248,8 @@
             }
 
             img {
+                margin-right: 10%;
+                max-width: 80%;
                 margin-left: 10%;
             }
         }
@@ -581,6 +583,14 @@
 
         &.-image-right {
             padding-top: 0;
+
+            &.-cca-synthesis {
+                padding-bottom: 0;
+
+                @include breakpoints("tablet") {
+                    @include padding-bottom(40px);
+                }
+            }
         }
 
         @include breakpoints("sm-tablet") {
@@ -724,18 +734,19 @@
             position: relative;
             padding-right: 0;
 
-            @include breakpoints("sm-tablet") {
-                padding-right: 90px;
+            @include breakpoints("desktop") {
+                @include padding-right(90px);
             }
 
             img {
-                position: absolute;
+                @include breakpoints("desktop") {
+                    position: absolute;
+                }
                 left: calc(100% - 100px);
                 top: 0;
             }
 
             header {
-                padding-right: 90px;
 
                 @include breakpoints("sm-tablet") {
                     padding-right: 0px;
@@ -744,7 +755,6 @@
 
             p {
                 &:first-of-type {
-                    padding-right: 90px;
 
                     @include breakpoints("sm-tablet") {
                         padding-right: 0px;
