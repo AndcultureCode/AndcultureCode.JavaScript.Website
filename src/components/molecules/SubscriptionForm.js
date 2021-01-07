@@ -4,7 +4,7 @@ import Textarea                  from '../atoms/Textarea';
 import { submitLandingFormOne }  from '../../../lambda/fauna-create';
 
 // hubspotFormUrl is built using https://api.hsforms.com/submissions/v3/integration/submit/portalId/formId
-const hubspotFormUrl = "https://api.hsforms.com/submissions/v3/integration/submit/7690200/95b61704-718f-4305-806f-d05a35033a5d";
+const hubspotFormUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${process.env.GATSBY_HUBSPOT_PORTAL_KEY}/${process.env.GATSBY_HUBSPOT_FORM_KEY}`;
 
 const SubscriptionForm = class extends React.Component {
     constructor(props) {
