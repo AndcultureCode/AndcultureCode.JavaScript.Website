@@ -583,6 +583,14 @@
 
         &.-image-right {
             padding-top: 0;
+
+            &.-cca {
+                padding-bottom: 0;
+
+                @include breakpoints("tablet") {
+                    @include padding-bottom(40px);
+                }
+            }
         }
 
         @include breakpoints("sm-tablet") {
