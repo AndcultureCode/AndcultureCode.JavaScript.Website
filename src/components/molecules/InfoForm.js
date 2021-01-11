@@ -111,7 +111,7 @@ const InfoForm = class extends React.Component {
     }
 
     _onKeydownPress(e) {
-        if (e.key === "Enter") {
+        if (e.keyCode === 13) {
             e.preventDefault();
             this._onNextClick(e);
         }

@@ -115,7 +115,7 @@ const ProjectForm = class extends React.Component {
     }
 
     _onKeydownPress(e) {
-        if (e.key === "Enter") {
+        if (e.keyCode === 13) {
             this._onNextClick(e);
         }
     }

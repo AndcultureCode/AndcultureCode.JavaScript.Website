@@ -116,7 +116,7 @@ const CatamaranForm = class extends React.Component {
     }
 
     _onKeydownPress(e) {
-        if (e.key === "Enter") {
+        if (e.keyCode === 13) {
             // allow Interest field dropdown to progress on enter
             // if no option is selected, press enter will open the dropdown
             // otherwise, press enter will move on to the next step
