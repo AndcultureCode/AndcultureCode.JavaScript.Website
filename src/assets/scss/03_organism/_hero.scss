@@ -117,7 +117,7 @@
 
         &.-spaced {
             .o-hero__title {
-                @include padding-top(100px);
+                @include padding-top(120px);
 
                 @include breakpoints("tablet") {
                     @include padding-bottom(125px);
@@ -140,7 +140,7 @@
         }
 
         .o-hero__title {
-            @include padding-top(100px);
+            @include padding-top(120px);
 
             @include breakpoints("tablet") {
                 @include span-col(5);
@@ -171,6 +171,16 @@
                 @include breakpoints("lg-desktop") {
                     @include font-size(70px);
                     @include line-height(80px);
+                }
+            }
+
+            h6 {
+                @include font-size(14px);
+                @include line-height(30px);
+
+                @include breakpoints("phone") {
+                    @include font-size(20px);
+                    @include line-height(40px);
                 }
             }
         }
