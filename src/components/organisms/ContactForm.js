@@ -1,9 +1,10 @@
-import * as React    from 'react';
-import ProjectForm   from '../molecules/ProjectForm';
-import InfoForm      from '../molecules/InfoForm';
-import CatamaranForm from '../molecules/CatamaranForm';
+import * as React           from 'react';
+import ProjectForm          from '../molecules/ProjectForm';
+import InfoForm             from '../molecules/InfoForm';
+import CatamaranForm        from '../molecules/CatamaranForm';
+import ContactFormAnimation from "./contactFormAnimation";
 
-const FORMVALUES = {
+export const FORMVALUES = {
     Project:   "project",
     QuickInfo: "quick-info",
     StartUps:  "start-ups",
@@ -25,6 +26,19 @@ const ContactForm = class extends React.Component {
         this._returnForm        = this._returnForm.bind(this);
         this._updateProgressBar = this._updateProgressBar.bind(this);
         this._isSubmitted       = this._isSubmitted.bind(this);
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        // set focus on the next input field when user presses enter or clicks on next
+        const nextInputField    = document.querySelector(".o-contact-form.-active fieldset.-active input");
+        const nextTextareaField = document.querySelector(".o-contact-form.-active fieldset.-active textarea");
+
+        if (nextInputField != null) {
+            nextInputField.focus();
+        }
+        if (nextTextareaField != null) {
+            nextTextareaField.focus();
+        }
     }
 
     _onFormTypeChange(value) {
@@ -90,7 +104,8 @@ const ContactForm = class extends React.Component {
             width: this.state.percentComplete + "%",
         };
 
-        let headerClass = this.props.lightTheme ? " -light " : "";
+        let headerClass = "o-contact-form-header";
+        headerClass += this.props.lightTheme ? " -light " : "";
 
         return (
             <div className = { formContainerClass }>
@@ -104,35 +119,10 @@ const ContactForm = class extends React.Component {
                     { // if
                         this.state.formActive === false &&
                         this.state.isSubmitted === false &&
-                        <div className = "o-rhythm__container">
-                            <div className = "o-contact-form__wrapper">
-                                <header
-                                    aria-label = "Contact form header"
-                                    className  = { headerClass }>
-                                    what can we help you with?
-                                </header>
-                                <fieldset className = "-space">
-                                    <legend>what can we help you with?</legend>
-                                    <button
-                                        className = { buttonClass }
-                                        onClick   = { () => this._onFormTypeChange(FORMVALUES.Project) }>
-                                        start a project together
-                                    </button>
-                                    <br/>
-                                    <button
-                                        className = { buttonClass }
-                                        onClick   = { () => this._onFormTypeChange(FORMVALUES.QuickInfo) }>
-                                        get quick info
-                                    </button>
-                                    <br/>
-                                    <button
-                                        className = { buttonClass }
-                                        onClick   = { () => this._onFormTypeChange(FORMVALUES.StartUps) }>
-                                        talk start-ups (catamaran)
-                                    </button>
-                                </fieldset>
-                            </div>
-                        </div>
+                        <ContactFormAnimation
+                            buttonClass      = { buttonClass }
+                            headerClass      = { headerClass }
+                            onFormTypeChange = { this._onFormTypeChange }/>
                     }
                 </div>
                 <div className = { this.state.formActive ? 'o-contact-form__forms -active' : 'o-contact-form__forms' }>

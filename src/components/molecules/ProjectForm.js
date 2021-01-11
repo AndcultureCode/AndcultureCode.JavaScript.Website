@@ -23,12 +23,10 @@ const ProjectForm = class extends React.Component {
         this._onSubmitClick     = this._onSubmitClick.bind(this);
         this._calculateProgress = this._calculateProgress.bind(this);
         this._setInputValue     = this._setInputValue.bind(this);
+        this._onKeydownPress    = this._onKeydownPress.bind(this);
     }
 
     _onNextClick(e) {
-        // get the focus to the active input on the form on tab key press
-        document.querySelectorAll(".o-contact-form fieldset.-active input")[0].focus();
-
         // prevent processing with keyboard when form input is invalid
         if (this._isFormDataInvalid()) {
             e.preventDefault();
@@ -116,6 +114,12 @@ const ProjectForm = class extends React.Component {
         this.setState({ formData: {...this.state.formData, [name]: value }});
     }
 
+    _onKeydownPress(e) {
+        if (e.keyCode === 13) {
+            this._onNextClick(e);
+        }
+    }
+
     render() {
         let formClass   = 'o-contact-form';
         formClass += this.props.isActive ? ' -active' : '';
@@ -141,60 +145,65 @@ const ProjectForm = class extends React.Component {
                         <Input
                             className          = { this.state.activeQuestion === 1 ? '-active': '' }
                             description        = "Enter your name for the project form submission"
-                            type               = "text"
-                            name               = "name"
+                            id                 = "project-name"
                             inputValueCallback = { this._setInputValue }
                             isRequired         = { true }
                             lightTheme         = { this.props.lightTheme }
-                            value              = { this.state.formData.name }
-                            id                 = "project-name" />
+                            name               = "name"
+                            onKeydownPress     = { this._onKeydownPress }
+                            type               = "text"
+                            value              = { this.state.formData.name }/>
                         <Input
                             className          = { this.state.activeQuestion === 2 ? '-active': '' }
                             description        = "Enter your email for the project form submission"
-                            type               = "email"
-                            name               = "email"
+                            id                 = "project-email"
                             inputValueCallback = { this._setInputValue }
                             isRequired         = { true }
                             lightTheme         = { this.props.lightTheme }
-                            value              = { this.state.formData.email }
-                            id                 = "project-email" />
+                            name               = "email"
+                            onKeydownPress     = { this._onKeydownPress }
+                            type               = "email"
+                            value              = { this.state.formData.email } />
                         <Input
                             className          = { this.state.activeQuestion === 3 ? '-active': '' }
                             description        = "Enter your phone number for the project form submission"
-                            type               = "text"
-                            name               = "phone"
+                            id                 = "project-phone"
                             inputValueCallback = { this._setInputValue }
-                            isRequiredCallback = { this._setIsRequired }
                             isRequired         = { true }
+                            isRequiredCallback = { this._setIsRequired }
                             lightTheme         = { this.props.lightTheme }
-                            value              = { this.state.formData.phone }
-                            id                 = "project-phone" />
+                            name               = "phone"
+                            onKeydownPress     = { this._onKeydownPress }
+                            type               = "text"
+                            value              = { this.state.formData.phone } />
                         <Input
                             className          = { this.state.activeQuestion === 4 ? '-active': '' }
                             description        = "Enter your industry for the project form submission"
-                            type               = "text"
-                            name               = "industry"
+                            id                 = "project-industry"
                             inputValueCallback = { this._setInputValue }
                             lightTheme         = { this.props.lightTheme }
-                            value              = { this.state.formData.industry }
-                            id                 = "project-industry" />
+                            name               = "industry"
+                            onKeydownPress     = { this._onKeydownPress }
+                            type               = "text"
+                            value              = { this.state.formData.industry } />
                         <Input
                             className          = { this.state.activeQuestion === 5 ? '-active': '' }
                             description        = "Enter your job title for the project form submission"
-                            type               = "text"
-                            name               = "job title"
+                            id                 = "project-job-title"
                             inputValueCallback = { this._setInputValue }
                             lightTheme         = { this.props.lightTheme }
-                            value              = { this.state.formData.job_title }
-                            id                 = "project-job-title" />
+                            name               = "job title"
+                            onKeydownPress     = { this._onKeydownPress }
+                            type               = "text"
+                            value              = { this.state.formData.job_title } />
                         <Textarea
                             className          = { this.state.activeQuestion === 6 ? '-active': '' }
                             description        = "Enter the message that you would like sent to andculture for the project form submission"
-                            name               = "message"
+                            id                 = "project-message"
                             inputValueCallback = { this._setInputValue }
                             lightTheme         = { this.props.lightTheme }
-                            value              = { this.state.formData.message }
-                            id                 = "project-message" />
+                            name               = "message"
+                            value              = { this.state.formData.message } />
                         <div className = "o-contact-form__buttons">
                             <button
                                 className = { buttonClass }

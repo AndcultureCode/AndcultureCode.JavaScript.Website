@@ -83,15 +83,16 @@ const Input = class extends React.Component {
                 <input
                     { ...inputProps }
                     aria-label  = { this.props.description }
-                    value       = { this.props.value }
+                    className   = { inputClassName }
+                    id          = { this.props.id }
+                    name        = { this.props.name }
                     onFocus     = { this._activateField }
                     onBlur      = { this._disableField }
                     onChange    = { this._updateInputValue }
-                    className   = { inputClassName }
-                    type        = { this.props.type }
-                    name        = { this.props.name }
+                    onKeyDown   = { (e) => this.props.onKeydownPress(e) }
                     placeholder = { this.state.placeholderValue }
-                    id          = { this.props.id } />
+                    type        = { this.props.type }
+                    value       = { this.props.value }/>
                 { // if
                     this.state.error &&
                     <span className = "a-label__error">please enter your { this.props.name }</span>
