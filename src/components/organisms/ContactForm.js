@@ -99,7 +99,6 @@ const ContactForm = class extends React.Component {
 
         let buttonClass = "form-button";
         buttonClass += this.props.lightTheme ? " -light " : "";
-        buttonClass += this.state.formActive ? "-active " : "";
 
         const progressBarWidth = {
             width: this.state.percentComplete + "%",
