@@ -23,12 +23,10 @@ const InfoForm = class extends React.Component {
         this._onSubmitClick     = this._onSubmitClick.bind(this);
         this._calculateProgress = this._calculateProgress.bind(this);
         this._setInputValue     = this._setInputValue.bind(this);
+        this._onKeydownPress    = this._onKeydownPress.bind(this);
     }
 
     _onNextClick(e) {
-        // get the focus to the active input on the form on tab key press
-        document.querySelectorAll(".o-contact-form fieldset.-active input")[1].focus();
-
         // prevent processing with keyboard when form input is invalid
         if (this._isFormDataInvalid()) {
             e.preventDefault();
@@ -112,6 +110,13 @@ const InfoForm = class extends React.Component {
         this.setState({ formData: {...this.state.formData, [name]: value }});
     }
 
+    _onKeydownPress(e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            this._onNextClick(e);
+        }
+    }
+
     render() {
         let formClass   = 'o-contact-form';
         formClass += this.props.isActive ? ' -active' : '';
@@ -135,33 +140,35 @@ const InfoForm = class extends React.Component {
                         <input type = "hidden" data-netlify="true" />
                         <input type="hidden" name="form-name" value="contact-info" />
                         <Input
-                            description        = "Enter your name for the info form submission"
-                            type               = "text"
                             className          = { this.state.activeQuestion === 1 ? '-active': '' }
-                            name               = "name"
+                            description        = "Enter your name for the info form submission"
+                            id                 = "info-name"
                             inputValueCallback = { this._setInputValue }
                             isRequired         = { true }
                             lightTheme         = { this.props.lightTheme }
-                            value              = { this.state.formData.name }
-                            id                 = "info-name" />
+                            name               = "name"
+                            onKeydownPress     = { this._onKeydownPress }
+                            type               = "text"
+                            value              = { this.state.formData.name } />
                         <Input
                             className          = { this.state.activeQuestion === 2 ? '-active': '' }
                             description        = "Enter your email for the info form submission"
-                            type               = "email"
-                            name               = "email"
+                            id                 = "info-email"
                             inputValueCallback = { this._setInputValue }
                             isRequired         = { true }
                             lightTheme         = { this.props.lightTheme }
-                            value              = { this.state.formData.email }
-                            id                 = "info-email" />
+                            name               = "email"
+                            onKeydownPress     = { this._onKeydownPress }
+                            type               = "email"
+                            value              = { this.state.formData.email } />
                         <Textarea
                             className          = { this.state.activeQuestion === 3 ? '-active': '' }
                             description        = "Enter the message that you would like sent to andculture for the info form submission"
-                            name               = "message"
+                            id                 = "info-message"
                             inputValueCallback = { this._setInputValue }
-                            value              = { this.state.formData.message }
                             lightTheme         = { this.props.lightTheme }
-                            id                 = "info-message" />
+                            name               = "message"
+                            value              = { this.state.formData.message } />
                         <div className = "o-contact-form__buttons">
                             <button
                                 className = { buttonClass }

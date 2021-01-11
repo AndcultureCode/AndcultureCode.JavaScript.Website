@@ -79,6 +79,7 @@ const Select = class extends React.Component {
                         name         = { this.props.name }
                         onChange     = { this._updateInputValue }
                         onBlur       = { this._disableField }
+                        onKeyDown    = { (e) => this.props.onKeydownPress(e)}
                         onFocus      = { this._activateField }
                         defaultValue = "default">
                         <option value="default" disabled>Select an option</option>
