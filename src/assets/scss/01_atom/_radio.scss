@@ -8,27 +8,20 @@ fieldset {
         @include padding(0, 16px);
         @include margin(10px, 0);
         background: get-color-primary("after-hours");
-        color: get-color-primary("white");
+        color: get-color-neutral("light-gray");
         position: relative;
         z-index: 1;
         border: none;
         font-weight: inherit;
         font-family: inherit;
 
-        &:hover {
-            cursor: pointer;
-        }
-
-        &.-light {
-            background: get-color("primary", "white");
-            color: get-color-primary("after-hours");
-        }
-
         @include breakpoints("tablet") {
             @include font-size(32px);
         }
 
         &:hover {
+            cursor: pointer;
+            color: get-color-primary("white");
 
             &:before,
             &:after {
@@ -55,6 +48,23 @@ fieldset {
                 @include rem-fallback(width, 60px);
                 @include rem-fallback(height, 18px);
                 background: url('../../../static/img/arrow.svg') no-repeat center center / contain;
+            }
+        }
+
+        &:focus {
+            color: get-color-primary("white");
+        }
+
+        &.-light {
+            background: get-color("primary", "white");
+            color: get-color-primary("after-hours-light");
+
+            &:hover {
+                color: get-color-primary("after-hours");
+            }
+
+            &:focus {
+                color: get-color-primary("after-hours");
             }
         }
     }

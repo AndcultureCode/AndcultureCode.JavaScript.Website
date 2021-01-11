@@ -19,6 +19,7 @@
         display: none;
 
         &.-active {
+            @include margin-bottom(113px);
             display: block;
         }
     }
@@ -68,11 +69,27 @@
         }
     }
 
+    @keyframes flyInAnimation {
+        0% {
+            opacity: 0;
+            margin-left: 10%;
+        }
+        100% {
+            opacity: 1;
+            margin-left: 0;
+        }
+    }
+
     &__forms {
         display: none;
 
         &.-active {
             display: block;
+
+            header, fieldset {
+                animation: flyInAnimation ease 0.5s;
+                animation-iteration-count: 1;
+            }
         }
     }
 
@@ -89,7 +106,8 @@
 
     &__buttons {
         @include margin-top(40px);
-        @include margin-bottom(4px);
+        animation: flyInAnimation ease 0.5s;
+        animation-iteration-count: 1;
 
         &.-space {
             @include padding(0, 30px);
