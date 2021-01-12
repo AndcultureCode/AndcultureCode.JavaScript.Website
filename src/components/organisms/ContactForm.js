@@ -2,7 +2,7 @@ import * as React           from 'react';
 import ProjectForm          from '../molecules/ProjectForm';
 import InfoForm             from '../molecules/InfoForm';
 import CatamaranForm        from '../molecules/CatamaranForm';
-import ContactFormAnimation from "./contactFormAnimation";
+import ContactFormAnimation from "./ContactFormAnimation";
 
 export const FORMVALUES = {
     Project:   "project",
