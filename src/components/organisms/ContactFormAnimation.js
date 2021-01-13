@@ -7,10 +7,10 @@ const ContactFormAnimation = (props) => {
         const selectedOptionClass  = document.querySelector(`.form-button.-${value}`);
         const remainingOptionClass = document.querySelectorAll(`.form-button:not(.-${value})`);
         const formHeaderClass      = document.querySelector('.o-contact-form-header');
-        const tl                   = gsap.timeline();
+        const timeline             = gsap.timeline();
 
         // fly out selected form option
-        tl.fromTo(
+        timeline.fromTo(
             selectedOptionClass,
             { opacity: 1, x: "0%" },
             {
@@ -23,7 +23,7 @@ const ContactFormAnimation = (props) => {
         );
 
         // fade out form header and remaining options
-        tl.fromTo(
+        timeline.fromTo(
             [formHeaderClass, remainingOptionClass],
             { opacity: 1 },
             {
