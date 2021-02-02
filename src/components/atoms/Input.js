@@ -1,3 +1,7 @@
+import {
+    EMAILPATTERN,
+    PHONEPATTERN
+}            from "../../constants/data-validation-patterns";
 import React from 'react';
 
 const Input = class extends React.Component {
@@ -42,8 +46,7 @@ const Input = class extends React.Component {
             }
         } else {
             if (this.props.type === "email") {
-                const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                if (!pattern.test(e.target.value)) {
+                if (!EMAILPATTERN.test(e.target.value)) {
                     this.setState({
                         isInvalidInput: true,
                     })
@@ -51,8 +54,7 @@ const Input = class extends React.Component {
                 }
             }
             if (this.props.name === "phone") {
-                const pattern = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
-                if (!pattern.test(e.target.value)) {
+                if (!PHONEPATTERN.test(e.target.value)) {
                     this.setState({
                         isInvalidInput: true,
                     })

@@ -1,6 +1,10 @@
-import React                   from 'react';
-import Input                   from '../atoms/Input';
-import Textarea                from '../atoms/Textarea';
+import {
+    EMAILPATTERN,
+    PHONEPATTERN
+}               from "../../constants/data-validation-patterns";
+import Input    from '../atoms/Input';
+import Textarea from '../atoms/Textarea';
+import React    from 'react';
 
 function encode(data) {
     return Object.keys(data)
@@ -69,18 +73,15 @@ const ProjectForm = class extends React.Component {
     }
 
     _isFormDataInvalid() {
-        const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        const phonePattern = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
-
         if (this.state.activeQuestion === 1 && this.state.formData.name && this.state.formData.name !== "") {
             return false;
         }
 
-        if (this.state.activeQuestion === 2 && this.state.formData.email && this.state.formData.email !== "" && emailPattern.test(this.state.formData.email)) {
+        if (this.state.activeQuestion === 2 && this.state.formData.email && this.state.formData.email !== "" && EMAILPATTERN.test(this.state.formData.email)) {
             return false;
         }
 
-        if (this.state.activeQuestion === 3 && this.state.formData.phone && this.state.formData.phone !== "" && phonePattern.test(this.state.formData.phone)) {
+        if (this.state.activeQuestion === 3 && this.state.formData.phone && this.state.formData.phone !== "" && PHONEPATTERN.test(this.state.formData.phone)) {
             return false;
         }
 
