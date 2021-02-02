@@ -69,16 +69,18 @@ const ProjectForm = class extends React.Component {
     }
 
     _isFormDataInvalid() {
-        const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const phonePattern = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
+
         if (this.state.activeQuestion === 1 && this.state.formData.name && this.state.formData.name !== "") {
             return false;
         }
 
-        if (this.state.activeQuestion === 2 && this.state.formData.email && this.state.formData.email !== "" && pattern.test(this.state.formData.email)) {
+        if (this.state.activeQuestion === 2 && this.state.formData.email && this.state.formData.email !== "" && emailPattern.test(this.state.formData.email)) {
             return false;
         }
 
-        if (this.state.activeQuestion === 3 && this.state.formData.phone && this.state.formData.phone !== "") {
+        if (this.state.activeQuestion === 3 && this.state.formData.phone && this.state.formData.phone !== "" && phonePattern.test(this.state.formData.phone)) {
             return false;
         }
 
@@ -197,7 +199,7 @@ const ProjectForm = class extends React.Component {
                             type               = "text"
                             value              = { this.state.formData.job_title } />
                         <Textarea
-                            className          = { this.state.activeQuestion === 6 ? '-active': '' }
+                            className          = { `-form-message ${this.state.activeQuestion === 6 ? '-active' : ''}` }
                             description        = "Enter the message that you would like sent to andculture for the project form submission"
                             id                 = "project-message"
                             inputValueCallback = { this._setInputValue }
