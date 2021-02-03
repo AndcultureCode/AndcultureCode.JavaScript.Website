@@ -162,7 +162,7 @@ const InfoForm = class extends React.Component {
                             type               = "email"
                             value              = { this.state.formData.email } />
                         <Textarea
-                            className          = { this.state.activeQuestion === 3 ? '-active': '' }
+                            className          = { `-form-message ${this.state.activeQuestion === 3 ? '-active' : ''}` }
                             description        = "Enter the message that you would like sent to andculture for the info form submission"
                             id                 = "info-message"
                             inputValueCallback = { this._setInputValue }

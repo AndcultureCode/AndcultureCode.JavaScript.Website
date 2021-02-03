@@ -21,6 +21,14 @@
         &.-active {
             @include margin-bottom(113px);
             display: block;
+
+            &.-form-message {
+                @include margin-bottom(55px);
+
+                textarea {
+                    @include rem-fallback(height, 100px);
+                }
+            }
         }
     }
 
@@ -30,19 +38,39 @@
         position: relative;
         background: get-color("primary", "after-hours");
 
+        fieldset {
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus textarea:-webkit-autofill,
+            textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+            select:-webkit-autofill,
+            select:-webkit-autofill:hover,
+            select:-webkit-autofill:focus {
+                -webkit-box-shadow: 0 0 0 30px #043544 inset !important;
+                -webkit-text-fill-color: get-color-primary("fresh") !important;
+            }
+        }
+
         &.-light {
             background: get-color("primary", "white");
 
-            header {
+            h1,
+            header,
+            .o-contact-form__wrapper__heading,
+            fieldset .a-radio + label
+            {
                 color: get-color-primary("after-hours");
             }
 
-            .o-contact-form__wrapper__heading {
-                color: get-color-primary("after-hours");
-            }
-
-            fieldset .a-radio + label {
-                color: get-color-primary("after-hours");
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus textarea:-webkit-autofill,
+            textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+            select:-webkit-autofill,
+            select:-webkit-autofill:hover,
+            select:-webkit-autofill:focus {
+                -webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
+                -webkit-text-fill-color: get-color-primary("after-hours") !important;
             }
         }
 
@@ -93,7 +121,21 @@
         }
     }
 
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
     &__submitted {
+        @include margin-bottom(138px);
+        margin-left: auto;
+        animation: fadeInAnimation ease 0.6s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
 
         h1 {
             color: get-color("primary", "white");

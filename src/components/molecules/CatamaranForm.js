@@ -180,7 +180,7 @@ const CatamaranForm = class extends React.Component {
                             onKeydownPress     = { this._onKeydownPress }
                             value              = { this.state.formData.interest } />
                         <Textarea
-                            className          = { this.state.activeQuestion === 4 ? '-active': '' }
+                            className          = { `-form-message ${this.state.activeQuestion === 4 ? '-active' : ''}` }
                             description        = "Enter the message that you would like sent to Catamaran"
                             id                 = "catamaran-message"
                             inputValueCallback = { this._setInputValue }

@@ -3,6 +3,7 @@ import ProjectForm          from '../molecules/ProjectForm';
 import InfoForm             from '../molecules/InfoForm';
 import CatamaranForm        from '../molecules/CatamaranForm';
 import ContactFormAnimation from "./ContactFormAnimation";
+import { gsap }             from 'gsap';
 
 export const FORMVALUES = {
     Project:   "project",
@@ -50,6 +51,23 @@ const ContactForm = class extends React.Component {
 
     _updateProgressBar(percentComplete) {
         this.setState({ percentComplete: percentComplete });
+
+        const contactFormClass  = document.querySelector(".o-contact-form.-initial");
+
+        // fade out form header and remaining options
+        if (contactFormClass != null) {
+            const timeline = gsap.timeline();
+            timeline.fromTo(
+                contactFormClass,
+                { opacity: 0, x: "5%" },
+                {
+                    duration: 0.5,
+                    x:       "0%",
+                    opacity: 1,
+                    ease:    "power1.out"
+                }
+            );
+        }
     }
 
     _isSubmitted(isSubmitted) {
