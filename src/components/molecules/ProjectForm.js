@@ -1,6 +1,10 @@
-import React                   from 'react';
-import Input                   from '../atoms/Input';
-import Textarea                from '../atoms/Textarea';
+import {
+    EMAILPATTERN,
+    PHONEPATTERN
+}               from "../../constants/data-validation-patterns";
+import Input    from '../atoms/Input';
+import Textarea from '../atoms/Textarea';
+import React    from 'react';
 
 function encode(data) {
     return Object.keys(data)
@@ -21,30 +25,37 @@ const ProjectForm = class extends React.Component {
         this._onNextClick       = this._onNextClick.bind(this);
         this._onBackClick       = this._onBackClick.bind(this);
         this._onSubmitClick     = this._onSubmitClick.bind(this);
-        this._caclulateProgress = this._caclulateProgress.bind(this);
+        this._calculateProgress = this._calculateProgress.bind(this);
         this._setInputValue     = this._setInputValue.bind(this);
+        this._onKeydownPress    = this._onKeydownPress.bind(this);
     }
 
-    _onNextClick() {
+    _onNextClick(e) {
+        // prevent processing with keyboard when form input is invalid
+        if (this._isFormDataInvalid()) {
+            e.preventDefault();
+            return;
+        }
+
         if (this.state.activeQuestion === this.state.totalQuestions) {
-            this._caclulateProgress(1);
+            this._calculateProgress(1);
             return;
         }
 
         this.setState({
             activeQuestion:  this.state.activeQuestion + 1,
-        }, this._caclulateProgress(1));
+        }, this._calculateProgress(1));
     }
 
-    _onBackClick() {
+    _onBackClick(){
         if (this.state.activeQuestion === 1) {
-            this._caclulateProgress(0);
+            this._calculateProgress(0);
             return;
         }
 
         this.setState({
             activeQuestion:  this.state.activeQuestion  - 1,
-        }, this._caclulateProgress(0));
+        }, this._calculateProgress(0));
     }
 
     _onSubmitClick(e) {
@@ -54,24 +65,23 @@ const ProjectForm = class extends React.Component {
             body: encode({ "form-name": "contact-project", ...this.state.formData })
         })
             .then(() =>
-                this._caclulateProgress(1)
+                this._calculateProgress(1)
             )
             .catch(error => alert(error));
 
         e.preventDefault();
     }
 
-    _validateFormData() {
-        const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    _isFormDataInvalid() {
         if (this.state.activeQuestion === 1 && this.state.formData.name && this.state.formData.name !== "") {
             return false;
         }
 
-        if (this.state.activeQuestion === 2 && this.state.formData.email && this.state.formData.email !== "" && pattern.test(this.state.formData.email)) {
+        if (this.state.activeQuestion === 2 && this.state.formData.email && this.state.formData.email !== "" && EMAILPATTERN.test(this.state.formData.email)) {
             return false;
         }
 
-        if (this.state.activeQuestion === 3 && this.state.formData.phone && this.state.formData.phone !== "") {
+        if (this.state.activeQuestion === 3 && this.state.formData.phone && this.state.formData.phone !== "" && PHONEPATTERN.test(this.state.formData.phone)) {
             return false;
         }
 
@@ -82,8 +92,8 @@ const ProjectForm = class extends React.Component {
         return true;
     }
 
-    _caclulateProgress(direction) {
-        let percentComplete = this.state.activeQuestion / this.state.totalQuestions * 100;
+    _calculateProgress(direction) {
+        let percentComplete = (this.state.activeQuestion / this.state.totalQuestions) * 100;
         if (this.state.activeQuestion === this.state.totalQuestions && direction === 1) {
             this.props.isSubmittedCallback(true);
         }
@@ -93,7 +103,7 @@ const ProjectForm = class extends React.Component {
         }
 
         if (direction === 0) {
-            percentComplete = (this.state.activeQuestion - 2) / this.state.totalQuestions * 100;
+            percentComplete = ((this.state.activeQuestion - 2) / this.state.totalQuestions) * 100;
         }
 
         this._sendData(percentComplete);
@@ -107,6 +117,12 @@ const ProjectForm = class extends React.Component {
         this.setState({ formData: {...this.state.formData, [name]: value }});
     }
 
+    _onKeydownPress(e) {
+        if (e.keyCode === 13) {
+            this._onNextClick(e);
+        }
+    }
+
     render() {
         let formClass   = 'o-contact-form';
         formClass += this.props.isActive ? ' -active' : '';
@@ -115,13 +131,8 @@ const ProjectForm = class extends React.Component {
         buttonClass += this.props.lightTheme ? ' -light ' : '';
 
         let nextButtonClass = 'a-button';
-        formClass += this.props.isActive ? ' -active' : '';
 
-        if (this.state.activeQuestion === this.state.totalQuestions) {
-            buttonClass += ' -active'
-        }
-
-        if (this._validateFormData()) {
+        if (this._isFormDataInvalid()) {
             nextButtonClass += ' -disabled'
         }
 
@@ -137,80 +148,90 @@ const ProjectForm = class extends React.Component {
                         <Input
                             className          = { this.state.activeQuestion === 1 ? '-active': '' }
                             description        = "Enter your name for the project form submission"
-                            type               = "text"
-                            name               = "name"
+                            id                 = "project-name"
                             inputValueCallback = { this._setInputValue }
                             isRequired         = { true }
                             lightTheme         = { this.props.lightTheme }
-                            value              = { this.state.formData.name }
-                            id                 = "project-name" />
+                            name               = "name"
+                            onKeydownPress     = { this._onKeydownPress }
+                            type               = "text"
+                            value              = { this.state.formData.name }/>
                         <Input
                             className          = { this.state.activeQuestion === 2 ? '-active': '' }
                             description        = "Enter your email for the project form submission"
-                            type               = "email"
-                            name               = "email"
+                            id                 = "project-email"
                             inputValueCallback = { this._setInputValue }
                             isRequired         = { true }
                             lightTheme         = { this.props.lightTheme }
-                            value              = { this.state.formData.email }
-                            id                 = "project-email" />
+                            name               = "email"
+                            onKeydownPress     = { this._onKeydownPress }
+                            type               = "email"
+                            value              = { this.state.formData.email } />
                         <Input
                             className          = { this.state.activeQuestion === 3 ? '-active': '' }
                             description        = "Enter your phone number for the project form submission"
-                            type               = "text"
-                            name               = "phone"
+                            id                 = "project-phone"
                             inputValueCallback = { this._setInputValue }
-                            isRequiredCallback = { this._setIsRequired }
                             isRequired         = { true }
+                            isRequiredCallback = { this._setIsRequired }
                             lightTheme         = { this.props.lightTheme }
-                            value              = { this.state.formData.phone }
-                            id                 = "project-phone" />
+                            name               = "phone"
+                            onKeydownPress     = { this._onKeydownPress }
+                            type               = "text"
+                            value              = { this.state.formData.phone } />
                         <Input
                             className          = { this.state.activeQuestion === 4 ? '-active': '' }
                             description        = "Enter your industry for the project form submission"
-                            type               = "text"
-                            name               = "industry"
+                            id                 = "project-industry"
                             inputValueCallback = { this._setInputValue }
                             lightTheme         = { this.props.lightTheme }
-                            value              = { this.state.formData.industry }
-                            id                 = "project-industry" />
+                            name               = "industry"
+                            onKeydownPress     = { this._onKeydownPress }
+                            type               = "text"
+                            value              = { this.state.formData.industry } />
                         <Input
                             className          = { this.state.activeQuestion === 5 ? '-active': '' }
                             description        = "Enter your job title for the project form submission"
-                            type               = "text"
+                            id                 = "project-job-title"
+                            inputValueCallback = { this._setInputValue }
+                            lightTheme         = { this.props.lightTheme }
                             name               = "job title"
-                            inputValueCallback = { this._setInputValue }
-                            lightTheme         = { this.props.lightTheme }
-                            value              = { this.state.formData.job_title }
-                            id                 = "project-job-title" />
+                            onKeydownPress     = { this._onKeydownPress }
+                            type               = "text"
+                            value              = { this.state.formData.job_title } />
                         <Textarea
-                            className          = { this.state.activeQuestion === 6 ? '-active': '' }
+                            className          = { `-form-message ${this.state.activeQuestion === 6 ? '-active' : ''}` }
                             description        = "Enter the message that you would like sent to andculture for the project form submission"
-                            name               = "message"
+                            id                 = "project-message"
                             inputValueCallback = { this._setInputValue }
                             lightTheme         = { this.props.lightTheme }
-                            value              = { this.state.formData.message }
-                            id                 = "project-message" />
+                            name               = "message"
+                            value              = { this.state.formData.message } />
                         <div className = "o-contact-form__buttons">
-                            <a
+                            <button
+                                className = { buttonClass }
                                 onClick   = { this._onBackClick }
-                                className = { buttonClass }>
+                                type      = "button">
                                 Go Back
-                            </a>
+                            </button>
                             {  // if
                                 this.state.activeQuestion !== this.state.totalQuestions &&
-                                <a
+                                <button
+                                    className = { nextButtonClass }
                                     onClick   = { this._onNextClick }
-                                    className = { nextButtonClass }>
+                                    type      = "button">
                                     Next
-                                </a>
+                                </button>
                             }
-                            <button
-                                type      = "submit"
-                                onClick   = { this._onSubmitClick }
-                                className = { buttonClass }>
-                                Submit
-                            </button>
+                            { // if
+                                this.state.activeQuestion === this.state.totalQuestions &&
+                                <button
+                                    className = { buttonClass }
+                                    onClick   = { this._onSubmitClick }
+                                    type      = "submit">
+                                    Submit
+                                </button>
+                            }
                         </div>
                     </div>
                 </div>
