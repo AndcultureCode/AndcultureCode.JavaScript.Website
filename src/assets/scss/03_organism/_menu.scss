@@ -33,17 +33,18 @@
         }
 
         &__logo {
+            @include rem-fallback(width, 50px);
+            @include rem-fallback(top, 10px);
+            @include rem-fallback(perspective, 200px);
             display: block;
-            width: 50px;
             position: fixed;
-            top: 50px;
-            perspective: 200px;
             transition: opacity .4s cubic-bezier(.165,.84,.44,1);
             -webkit-transform: translateZ(0);
             transform: translateZ(0);
 
             @include breakpoints("tablet") {
-                width: 60px;
+                @include rem-fallback(width, 60px);
+                @include rem-fallback(top, 50px);
             }
 
             svg {
