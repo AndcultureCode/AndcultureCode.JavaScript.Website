@@ -6,6 +6,7 @@ import IconSocialFacebook  from 'components/atoms/IconSocialFacebook';
 import IconSocialInstagram from 'components/atoms/IconSocialInstagram';
 import IconSocialGithub    from 'components/atoms/IconSocialGithub';
 import IconSocialDribbble  from 'components/atoms/IconSocialDribbble';
+import IconSocialVimeo     from 'components/atoms/IconSocialVimeo'
 
 const Footer = class extends React.Component {
   constructor(props) {
@@ -52,6 +53,9 @@ const Footer = class extends React.Component {
                 </a>
                 <a href="https://github.com/AndcultureCode/" target="_blank" aria-label="GitHub account for andculture">
                   <IconSocialGithub />
+                </a>
+                <a href="https://vimeo.com/andculturedesigns/" target="_blank" aria-label="Vimeo account for andculture">
+                  <IconSocialVimeo />
                 </a>
               </div>
             </div>
