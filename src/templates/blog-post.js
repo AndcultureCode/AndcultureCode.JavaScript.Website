@@ -105,6 +105,7 @@ export const BlogPostTemplate = (props) => {
                 <span aria-hidden="true">{ properties.category }</span>
               </p>
               <h1>{ properties.title }</h1>
+<<<<<<< HEAD
               <div aria-label={ `Posted on ${ properties.longDate }` } className="m-blog-post__date">
                 <div aria-hidden="true">{ properties.date }</div>
               </div>
@@ -113,6 +114,12 @@ export const BlogPostTemplate = (props) => {
                   <BlogAuthor author={ author } />
                 ))
               }
+=======
+              <BlogAuthor
+                author       = { props.author }
+                postDate     = { properties.date }
+                postLongDate = { properties.longDate } />
+>>>>>>> parent of 8fe46be... #cmtt5z Multiple authors (in progress)
               {properties.headline &&
                 <h2>{ properties.headline }</h2>
               }
@@ -196,18 +203,18 @@ const BlogPost = ({ data }) => {
 
             const obj = {
               visitHistory: [],
-              userAgent:    components[0].value,
-              webdriver:    components[1].value,
-              language:     components[2].value,
-              screenRes:    components[6].value,
-              timezone:     components[9].value,
-              platform:     components[16].value,
-              ip:           data.ip,
-              city:         data.city,
-              state:        data.region_code,
-              postal:       data.postal,
-              isp:          data.asn.name,
-              country:      data.continent_name,
+              userAgent: components[0].value,
+              webdriver: components[1].value,
+              language: components[2].value,
+              screenRes: components[6].value,
+              timezone: components[9].value,
+              platform: components[16].value,
+              ip:       data.ip,
+              city:     data.city,
+              state:    data.region_code,
+              postal:   data.postal,
+              isp:      data.asn.name,
+              country:  data.continent_name,
             };
             fetch("/.netlify/functions/post-fingerprint",
     {
@@ -242,16 +249,6 @@ const BlogPost = ({ data }) => {
     setPageClass(`${invert ? "-inverted" : ""}`)
   };
 
-  const authorNames = [];
-  if (postProperties.author) {
-    authorNames.push(postProperties.author);
-  }
-  if (postProperties.authors) {
-    postProperties.authors.map((author) => {
-      authorNames.push(author.author);
-    });
-  }
-
   return (
     <Layout
       data                  = { postProperties }
@@ -261,7 +258,7 @@ const BlogPost = ({ data }) => {
       showFooterDividerLine = { true }>
       <main aria-label="Main content">
         <BlogPostTemplate
-          authors        = { _getAuthors(data.authors, authorNames) }
+          author         = { _getAuthor(data.authors, postProperties.author) }
           fingerprintObj = { fingerprintObject }
           html           = { postHtml }
           nextPostUrl    = { _getNextPostUrl(data.posts, data.post.id) }
@@ -278,17 +275,15 @@ const BlogPost = ({ data }) => {
 // Private Methods
 // --------------------------------------------------------
 
-const _getAuthors = (authors, authorNames) => {
-  var results = [];
+const _getAuthor = (authors, authorName) => {
+  const author = authors.edges
+                  .find(author => author.node.frontmatter.name === authorName);
 
-  authorNames.forEach(authorName => {
-    var author = authors.edges.find(author => author.node.frontmatter.name === authorName);
-    if (author) {
-      results.push(author.node.frontmatter);
-    }
-  });
+  if (!author) {
+    return null;
+  }
 
-  return results;
+  return author.node.frontmatter;
 };
 
 const _getNextPostUrl = (posts, blogPostId) => {
@@ -363,9 +358,6 @@ export const pageQuery = graphql`
       html
       frontmatter {
         author
-        authors {
-          author
-        }
         category
         headline
         title
