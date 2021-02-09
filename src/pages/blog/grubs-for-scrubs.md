@@ -1,25 +1,32 @@
 ---
-createPage: true
 templateKey: blog-post
-title: "grub for scrubs: win-win for local restaurants and healthcare workers"
+authors:
+  - Anne Parmer
+  - Jim Stevenson
 author: Anne Parmer
+createPage: true
+title: "grub for scrubs: win-win for local restaurants and healthcare workers"
 date: 2020-04-23
 featured: true
 featuredColor: -fresh
 featuredImage:
   image: /img/featured_grub_for_scrubs.jpg
-  description: "grub for scrumbs featured image"
+  description: grub for scrumbs featured image
 tileImage:
   image: /img/post_grub_for_scrubs.jpg
-  description: "grub for scrumbs post image"
+  description: grub for scrumbs post image
 postImage:
   image: /img/header_grub_for_scrubs.jpg
-  description: "grub for scrumbs header image"
+  description: grub for scrumbs header image
+category: Agency
 seo:
   metaTitle: Grub for Scrubs - Supporting Harrisburg during a pandemic | andculture
-  metaDescription: Amidst fear and uncertainty, we found a way to make a difference for both small, local restaurants and the brave healthcare professionals at UPMC Pinnacle.
-  socialShareCopy: What is andculture doing to support our community during the pandemic? We found a way to support both the healthcare professionals at UPMC Pinnacle and the local restaurant community.
-category: "Agency"
+  metaDescription: Amidst fear and uncertainty, we found a way to make a
+    difference for both small, local restaurants and the brave healthcare
+    professionals at UPMC Pinnacle.
+  socialShareCopy: What is andculture doing to support our community during the
+    pandemic? We found a way to support both the healthcare professionals at
+    UPMC Pinnacle and the local restaurant community.
 ---
 As a company, we know that quick thinking, collaboration and spotting broken realities can be the catalyst for something bigger than ourselves.
 
