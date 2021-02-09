@@ -2,7 +2,10 @@
 createPage: true
 templateKey: blog-post
 title: "grub for scrubs: win-win for local restaurants and healthcare workers"
-author: Anne Parmer
+authors:
+- author: Anne Parmer
+- author: Jim Stevenson
+- author: Minnie Mouse
 date: 2020-04-23
 featured: true
 featuredColor: -fresh
