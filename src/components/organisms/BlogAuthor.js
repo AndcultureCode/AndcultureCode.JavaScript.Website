@@ -30,15 +30,7 @@ const BlogAuthor = (props) => {
                         src = "/img/authors/author-scribble.png" />
                 }
             </div>
-            <div className="m-blog-author__details">
-                <div
-                    aria-label = { `Posted on ${props.postLongDate}` }
-                    className  = "m-blog-author__date">
-                    <div aria-hidden="true">
-                        { props.postDate }
-                    </div>
-                </div>
-                <div className="m-blog-author__divider">|</div>
+            <div className={`m-blog-author__details ${ props.author.socialLinks ? "" : "-no-social" }`}>
                 <div className="m-blog-author__name-position">
                     <div
                         className  = "m-blog-author__name"
