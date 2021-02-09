@@ -210,7 +210,15 @@ const BlogPost = ({ data }) => {
       method: 'POST',
       body: JSON.stringify({data: obj, page: 'specific blog'})
     })
-    .then(response => response.json())
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } else if(response.status === 404) {
+        return Promise.reject('Netlify was not found')
+      } else {
+        return Promise.reject('Netlify error: ' + response.status)
+      }
+    })
     .then(console.log);
            // postFingerprint(obj, 'specific blog');
             setFingerprintObject(obj)
