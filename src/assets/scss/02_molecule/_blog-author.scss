@@ -5,28 +5,24 @@
 
     @include breakpoints("sm-tablet") {
         margin-top: 5px;
+        padding-right: 60px;
     }
 
     &__image {
         float: left;
         padding-top: 20px;
-        width: 60px;
+        width: 80px;
         text-align: left;
 
         @include breakpoints("sm-desktop") {
             padding-top: 0;
-        }
-        @include breakpoints(none, "sm-desktop") {
-            padding-top: 10px;
-            width: 80px;
         }
     }
 
     &__details {
         @include font-size("base");
         float: left;
-        height: 60px;
-        padding-top: 10px;
+        margin-top: 10px;
         padding-left: 16px;
         color: get-color-primary("after-hours");
         text-align: left;
@@ -34,27 +30,10 @@
 
         @include breakpoints("sm-tablet") {
             @include font-size("small");
-            height: auto;
         }
 
         @include breakpoints("sm-desktop") {
             @include font-size(24px);
-        }
-
-        > div {
-            min-height: 44px;
-            @include breakpoints("sm-tablet") {
-                min-height: 40px;
-            }
-        }
-
-        &.-no-social {
-            @include breakpoints(none, "sm-tablet") {
-                padding-top: 20px;
-            }
-            @include breakpoints("sm-tablet", "sm-desktop") {
-                padding-top: 35px;
-            }
         }
     }
 
@@ -70,6 +49,17 @@
 
         @include breakpoints("sm-desktop") {
             display: inline-block;
+        }
+    }
+
+    &__date {
+        display: block;
+        margin-bottom: 6px;
+        position: relative;
+
+        @include breakpoints("sm-desktop") {
+            display: inline-block;
+            margin-bottom: 0;
         }
     }
 
@@ -115,9 +105,9 @@
         }
 
         a {
-            @include font-size(24px);
             display: inline-block;
             width: 20px;
+            height: 20px;
             margin-right: 20px;
 
             &:last-child {

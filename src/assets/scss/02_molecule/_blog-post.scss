@@ -23,23 +23,6 @@
         }
     }
 
-    &__date {
-        @include font-size("base");
-        display: block;
-        margin-bottom: 6px;
-        margin-top: 20px;
-        position: relative;
-
-        @include breakpoints("sm-tablet") {
-            @include font-size("small");
-        }
-        @include breakpoints("sm-desktop") {
-            @include font-size(24px);
-            display: inline-block;
-            margin-bottom: 0;
-        }
-    }
-
     &__image {
         @include span-col(12);
         position: relative;

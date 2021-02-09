@@ -106,12 +106,18 @@ export const BlogPostTemplate = (props) => {
               </p>
               <h1>{ properties.title }</h1>
 <<<<<<< HEAD
+<<<<<<< HEAD
               <div aria-label={ `Posted on ${ properties.longDate }` } className="m-blog-post__date">
                 <div aria-hidden="true">{ properties.date }</div>
               </div>
+=======
+>>>>>>> parent of fecefa3... Name & Date formatted; no social info handled
               {
                 props.authors.map((author) => (
-                  <BlogAuthor author={ author } />
+                  <BlogAuthor
+                    author       = { author }
+                    postDate     = { properties.date }
+                    postLongDate = { properties.longDate } />
                 ))
               }
 =======
