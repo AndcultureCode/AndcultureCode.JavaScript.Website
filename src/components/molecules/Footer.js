@@ -36,25 +36,25 @@ const Footer = class extends React.Component {
             </div>
             <div className = "m-footer__right">
               <div className = "m-footer__social">
-                <a href="https://www.instagram.com/andculture/" target="_blank" aria-label="Instagram account for andculture">
+                <a href="https://www.instagram.com/andculture/" target="_blank" aria-label="Instagram account for andculture" rel="noopener noreferrer">
                   <IconSocialInstagram />
                 </a>
-                <a href="https://dribbble.com/andculture/" target="_blank" aria-label="Dribbble account for andculture">
+                <a href="https://dribbble.com/andculture/" target="_blank" aria-label="Dribbble account for andculture" rel="noopener noreferrer">
                   <IconSocialDribbble />
                 </a>
-                <a href="https://www.linkedin.com/company/andculture/" target="_blank" aria-label="LinkedIn account for andculture">
+                <a href="https://www.linkedin.com/company/andculture/" target="_blank" aria-label="LinkedIn account for andculture" rel="noopener noreferrer">
                   <IconSocialLinkedIn />
                 </a>
-                <a href="https://twitter.com/andculture/" target="_blank" aria-label="Twitter account for andculture">
+                <a href="https://twitter.com/andculture/" target="_blank" aria-label="Twitter account for andculture" rel="noopener noreferrer">
                   <IconSocialTwitter />
                 </a>
-                <a href="https://www.facebook.com/andculture/" target="_blank" aria-label="Facebook account for andculture">
+                <a href="https://www.facebook.com/andculture/" target="_blank" aria-label="Facebook account for andculture" rel="noopener noreferrer">
                   <IconSocialFacebook />
                 </a>
-                <a href="https://github.com/AndcultureCode/" target="_blank" aria-label="GitHub account for andculture">
+                <a href="https://github.com/AndcultureCode/" target="_blank" aria-label="GitHub account for andculture" rel="noopener noreferrer">
                   <IconSocialGithub />
                 </a>
-                <a href="https://vimeo.com/andculturedesigns/" target="_blank" aria-label="Vimeo account for andculture">
+                <a href="https://vimeo.com/andculturedesigns/" target="_blank" aria-label="Vimeo account for andculture" rel="noopener noreferrer">
                   <IconSocialVimeo />
                 </a>
               </div>
