@@ -5,7 +5,11 @@ title: "grub for scrubs: win-win for local restaurants and healthcare workers"
 authors:
 - author: Anne Parmer
 - author: Jim Stevenson
+<<<<<<< HEAD
 - author: Mickey Mouse
+=======
+- author: Minnie Mouse
+>>>>>>> 24ccffa1ed2dbda42adbb4b6fd08f0d18799c28d
 date: 2020-04-23
 featured: true
 featuredColor: -fresh
