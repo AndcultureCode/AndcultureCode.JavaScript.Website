@@ -105,10 +105,14 @@ export const BlogPostTemplate = (props) => {
                 <span aria-hidden="true">{ properties.category }</span>
               </p>
               <h1>{ properties.title }</h1>
-              <BlogAuthor
-                author       = { props.author }
-                postDate     = { properties.date }
-                postLongDate = { properties.longDate } />
+              <div aria-label={ `Posted on ${ properties.longDate }` } className="m-blog-post__date">
+                <div aria-hidden="true">{ properties.date }</div>
+              </div>
+              {
+                props.authors.map((author) => (
+                  <BlogAuthor author={ author } />
+                ))
+              }
               {properties.headline &&
                 <h2>{ properties.headline }</h2>
               }
@@ -192,25 +196,33 @@ const BlogPost = ({ data }) => {
 
             const obj = {
               visitHistory: [],
-              userAgent: components[0].value,
-              webdriver: components[1].value,
-              language: components[2].value,
-              screenRes: components[6].value,
-              timezone: components[9].value,
-              platform: components[16].value,
-              ip:       data.ip,
-              city:     data.city,
-              state:    data.region_code,
-              postal:   data.postal,
-              isp:      data.asn.name,
-              country:  data.continent_name,
+              userAgent:    components[0].value,
+              webdriver:    components[1].value,
+              language:     components[2].value,
+              screenRes:    components[6].value,
+              timezone:     components[9].value,
+              platform:     components[16].value,
+              ip:           data.ip,
+              city:         data.city,
+              state:        data.region_code,
+              postal:       data.postal,
+              isp:          data.asn.name,
+              country:      data.continent_name,
             };
             fetch("/.netlify/functions/post-fingerprint",
     {
       method: 'POST',
       body: JSON.stringify({data: obj, page: 'specific blog'})
     })
-    .then(response => response.json())
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } else if(response.status === 404) {
+        return Promise.reject('Netlify was not found')
+      } else {
+        return Promise.reject('Netlify error: ' + response.status)
+      }
+    })
     .then(console.log);
            // postFingerprint(obj, 'specific blog');
             setFingerprintObject(obj)
@@ -238,6 +250,16 @@ const BlogPost = ({ data }) => {
     setPageClass(`${invert ? "-inverted" : ""}`)
   };
 
+  const authorNames = [];
+  if (postProperties.author) {
+    authorNames.push(postProperties.author);
+  }
+  if (postProperties.authors) {
+    postProperties.authors.map((author) => {
+      authorNames.push(author.author);
+    });
+  }
+
   return (
     <Layout
       data                  = { postProperties }
@@ -247,7 +269,7 @@ const BlogPost = ({ data }) => {
       showFooterDividerLine = { true }>
       <main aria-label="Main content">
         <BlogPostTemplate
-          author         = { _getAuthor(data.authors, postProperties.author) }
+          authors        = { _getAuthors(data.authors, authorNames) }
           fingerprintObj = { fingerprintObject }
           html           = { postHtml }
           nextPostUrl    = { _getNextPostUrl(data.posts, data.post.id) }
@@ -264,15 +286,17 @@ const BlogPost = ({ data }) => {
 // Private Methods
 // --------------------------------------------------------
 
-const _getAuthor = (authors, authorName) => {
-  const author = authors.edges
-                  .find(author => author.node.frontmatter.name === authorName);
+const _getAuthors = (authors, authorNames) => {
+  var results = [];
 
-  if (!author) {
-    return null;
-  }
+  authorNames.forEach(authorName => {
+    var author = authors.edges.find(author => author.node.frontmatter.name === authorName);
+    if (author) {
+      results.push(author.node.frontmatter);
+    }
+  });
 
-  return author.node.frontmatter;
+  return results;
 };
 
 const _getNextPostUrl = (posts, blogPostId) => {
@@ -347,6 +371,9 @@ export const pageQuery = graphql`
       html
       frontmatter {
         author
+        authors {
+          author
+        }
         category
         headline
         title
