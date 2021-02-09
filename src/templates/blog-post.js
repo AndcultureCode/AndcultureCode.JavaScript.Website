@@ -105,12 +105,12 @@ export const BlogPostTemplate = (props) => {
                 <span aria-hidden="true">{ properties.category }</span>
               </p>
               <h1>{ properties.title }</h1>
+              <div aria-label={ `Posted on ${ properties.longDate }` } className="m-blog-post__date">
+                <div aria-hidden="true">{ properties.date }</div>
+              </div>
               {
                 props.authors.map((author) => (
-                  <BlogAuthor
-                    author       = { author }
-                    postDate     = { properties.date }
-                    postLongDate = { properties.longDate } />
+                  <BlogAuthor author={ author } />
                 ))
               }
               {properties.headline &&
