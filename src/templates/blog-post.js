@@ -105,27 +105,10 @@ export const BlogPostTemplate = (props) => {
                 <span aria-hidden="true">{ properties.category }</span>
               </p>
               <h1>{ properties.title }</h1>
-<<<<<<< HEAD
-<<<<<<< HEAD
-              <div aria-label={ `Posted on ${ properties.longDate }` } className="m-blog-post__date">
-                <div aria-hidden="true">{ properties.date }</div>
-              </div>
-=======
->>>>>>> parent of fecefa3... Name & Date formatted; no social info handled
-              {
-                props.authors.map((author) => (
-                  <BlogAuthor
-                    author       = { author }
-                    postDate     = { properties.date }
-                    postLongDate = { properties.longDate } />
-                ))
-              }
-=======
               <BlogAuthor
                 author       = { props.author }
                 postDate     = { properties.date }
                 postLongDate = { properties.longDate } />
->>>>>>> parent of 8fe46be... #cmtt5z Multiple authors (in progress)
               {properties.headline &&
                 <h2>{ properties.headline }</h2>
               }
