@@ -364,7 +364,7 @@
 
     .large-image-container {
         .o-rhythm__row {
-            max-height: 244px;
+            max-height: 240px;
             @media (min-width: 400px) {
                 max-height: 319px;
             }
@@ -382,6 +382,11 @@
             }
             @include breakpoints("sm-desktop") {
                 max-height: none;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
             }
         }
     }
