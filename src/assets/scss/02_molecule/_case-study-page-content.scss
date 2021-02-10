@@ -829,16 +829,22 @@
             @include line-height(44px);
             margin-bottom: 32px;
 
+            &.-cca-section-header {
+                @include breakpoints("sm-tablet") {
+                    margin-left: 0;
+                }
+
+                @include breakpoints("desktop") {
+                    margin-left: 25%;
+                }
+            }
+
             @include breakpoints("tablet") {
                 @include span-col(10);
                 @include push-col(2);
                 @include font-size(60px);
                 @include line-height(65px);
                 margin-bottom: 48px;
-            
-                &.-cca-section-header {
-                    margin-left: 0;
-                }
             }
 
             @include breakpoints("desktop") {
