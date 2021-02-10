@@ -835,6 +835,10 @@
                 @include font-size(60px);
                 @include line-height(65px);
                 margin-bottom: 48px;
+            
+                &.-cca-section-header {
+                    margin-left: 0;
+                }
             }
 
             @include breakpoints("desktop") {

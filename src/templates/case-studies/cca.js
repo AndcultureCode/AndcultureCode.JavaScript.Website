@@ -116,7 +116,7 @@ const CCA = class extends React.Component {
                 </div>
                 <div className = "o-rhythm__container">
                     <div className = "m-case-study-page-content__copy-section">
-                        <header className = "-push-three">getting the word out</header>
+                        <header className = "-push-three -cca-section-header">getting the word out</header>
                         <div className = "o-rhythm__row">
                             <div className = "content__copy">
                                 <p>In the meantime, we launched a preliminary website to help Commonwealth Charter Academy shout from the rooftops that they’ve got a new name but the same incredible mission of innovative education for students throughout the state. Even as a preliminary site, we still made sure to include the basic info, media information and upcoming events to make this media friendly (gotta get that buzz going in the news).</p>
