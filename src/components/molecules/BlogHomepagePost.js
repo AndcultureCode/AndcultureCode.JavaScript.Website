@@ -8,7 +8,7 @@ const BlogHomepagePost = (props) => (
         />
         <p className="blog-category">{props.category}</p>
         <a href={props.url}>{props.linkText}</a>
-        <p className="blog-author">by {props.author.join(", ")}</p>
+        <p className="blog-author">by {props.author.join(" & ")}</p>
     </div>
 );
 

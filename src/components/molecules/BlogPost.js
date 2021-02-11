@@ -24,7 +24,7 @@ const BlogPost = (props) => {
                     <div className="m-blog-post__details">
                         <h2>{ post.category }</h2>
                         <h3><span>{ post.title }</span></h3>
-                        <p>by { post.author.join(", ") }</p>
+                        <p>by { post.author.join(" & ") }</p>
                     </div>
                 </Fragment>
             }
@@ -34,13 +34,13 @@ const BlogPost = (props) => {
                     <div className="m-blog-post__details -tablet-and-desktop-only">
                         <h2>{ post.category }</h2>
                         <h3><span>{ post.title }</span></h3>
-                        <p>by { post.author.join(", ") }</p>
+                        <p>by { post.author.join(" & ") }</p>
                     </div>
                     <BlogPostImage post = { post } />
                     <div className="m-blog-post__details -phone-only">
                         <h2>{ post.category }</h2>
                         <h3><span>{ post.title }</span></h3>
-                        <p>by { post.author.join(", ") }</p>
+                        <p>by { post.author.join(" & ") }</p>
                     </div>
                 </Fragment>
             }
