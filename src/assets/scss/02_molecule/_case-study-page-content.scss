@@ -439,16 +439,10 @@
                 &__last {
                     @include span-col(12);
 
-                    @include breakpoints("sm-desktop") {
+                    @include breakpoints("xl-desktop") {
                         @include span-col(6);
                         @include push-col(0);
-                    }
-
-                    @include breakpoints("desktop") {
-                        @include span-col(5);
-                        @include push-col(1);
-
-                        margin-top: 100px;
+                        @include margin-top(100px);
                     }
 
                     header {
@@ -459,13 +453,9 @@
                     }
 
                     &-image {
-                        @include breakpoints("sm-desktop") {
+                        @include breakpoints("xl-desktop") {
                             @include span-col(6);
                             @include push-col(0);
-                        }
-
-                        @include breakpoints("desktop") {
-                            @include span-col(6);
                         }
                     }
 
