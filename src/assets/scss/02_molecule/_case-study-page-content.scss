@@ -1115,9 +1115,7 @@
     &__next {
         padding: 0;
         display: block;
-        @include breakpoints("lg-laptop") {
-            cursor: pointer;
-        }
+        cursor: pointer;
 
         &.-career-link {
             a.a-button {
