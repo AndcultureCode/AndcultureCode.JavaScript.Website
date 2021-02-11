@@ -2,7 +2,8 @@
 createPage: true
 templateKey: blog-post
 title: departing from poor user experience at airports
-author: Heather Heigel
+author:
+- Heather Heigel
 date: 2014-10-20
 featured: false
 featuredColor: -violet-blue

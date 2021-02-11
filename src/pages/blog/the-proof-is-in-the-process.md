@@ -2,7 +2,8 @@
 createPage: true
 templateKey: blog-post
 title: "the proof is in the process: the research phase"
-author: Heather Heigel
+author:
+- Heather Heigel
 date: 2014-07-24
 featured: false
 featuredColor: -violet-blue

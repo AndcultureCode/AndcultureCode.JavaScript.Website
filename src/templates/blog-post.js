@@ -250,16 +250,6 @@ const BlogPost = ({ data }) => {
     setPageClass(`${invert ? "-inverted" : ""}`)
   };
 
-  const authorNames = [];
-  if (postProperties.author) {
-    authorNames.push(postProperties.author);
-  }
-  if (postProperties.authors) {
-    postProperties.authors.map((author) => {
-      authorNames.push(author.author);
-    });
-  }
-
   return (
     <Layout
       data                  = { postProperties }
@@ -269,7 +259,7 @@ const BlogPost = ({ data }) => {
       showFooterDividerLine = { true }>
       <main aria-label="Main content">
         <BlogPostTemplate
-          authors        = { _getAuthors(data.authors, authorNames) }
+          authors        = { _getAuthors(data.authors, postProperties.author) }
           fingerprintObj = { fingerprintObject }
           html           = { postHtml }
           nextPostUrl    = { _getNextPostUrl(data.posts, data.post.id) }
@@ -371,9 +361,6 @@ export const pageQuery = graphql`
       html
       frontmatter {
         author
-        authors {
-          author
-        }
         category
         headline
         title

@@ -2,7 +2,8 @@
 createPage: true
 templateKey: blog-post
 title: mobile architecture with Xamarin
-author: Mike Koser
+author:
+- Mike Koser
 date: 2017-10-11
 featured: false
 featuredColor: -violet-blue

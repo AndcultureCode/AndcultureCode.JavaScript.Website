@@ -2,7 +2,8 @@
 createPage: true
 templateKey: blog-post
 title: helpful tips about engaging with andculture
-author: Anne Parmer
+author:
+- Anne Parmer
 date: 2020-05-20
 featured: false
 featuredColor: -violet-blue
