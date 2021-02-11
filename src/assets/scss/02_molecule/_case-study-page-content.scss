@@ -1115,7 +1115,7 @@
     &__next {
         padding: 0;
         display: block;
-        @include breakpoints("desktop") {
+        @include breakpoints("lg-laptop") {
             cursor: pointer;
         }
 
