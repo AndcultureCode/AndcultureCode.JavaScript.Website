@@ -1,21 +1,26 @@
-import React from 'react';
+import React                   from 'react';
 import CaseStudyContentSection from '../../components/molecules/CaseStudyContentSection';
 import CaseStudyFullBleedImage from '../../components/molecules/CaseStudyFullBleedImage';
-import scheduleImg from '../../../static/img/case-studies/pulse/schedule.jpg';
-import peopleImg from '../../../static/img/case-studies/pulse/peopleroles.jpg';
-import nurseImg from '../../../static/img/case-studies/pulse/nurse_hallway.jpg';
-import sketchImgOne from '../../../static/img/case-studies/pulse/sketchbook1.png';
-import sketchImgTwo from '../../../static/img/case-studies/pulse/sketchbook2.png';
-import stationImg from '../../../static/img/case-studies/pulse/nurse_station.jpg';
-import whiteSketches from '../../../static/img/case-studies/pulse/white_sketches.png';
-import safariImg from '../../../static/img/case-studies/pulse/unit-workload-safari.png';
-import doodleImg from '../../../static/img/case-studies/pulse/pulse_block_doodle.jpg';
-import dataImg from '../../../static/img/case-studies/pulse/data-leveling.png';
-import nextImg from '../../../static/img/case-studies/edio/edio-hero.png';
+import scheduleImg             from '../../../static/img/case-studies/pulse/schedule.jpg';
+import peopleImg               from '../../../static/img/case-studies/pulse/peopleroles.jpg';
+import nurseImg                from '../../../static/img/case-studies/pulse/nurse_hallway.jpg';
+import sketchImgOne            from '../../../static/img/case-studies/pulse/sketchbook1.png';
+import sketchImgTwo            from '../../../static/img/case-studies/pulse/sketchbook2.png';
+import stationImg              from '../../../static/img/case-studies/pulse/nurse_station.jpg';
+import whiteSketches           from '../../../static/img/case-studies/pulse/white_sketches.png';
+import safariImg               from '../../../static/img/case-studies/pulse/unit-workload-safari.png';
+import doodleImg               from '../../../static/img/case-studies/pulse/pulse_block_doodle.jpg';
+import dataImg                 from '../../../static/img/case-studies/pulse/data-leveling.png';
+import nextImg                 from '../../../static/img/case-studies/edio/edio-hero.png';
+import { RouteUtils }          from '../../utils/routeUtils';
 
 const Pulse = class extends React.Component {
     constructor(props) {
         super(props);
+    }
+
+    handleNextCaseStudyClick = () => {
+        RouteUtils.goToUrl("/case-studies/edio/");
     }
 
     render() {
@@ -116,7 +121,7 @@ const Pulse = class extends React.Component {
                     <p>We had initial user feedback, plus data, and now we could update the platform design. We tweaked how the info was presented and modified the navigation. Charts were added to make the experience more comprehensive; you really could get a sense of how the entire hospital operated.</p>
                     <p>We didn’t veer off our initial guiding principles. We just worked with our partner to evolve the system into an even more effective version to address their problem.</p>
                 </CaseStudyContentSection>
-                <div className="m-case-study-page-content__next m-case-study -edio">
+                <div className="m-case-study-page-content__next m-case-study -edio" onClick={ this.handleNextCaseStudyClick }>
                     <div className="-background-image__container">
                         <div
                             style={nextImageBlockStyle}

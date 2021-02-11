@@ -1,25 +1,29 @@
-import React from 'react';
-import CustomSlider from 'components/molecules/CustomSlider';
+import React                   from 'react';
+import CustomSlider            from 'components/molecules/CustomSlider';
 import CaseStudyContentSection from 'components/molecules/CaseStudyContentSection';
-import imgCarousel1 from 'static/img/case-studies/edio/edio-carousel-1.jpg';
-import imgCarousel2 from 'static/img/case-studies/edio/edio-carousel-2.jpg';
-import imgCarousel3 from 'static/img/case-studies/edio/edio-carousel-3.jpg';
-import rainbow from 'static/img/case-studies/cca/rainbow_doodle.png';
-import traingle from 'static/img/case-studies/cca/doodle_triangle.png';
-import dotsSmall from 'static/img/case-studies/cca/dotted_area.png';
-import artifactsPlant from 'static/img/case-studies/edio/edio-artifact-plant.png';
-import imgCalendar from 'static/img/case-studies/edio/edio-calendar.jpg';
-import imgCollage from 'static/img/case-studies/edio/edio-collage-1.jpg';
-import imgDiagram from 'static/img/case-studies/edio/edio-diagram.png';
-import imgStudentTeacher from 'static/img/case-studies/edio/edio-student-teacher.jpg';
-
-import studyImg from 'static/img/case-studies/cca/studying.jpg';
-import nextImg from 'static/img/case-studies/career-link/woman_iPad.jpg';
+import imgCarousel1            from 'static/img/case-studies/edio/edio-carousel-1.jpg';
+import imgCarousel2            from 'static/img/case-studies/edio/edio-carousel-2.jpg';
+import imgCarousel3            from 'static/img/case-studies/edio/edio-carousel-3.jpg';
+import rainbow                 from 'static/img/case-studies/cca/rainbow_doodle.png';
+import traingle                from 'static/img/case-studies/cca/doodle_triangle.png';
+import dotsSmall               from 'static/img/case-studies/cca/dotted_area.png';
+import artifactsPlant          from 'static/img/case-studies/edio/edio-artifact-plant.png';
+import imgCalendar             from 'static/img/case-studies/edio/edio-calendar.jpg';
+import imgCollage              from 'static/img/case-studies/edio/edio-collage-1.jpg';
+import imgDiagram              from 'static/img/case-studies/edio/edio-diagram.png';
+import imgStudentTeacher       from 'static/img/case-studies/edio/edio-student-teacher.jpg';
+import studyImg                from 'static/img/case-studies/cca/studying.jpg';
+import nextImg                 from 'static/img/case-studies/career-link/woman_iPad.jpg';
+import { RouteUtils }          from '../../utils/routeUtils';
 
 
 const Edio = class extends React.Component {
     constructor(props) {
         super(props);
+    }
+
+    handleNextCaseStudyClick = () => {
+        RouteUtils.goToUrl("/case-studies/pa-career-link/");
     }
 
     render() {
@@ -146,7 +150,7 @@ const Edio = class extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="m-case-study-page-content__next m-case-study -career-link">
+                <div className="m-case-study-page-content__next m-case-study -career-link" onClick={ this.handleNextCaseStudyClick }>
                     <div className="-background-image__container">
                         <div
                             style={nextImageBlockStyle}

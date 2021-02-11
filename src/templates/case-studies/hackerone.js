@@ -27,10 +27,15 @@ import sliderImage11           from 'static/img/case-studies/hackerone/Security1
 import sliderImage12           from 'static/img/case-studies/hackerone/Security21.jpg';
 import sliderImage13           from 'static/img/case-studies/hackerone/Security25.jpg';
 import nextImg                 from 'static/img/case-studies/cca/studying.jpg';
+import { RouteUtils }          from '../../utils/routeUtils';
 
 const Hackerone = class extends React.Component {
     constructor(props) {
         super(props);
+    }
+
+    handleNextCaseStudyClick = () => {
+        RouteUtils.goToUrl("/case-studies/cca/");
     }
 
     render() {
@@ -128,7 +133,7 @@ const Hackerone = class extends React.Component {
                     title            = "why we love HackerOne">
                         <p>HackerOne believes everyone is a hacker. We love the modesty, but mostly we love the mission to &quot;empower the world to build a safer internet,&quot; keeping our software secure and personal information, well, personal.</p>
                 </CaseStudyContentSection>
-                <div className = "m-case-study-page-content__next m-case-study -cca">
+                <div className = "m-case-study-page-content__next m-case-study -cca" onClick={ this.handleNextCaseStudyClick }>
                     <div className = "-background-image__container">
                         <div
                             style     = { nextImageBlockStyle }
