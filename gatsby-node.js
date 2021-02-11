@@ -57,7 +57,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       frontmatter: Frontmatter
     }
     type Frontmatter {
-      author: [String]
+      author: [String!]!
     }
   `
   createTypes(typeDefs)
