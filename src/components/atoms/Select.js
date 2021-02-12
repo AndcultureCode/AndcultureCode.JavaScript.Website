@@ -49,6 +49,13 @@ const Select = class extends React.Component {
         this.setState({ inputValue: e.target.value }, () => this.props.inputValueCallback(this.props.name, this.state.inputValue));
     }
 
+    _handleKeydown = (e) => {
+        if (!this.props.onKeydownPress) {
+            return;
+        }
+        this.props.onKeydownPress(e);
+    }
+
     render() {
         let cssClassName = 'a-label -dropdown';
 
@@ -79,7 +86,7 @@ const Select = class extends React.Component {
                         name         = { this.props.name }
                         onChange     = { this._updateInputValue }
                         onBlur       = { this._disableField }
-                        onKeyDown    = { (e) => this.props.onKeydownPress(e)}
+                        onKeyDown    = { this._handleKeydown }
                         onFocus      = { this._activateField }
                         defaultValue = "default">
                         <option value="default" disabled>Select an option</option>
