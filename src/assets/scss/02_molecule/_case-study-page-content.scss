@@ -400,6 +400,12 @@
                         }
                     }
                 }
+
+                &.-site-home-page {
+                    @include breakpoints("phone","xl-desktop") {
+                        text-align: center;
+                    }
+                }
             }
         }
 
@@ -456,6 +462,28 @@
                         @include breakpoints("xl-desktop") {
                             @include span-col(6);
                             @include push-col(0);
+                        }
+
+                        .kd-image.-site-home-page {
+                            img {
+                                @include breakpoints("xl-desktop") {
+                                    max-width: none;
+                                }
+                            }
+                        }
+                    }
+
+                    .m-case-study-page-content__copy-section {
+                        &.-with-image {
+                            @include breakpoints("lg-desktop","xl-desktop") {
+                                width: 65%;
+                                margin: 0 auto;
+                            }
+
+                            @include breakpoints("desktop", "lg-desktop") {
+                                margin: 0 auto;
+                                width: 75%;
+                            }
                         }
                     }
 
