@@ -188,6 +188,7 @@ const BlogPost = ({ data }) => {
       setScrollTop(e.target.documentElement.scrollTop);
     };
 
+/*---- fingerprinting has been disabled for now ----
     if (window.requestIdleCallback && fingerprint === false) {
       requestIdleCallback(() => {
         json().then(data => {
@@ -237,6 +238,7 @@ const BlogPost = ({ data }) => {
           })
       }, 500)
   }
+*/
 
     window.addEventListener("scroll", onScroll);
 

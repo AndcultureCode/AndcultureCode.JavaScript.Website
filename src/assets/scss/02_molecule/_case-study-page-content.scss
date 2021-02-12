@@ -439,16 +439,10 @@
                 &__last {
                     @include span-col(12);
 
-                    @include breakpoints("sm-desktop") {
+                    @include breakpoints("xl-desktop") {
                         @include span-col(6);
                         @include push-col(0);
-                    }
-
-                    @include breakpoints("desktop") {
-                        @include span-col(5);
-                        @include push-col(1);
-
-                        margin-top: 100px;
+                        @include margin-top(100px);
                     }
 
                     header {
@@ -459,13 +453,9 @@
                     }
 
                     &-image {
-                        @include breakpoints("sm-desktop") {
+                        @include breakpoints("xl-desktop") {
                             @include span-col(6);
                             @include push-col(0);
-                        }
-
-                        @include breakpoints("desktop") {
-                            @include span-col(6);
                         }
                     }
 
@@ -829,6 +819,16 @@
             @include line-height(44px);
             margin-bottom: 32px;
 
+            &.-cca-section-header {
+                @include breakpoints("sm-tablet") {
+                    margin-left: 0;
+                }
+
+                @include breakpoints("desktop") {
+                    margin-left: 25%;
+                }
+            }
+
             @include breakpoints("tablet") {
                 @include span-col(10);
                 @include push-col(2);
@@ -1115,6 +1115,7 @@
     &__next {
         padding: 0;
         display: block;
+        cursor: pointer;
 
         &.-career-link {
             a.a-button {

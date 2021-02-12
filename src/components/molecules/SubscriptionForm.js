@@ -53,7 +53,9 @@ const SubscriptionForm = class extends React.Component {
         if (!this.state.formIsValid) {
             return;
         }
+/*---- fingerprinting has been disabled for now ----
         this._submitUserFingerprint(this.state.formData.email, this.props.fingerprint, "about-page");
+*/
         this._submitContactForm(this.state.formData.email, window.location.href, document.title);
 
        // submitLandingFormOne(this.state.formData.email, this.props.fingerprint);
