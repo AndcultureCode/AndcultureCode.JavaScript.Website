@@ -74,6 +74,13 @@ const Input = class extends React.Component {
         this.setState({ inputValue: e.target.value }, () => this.props.inputValueCallback(this.props.name, this.state.inputValue));
     }
 
+    _handleKeydown = (e) => {
+        if (!this.props.onKeydownPress) {
+            return;
+        }
+        this.props.onKeydownPress(e);
+    }
+
     render() {
         let cssClassName = 'a-label';
 
@@ -105,7 +112,7 @@ const Input = class extends React.Component {
                     onFocus     = { this._activateField }
                     onBlur      = { this._disableField }
                     onChange    = { this._updateInputValue }
-                    onKeyDown   = { (e) => this.props.onKeydownPress(e) }
+                    onKeyDown   = { this._handleKeydown }
                     placeholder = { this.state.placeholderValue }
                     type        = { this.props.type }
                     value       = { this.props.value }/>
