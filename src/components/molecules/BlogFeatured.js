@@ -20,7 +20,7 @@ const BlogFeatured = React.forwardRef((props, ref) => {
     }
 
     if (props.scrollTop > 160) {
-      className += " -fade";
+        className += " -fade";
     }
 
 
@@ -68,7 +68,7 @@ export default React.forwardRef((props, ref) => (
                                 image {
                                     childImageSharp {
                                         fluid(maxWidth: 1920, quality: 100) {
-                                          ...GatsbyImageSharpFluid
+                                            ...GatsbyImageSharpFluid
                                         }
                                     }
                                 }

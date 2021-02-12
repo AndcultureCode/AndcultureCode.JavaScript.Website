@@ -279,10 +279,10 @@ const BlogPost = ({ data }) => {
 // --------------------------------------------------------
 
 const _getAuthors = (authors, authorNames) => {
-  var results = [];
+  const results = [];
 
   authorNames.forEach(authorName => {
-    var author = authors.edges.find(author => author.node.frontmatter.name === authorName);
+    const author = authors.edges.find(author => author.node.frontmatter.name === authorName);
     if (author) {
       results.push(author.node.frontmatter);
     }
