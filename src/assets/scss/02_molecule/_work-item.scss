@@ -112,12 +112,6 @@
                 @include font-size("medium-large");
                 @include line-height("large");
             }
-
-            span {
-                box-shadow:
-                    inset 0 -0.15em get-color-primary("white"),
-                    inset 0 -0.2em get-color-primary("fresh");
-            }
         }
     }
 }

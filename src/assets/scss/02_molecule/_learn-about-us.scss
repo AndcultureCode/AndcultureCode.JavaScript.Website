@@ -6,7 +6,6 @@
         padding-bottom: 5rem;
 
         a {
-            border-bottom: 0.075em solid get-color("primary", "fresh");
             color: get-color-primary("after-hours");
             font-family: $font-secondary;
             font-size: 18px;
@@ -16,6 +15,10 @@
             text-decoration: none;
             @include breakpoints("tablet") {
                 font-size: 20px;
+            }
+
+            &:hover {
+                border-bottom: 0.075em solid get-color("primary", "fresh");
             }
         }
 

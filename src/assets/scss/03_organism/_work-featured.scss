@@ -82,7 +82,6 @@
         }
 
         a {
-            border-bottom: 0.075em solid get-color("primary", "fresh");
             color: get-color-primary("white");
             line-height: 27px;
             font-size: 16px;
@@ -98,6 +97,10 @@
 
             @include breakpoints("sm-desktop") {
                 font-size: 20px;
+            }
+
+            &:hover {
+                border-bottom: 0.075em solid get-color("primary", "fresh");
             }
         }
 

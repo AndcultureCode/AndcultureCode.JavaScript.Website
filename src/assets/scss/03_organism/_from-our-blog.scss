@@ -8,13 +8,16 @@
             flex-direction: column;
             a.view-all-posts {
                 @include font-size("small");
-                border-bottom: 0.075em solid get-color("primary", "fresh");
                 color: get-color-primary("after-hours");
                 font-weight: 600;
                 line-height: 28px;
                 letter-spacing: 0.2em;
                 padding-bottom: 0.2em;
                 text-decoration: none;
+
+                &:hover {
+                    border-bottom: 0.075em solid get-color("primary", "fresh");
+                }
             }
 
             .from-our-blog {

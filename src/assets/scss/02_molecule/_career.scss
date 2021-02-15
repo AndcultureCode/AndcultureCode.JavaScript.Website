@@ -13,17 +13,17 @@
             @include font-size("base");
             display: inline-block;
             font-family: $font-primary;
-            text-decoration: underline;
-            text-decoration-color: get-color-primary("fresh");
             transition: color 0.3s ease;
-
+            
             @include breakpoints("tablet") {
                 @include font-size(20px);
             }
-
+            
             &:hover {
                 color: get-color-primary("fresh");
                 opacity: 1;
+                text-decoration: underline;
+                text-decoration-color: get-color-primary("fresh");
             }
 
             + a {
