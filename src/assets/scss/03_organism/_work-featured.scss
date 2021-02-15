@@ -82,6 +82,7 @@
         }
 
         a {
+            border-bottom: 0.075em solid get-color("casestudies", "edio");
             color: get-color-primary("white");
             line-height: 27px;
             font-size: 16px;
