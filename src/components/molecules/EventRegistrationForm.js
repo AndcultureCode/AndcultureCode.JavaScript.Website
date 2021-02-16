@@ -1,7 +1,8 @@
-import React from 'react';
-import Input from '../atoms/Input';
+import React from "react";
+import { EMAILPATTERN } from "../../constants/data-validation-patterns";
+import Input from "../atoms/Input";
 
-const RegistrationForm = class extends React.Component {
+const EventRegistrationForm = class extends React.Component {
     constructor(props) {
         super(props);
 
@@ -18,19 +19,13 @@ const RegistrationForm = class extends React.Component {
         if (!this.state.formIsValid) {
             return;
         }
-console.log(this.state)
+
         this.setState({ submitted: true });
     }
 
     _validateFormData = () => {
-        const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-        if (emailPattern.test(this.state.formData.email)) {
-            this.setState({ formIsValid: true });
-            return;
-        }
-
-        this.setState({ formIsValid: false });
+        const isValid = EMAILPATTERN.test(this.state.formData.email);
+        this.setState({ formIsValid: isValid });
     }
 
     _setInputValue = (name, value) => {
@@ -44,16 +39,19 @@ console.log(this.state)
     }
 
     render() {
-        let formClass   = 'o-registration-form';
+        const formClass   = "o-registration-form";
 
-        let buttonClass = 'a-button';
-        buttonClass += this.props.lightTheme ? ' -light ' : '';
-        buttonClass += this.state.formIsValid ? '' : " -disabled";
+        let buttonClass = "a-button";
+        buttonClass += this.props.lightTheme ? " -light " : "";
+        buttonClass += this.state.formIsValid ? "" : " -disabled";
 
         const headerClass = this.props.lightTheme ? " -light " : "";
 
         return (
-            <form className = { formClass } name={ this.props.formName } method="POST" data-netlify="true">
+            <form className = { formClass }
+                name={ this.props.formName }
+                method="POST"
+                data-netlify="true">
                 <div className = { `${formClass}__container` }>
                     <div className = { `${formClass}__wrapper` }>
                         {
@@ -133,4 +131,4 @@ console.log(this.state)
     }
 }
 
-export default RegistrationForm
+export default EventRegistrationForm

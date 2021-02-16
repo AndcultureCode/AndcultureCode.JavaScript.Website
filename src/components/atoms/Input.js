@@ -35,7 +35,7 @@ const Input = class extends React.Component {
         if (e.target.value === "") {
             this.setState({
                 fieldActive:      false,
-                placeholderValue: this.props.name,
+                placeholderValue: this.props.placeholder ?? this.props.name,
                 isInvalidInput:   false,
             })
 

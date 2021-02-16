@@ -44,29 +44,37 @@
         .o-contact-form__wrapper__heading {
             @include font-size("smallest");
             @include line-height("base");
+            @include margin(0,0,40px);
             color: get-color-primary("white");
-            margin: 0 0 40px;
             font-weight: 600;
             font-family: $font-secondary;
-            letter-spacing: .2em;
+            letter-spacing: .2rem;
             text-transform: uppercase;
 
             @include breakpoints("tablet") {
-                margin: 0 0 80px;
+                @include margin(0,0,80px);
             }
         }
     }
 
     &__input {
         &-container {
-            display: flex;
-
+            @include breakpoints("sm-tablet") {
+                display: flex;
+            }
+            
             .-left {
-                width: 50%;
+                @include padding-right(15px);
+
+                @include breakpoints("sm-tablet") {
+                    width: 50%;
+                }
             }
 
             .-right {
-                width: 50%;
+                @include breakpoints("sm-tablet") {
+                    width: 50%;
+                }
             }
         }
     }
@@ -78,14 +86,14 @@
     }
 
     fieldset {
-        margin-top: 43px;
-        margin-bottom: 36px;
-        max-width: 400px;
+        @include margin-bottom(36px);
+        @include margin-top(43px);
+        @include rem-fallback(max-width, 400px);
     }
 
     .a-button {
         cursor: pointer;
-        padding-right: .2em;
+        padding-right: .2rem;
 
         &.-disabled {
             cursor: default;
