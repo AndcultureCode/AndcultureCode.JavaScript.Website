@@ -1,5 +1,5 @@
-import React                     from 'react';
-import Input                     from '../atoms/Input';
+import React from 'react';
+import Input from '../atoms/Input';
 
 const RegistrationForm = class extends React.Component {
     constructor(props) {
@@ -20,8 +20,7 @@ const RegistrationForm = class extends React.Component {
         }
 
         // this._submitContactForm(this.state.formData.email, window.location.href, document.title);
-
-       // submitLandingFormOne(this.state.formData.email, this.props.fingerprint);
+console.log(this.state)
         this.setState({ submitted: true });
     }
 
@@ -57,29 +56,61 @@ const RegistrationForm = class extends React.Component {
 
         return (
             <form className = { formClass } name={ this.props.formName } method="POST" data-netlify="true">
-                <div className = "o-registration-form__container">
-                    <div className = "o-registration-form__wrapper">
+                <div className = { `${formClass}__container` }>
+                    <div className = { `${formClass}__wrapper` }>
                         {
                             this.state.submitted &&
                             <React.Fragment>
-                                <h2 className={ headerClass } aria-label="Registration form header">thank you!</h2>
+                                <h2 className = { headerClass } aria-label="Registration form header">thank you!</h2>
                                 <p>Keep an eye on your inbox for updates.</p>
                             </React.Fragment>
                         }
                         {
                             !this.state.submitted &&
                             <React.Fragment>
-                                <h2 className={ headerClass } aria-label="Registration form header">{ this.props.header }</h2>
+                                <h2 className = { headerClass } aria-label="Registration form header">{ this.props.header }</h2>
                                 <p>{ this.props.subHeader }</p>
-                                <Input
-                                    description        = { this.props.description }
-                                    type               = "email"
-                                    name               = "email"
-                                    inputValueCallback = { this._setInputValue }
-                                    isRequired         = { true }
-                                    lightTheme         = { this.props.lightTheme }
-                                    value              = { this.state.formData.name }
-                                    id                 = "registration-name" />
+                                <div className = { `${formClass}__input-container` }>
+                                    <div className= { "-left" }>
+                                        <Input
+                                            type               = "name"
+                                            name               = "name"
+                                            inputValueCallback = { this._setInputValue }
+                                            isRequired         = { true }
+                                            lightTheme         = { this.props.lightTheme }
+                                            value              = { this.state.formData.name }/>
+                                        <Input
+                                            type               = "title"
+                                            name               = "title"
+                                            inputValueCallback = { this._setInputValue }
+                                            isRequired         = { false }
+                                            lightTheme         = { this.props.lightTheme }
+                                            value              = { this.state.formData.title }/>
+                                        <Input
+                                            type               = "companyName"
+                                            name               = "company name"
+                                            inputValueCallback = { this._setInputValue }
+                                            isRequired         = { false }
+                                            lightTheme         = { this.props.lightTheme }
+                                            value              = { this.state.formData.companyName }/>
+                                    </div>
+                                    <div className = { "-right" }>
+                                        <Input
+                                            type               = "email"
+                                            name               = "email"
+                                            inputValueCallback = { this._setInputValue }
+                                            isRequired         = { true }
+                                            lightTheme         = { this.props.lightTheme }
+                                            value              = { this.state.formData.email }/>
+                                        <Input
+                                            type               = "phoneNumber"
+                                            name               = "phone number"
+                                            inputValueCallback = { this._setInputValue }
+                                            isRequired         = { false }
+                                            lightTheme         = { this.props.lightTheme }
+                                            value              = { this.state.formData.phoneNumber }/>
+                                    </div>
+                                </div>
                                 <div className = "o-registration-form__buttons">
                                     <button
                                         type      = "submit"

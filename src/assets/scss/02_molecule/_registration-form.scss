@@ -57,8 +57,24 @@
         }
     }
 
-    input[type="email"] {
-        background-color: #f5f5f5;
+    &__input {
+        &-container {
+            display: flex;
+
+            .-left {
+                width: 50%;
+            }
+
+            .-right {
+                width: 50%;
+            }
+        }
+    }
+
+    input {
+        &.a-input {
+            background-color: #f5f5f5;
+        }
     }
 
     fieldset {
