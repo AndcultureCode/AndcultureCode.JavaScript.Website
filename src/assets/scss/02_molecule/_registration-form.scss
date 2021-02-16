@@ -1,0 +1,78 @@
+.o-registration-form {
+    @include clearfix();
+    position: relative;
+
+    h2 {
+        @include font-size(30px);
+        color: get-color("primary", "fresh-dark");
+
+        @include breakpoints("tablet") {
+            @include font-size("medium-large");
+            margin-bottom: 20px;
+        }
+
+        &.-light {
+            color: get-color("primary", "fresh-dark");
+        }
+    }
+
+    &__container {
+        @include clearfix();
+        @include padding(60px, 30px);
+        position: relative;
+
+        fieldset .a-radio + label {
+            color: get-color-primary("white");
+        }
+
+        &.-light {
+            background: get-color("primary", "white");
+
+            h2 {
+                color: get-color-primary("after-hours");
+            }
+
+            .o-contact-form__wrapper__heading {
+                color: get-color-primary("after-hours");
+            }
+
+            fieldset .a-radio + label {
+                color: get-color-primary("after-hours");
+            }
+        }
+
+        .o-contact-form__wrapper__heading {
+            @include font-size("smallest");
+            @include line-height("base");
+            color: get-color-primary("white");
+            margin: 0 0 40px;
+            font-weight: 600;
+            font-family: $font-secondary;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+
+            @include breakpoints("tablet") {
+                margin: 0 0 80px;
+            }
+        }
+    }
+
+    input[type="email"] {
+        background-color: #f5f5f5;
+    }
+
+    fieldset {
+        margin-top: 43px;
+        margin-bottom: 36px;
+        max-width: 400px;
+    }
+
+    .a-button {
+        cursor: pointer;
+        padding-right: .2em;
+
+        &.-disabled {
+            cursor: default;
+        }
+    }
+}
