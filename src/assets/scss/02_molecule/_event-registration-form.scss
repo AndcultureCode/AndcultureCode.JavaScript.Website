@@ -8,7 +8,7 @@
 
         @include breakpoints("tablet") {
             @include font-size("medium-large");
-            margin-bottom: 20px;
+            @include margin-bottom(20px);
         }
 
         &.-light {
@@ -44,7 +44,7 @@
         .o-contact-form__wrapper__heading {
             @include font-size("smallest");
             @include line-height("base");
-            @include margin(0,0,40px);
+            @include margin(0, 0, 40px);
             color: get-color-primary("white");
             font-weight: 600;
             font-family: $font-secondary;
@@ -52,7 +52,7 @@
             text-transform: uppercase;
 
             @include breakpoints("tablet") {
-                @include margin(0,0,80px);
+                @include margin(0, 0, 80px);
             }
         }
     }
