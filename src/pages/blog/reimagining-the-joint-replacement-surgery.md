@@ -2,7 +2,8 @@
 createPage: true
 templateKey: blog-post
 title: reimagining the joint replacement surgery experience
-author: Lauren McAteer
+author:
+- Lauren McAteer
 date: 2016-07-13
 featured: false
 featuredColor: -violet-blue

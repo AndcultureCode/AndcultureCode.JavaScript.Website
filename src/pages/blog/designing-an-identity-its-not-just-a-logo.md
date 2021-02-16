@@ -2,7 +2,8 @@
 createPage: true
 templateKey: blog-post
 title: "designing an identity: it's not \"just\" a logo"
-author: Madeline Pellman
+author:
+- Madeline Pellman
 date: 2014-09-18
 featured: false
 featuredColor: -violet-blue

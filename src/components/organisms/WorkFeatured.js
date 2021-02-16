@@ -14,8 +14,7 @@ const WorkFeatured = React.forwardRef((props, ref) => {
     }
 
     return (
-        <div 
-        className="o-work-featured__container">
+        <div className="o-work-featured__container">
             <div className="o-rhythm__container">
                 <div className="o-work-featured__image-container">
                     <img src={featuredWork.featuredimage.childImageSharp.fluid.src} alt="" />

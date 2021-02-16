@@ -3,7 +3,8 @@ createPage: true
 templateKey: blog-post
 title: "marketers, first ask: “why do we want to do this?”"
 headline: Please put down that case study.
-author: Andy Shaw
+author:
+- Andy Shaw
 date: 2020-04-15
 featured: false
 featuredColor: -throwback-pink

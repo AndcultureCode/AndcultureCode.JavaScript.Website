@@ -2,7 +2,8 @@
 createPage: true
 templateKey: blog-post
 title: .NET Core development with Docker
-author: Winton DeShong
+author:
+- Winton DeShong
 date: 2017-11-21
 featured: false
 featuredColor: -violet-blue

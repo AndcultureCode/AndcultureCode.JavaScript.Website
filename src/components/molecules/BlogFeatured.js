@@ -20,7 +20,7 @@ const BlogFeatured = React.forwardRef((props, ref) => {
     }
 
     if (props.scrollTop > 160) {
-      className += " -fade";
+        className += " -fade";
     }
 
 
@@ -38,7 +38,7 @@ const BlogFeatured = React.forwardRef((props, ref) => {
             <div className="m-blog-featured__title">
                 <h1><span>{ featuredPost.title }</span></h1>
                 <div className="m-blog-featured__title__author">
-                    by { featuredPost.author }
+                    by { featuredPost.author.join(" & ") }
                 </div>
             </div>
         </a>
@@ -68,7 +68,7 @@ export default React.forwardRef((props, ref) => (
                                 image {
                                     childImageSharp {
                                         fluid(maxWidth: 1920, quality: 100) {
-                                          ...GatsbyImageSharpFluid
+                                            ...GatsbyImageSharpFluid
                                         }
                                     }
                                 }

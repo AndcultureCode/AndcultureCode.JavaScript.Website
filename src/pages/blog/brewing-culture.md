@@ -2,7 +2,8 @@
 createPage: true
 templateKey: blog-post
 title: brewing culture
-author: Mike Koser
+author:
+- Mike Koser
 date: 2020-04-15
 featured: false
 featuredColor: -violet-blue

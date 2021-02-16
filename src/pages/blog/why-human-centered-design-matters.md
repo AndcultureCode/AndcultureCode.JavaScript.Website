@@ -2,7 +2,8 @@
 templateKey: blog-post
 createPage: true
 title: why human centered design matters
-author: Ryan Eagan
+author:
+- Ryan Eagan
 date: 2020-07-14T19:03:43.342Z
 featured: false
 featuredColor: '-fresh'

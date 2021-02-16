@@ -2,7 +2,8 @@
 createPage: true
 templateKey: blog-post
 title: "for a designer: tools < hands < instinct"
-author: Laura Moyer
+author:
+- Laura Moyer
 date: 2014-07-14
 featured: false
 featuredColor: -violet-blue

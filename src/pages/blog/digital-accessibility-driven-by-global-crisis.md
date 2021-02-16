@@ -2,7 +2,8 @@
 createPage: true
 templateKey: blog-post
 title: digital accessibility driven by global crisis
-author: Ryan Eagan
+author:
+- Ryan Eagan
 date: 2020-05-21
 featured: false
 featuredColor: -violet-blue

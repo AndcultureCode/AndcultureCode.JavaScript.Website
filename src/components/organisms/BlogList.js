@@ -84,7 +84,6 @@ export default (props) => (
                       }
                       category
                       featuredColor
-                      author
                     }
                     fields {
                       slug
