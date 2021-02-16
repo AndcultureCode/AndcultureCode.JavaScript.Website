@@ -12,7 +12,7 @@ const Input = class extends React.Component {
         this.state = {
             inputValue:       '',
             fieldActive:      false,
-            placeholderValue: this.props.name,
+            placeholderValue: this.props.placeholder ?? this.props.name,
             error:            false,
             isInvalidInput:   false,
         }
@@ -101,7 +101,7 @@ const Input = class extends React.Component {
                 <label
                     className = { cssClassName }
                     htmlFor   = { this.props.id }>
-                    { this.props.name }
+                    { this.props.placeholder ?? this.props.name }
                 </label>
                 <input
                     { ...inputProps }
