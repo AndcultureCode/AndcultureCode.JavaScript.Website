@@ -1,0 +1,102 @@
+.o-registration-form {
+    @include clearfix();
+    position: relative;
+
+    h2 {
+        @include font-size(30px);
+        color: get-color("primary", "fresh-dark");
+
+        @include breakpoints("tablet") {
+            @include font-size("medium-large");
+            @include margin-bottom(20px);
+        }
+
+        &.-light {
+            color: get-color("primary", "fresh-dark");
+        }
+    }
+
+    &__container {
+        @include clearfix();
+        @include padding(60px, 30px);
+        position: relative;
+
+        fieldset .a-radio + label {
+            color: get-color-primary("white");
+        }
+
+        &.-light {
+            background: get-color("primary", "white");
+
+            h2 {
+                color: get-color-primary("after-hours");
+            }
+
+            .o-contact-form__wrapper__heading {
+                color: get-color-primary("after-hours");
+            }
+
+            fieldset .a-radio + label {
+                color: get-color-primary("after-hours");
+            }
+        }
+
+        .o-contact-form__wrapper__heading {
+            @include font-size("smallest");
+            @include line-height("base");
+            @include margin(0, 0, 40px);
+            color: get-color-primary("white");
+            font-weight: 600;
+            font-family: $font-secondary;
+            letter-spacing: .2rem;
+            text-transform: uppercase;
+
+            @include breakpoints("tablet") {
+                @include margin(0, 0, 80px);
+            }
+        }
+    }
+
+    &__input {
+        &-container {
+            @include breakpoints("sm-tablet") {
+                display: flex;
+            }
+            
+            .-left {
+                @include padding-right(15px);
+
+                @include breakpoints("sm-tablet") {
+                    width: 50%;
+                }
+            }
+
+            .-right {
+                @include breakpoints("sm-tablet") {
+                    width: 50%;
+                }
+            }
+        }
+    }
+
+    input {
+        &.a-input {
+            background-color: #f5f5f5;
+        }
+    }
+
+    fieldset {
+        @include margin-bottom(36px);
+        @include margin-top(43px);
+        @include rem-fallback(max-width, 400px);
+    }
+
+    .a-button {
+        cursor: pointer;
+        padding-right: .2rem;
+
+        &.-disabled {
+            cursor: default;
+        }
+    }
+}
