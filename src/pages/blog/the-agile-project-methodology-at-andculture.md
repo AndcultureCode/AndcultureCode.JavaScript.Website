@@ -5,8 +5,6 @@ title: agile as a methodology for getting work done and being human
 headline: 'In a nutshell: Life happens. Let’s do this thing.'
 author:
 - Nic Easton
-- Winton DeShong
-- Test by Jim
 date: 2020-07-23T00:00:00.000Z
 featured: false
 featuredColor: '-violet-blue'
