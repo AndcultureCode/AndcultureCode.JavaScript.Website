@@ -1,25 +1,26 @@
 .o-registration-form {
     @include clearfix();
     position: relative;
-
-    h2 {
-        @include font-size(30px);
-        color: get-color("primary", "fresh-dark");
-
-        @include breakpoints("tablet") {
-            @include font-size("medium-large");
-            @include margin-bottom(20px);
-        }
-
-        &.-light {
-            color: get-color("primary", "fresh-dark");
-        }
-    }
+    background-color: #f5f5f5;
 
     &__container {
         @include clearfix();
         @include padding(60px, 30px);
         position: relative;
+
+        h2 {
+            @include font-size(30px);
+            color: get-color("primary", "fresh-dark");
+
+            @include breakpoints("tablet") {
+                @include font-size("medium-large");
+                @include margin-bottom(20px);
+            }
+
+            &.-light {
+                color: get-color("primary", "fresh-dark");
+            }
+        }
 
         fieldset .a-radio + label {
             color: get-color-primary("white");
@@ -62,9 +63,31 @@
             @include breakpoints("sm-tablet") {
                 display: flex;
             }
-            
+
+            fieldset {
+                @include margin-bottom(60px);
+                @include margin-top(43px);
+
+                input:-webkit-autofill,
+                input:-webkit-autofill:hover,
+                input:-webkit-autofill:focus textarea:-webkit-autofill,
+                textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+                select:-webkit-autofill,
+                select:-webkit-autofill:hover,
+                select:-webkit-autofill:focus {
+                    -webkit-box-shadow: 0 0 0 30px #f5f5f5 inset !important;
+                    -webkit-text-fill-color: get-color-primary("fresh") !important;
+                }
+
+                input {
+                    &.a-input {
+                        background-color: #f5f5f5;
+                    }
+                }
+            }
+
             .-left {
-                @include padding-right(15px);
+                @include padding-right(25px);
 
                 @include breakpoints("sm-tablet") {
                     width: 50%;
@@ -79,24 +102,18 @@
         }
     }
 
-    input {
-        &.a-input {
-            background-color: #f5f5f5;
+    &__buttons {
+        @include margin-top(50px);
+
+        .a-button {
+            @include font-size("smaller");
+            cursor: pointer;
+            padding-right: .2rem;
+
+            &.-disabled {
+                cursor: default;
+            }
         }
     }
 
-    fieldset {
-        @include margin-bottom(36px);
-        @include margin-top(43px);
-        @include rem-fallback(max-width, 400px);
-    }
-
-    .a-button {
-        cursor: pointer;
-        padding-right: .2rem;
-
-        &.-disabled {
-            cursor: default;
-        }
-    }
 }

@@ -70,7 +70,7 @@
             }
 
             @include breakpoints("lg-desktop"){
-                max-width: 200px;
+                @include rem-fallback(max-width, 200px);
                 img {
                     max-width: 80%;
                 }
@@ -126,7 +126,7 @@
     &__header {
         @include breakpoints("tablet", "laptop") {
             .o-rhythm__row {
-                margin-left: 80px;
+                @include margin-left(80px);
             }
         }
 
@@ -151,7 +151,8 @@
         }
     }
 
-    &__content {
+    &__content,
+    &__form {
         @include span-col(12);
         @include margin-left(14px);
 
@@ -162,7 +163,9 @@
         @include breakpoints("laptop", "lg-desktop") {
             @include span-col(12);
         }
+    }
 
+    &__content {
         h1 {
             @include font-size(32px);
             @include line-height(45px);
@@ -265,22 +268,10 @@
                 @include margin-top(25px);
             }
         }
+    }
 
-        .-subscribe-form {
-            > div {
-                @include span-col(12);
-                background-color: #f5f5f5;
-                @include margin-top(32px);
-
-                @include breakpoints("sm-tablet") {
-                    @include span-col(10);
-                    @include push-col(1);
-                }
-
-                @include breakpoints("tablet") {
-                    @include margin-top(80px);
-                }
-            }
-        }
+    section.-article-form {
+        @include margin-top(30px);
+        width: 100%;
     }
 }
