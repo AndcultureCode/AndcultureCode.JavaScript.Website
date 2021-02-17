@@ -1,6 +1,5 @@
-import React      from 'react';
-import headshot   from "../../../static/img/florida-creativity-conference/stephanie-krell.png";
-import SubscriptionForm from 'components/molecules/SubscriptionForm';
+import React                 from 'react';
+import EventRegistrationForm from 'components/molecules/EventRegistrationForm';
 
 
 const FloridaCreativityConferenceContent = (props) => {
@@ -8,8 +7,8 @@ const FloridaCreativityConferenceContent = (props) => {
       <article>
         <div className="p-landing-page__wrapper o-rhythm__container">
           <div className="o-rhythm__row">
-            <div className="p-landing-page__content">
-              <section aria-label="Article content">
+            <section aria-label="Article content">
+              <div className="p-landing-page__content">
                 <h2>
                   Creating a Human-Centric Business Culture
                 </h2>
@@ -71,18 +70,17 @@ const FloridaCreativityConferenceContent = (props) => {
                   <li>Management shifting to a customer/user centric approach to new services/products.</li>
                   <li>Employees understand the customers better in order to deliver better customer experiences.</li>
                 </ul>
-              </section>
-              <section className="-subscribe-form" aria-label="Subscription form">
-                <div>
-                  <SubscriptionForm
-                      formName    = "blog-subscription-form"
-                      fingerprint = { null }
-                      header      = "there's more in the works"
-                      lightTheme  = { true }
-                      subHeader   = "Enter your email below and be the first to know when we drop a new blog post." />
-                </div>
-              </section>
-            </div>
+              </div>
+            </section>
+            <section className = "-article-form" aria-label = "Article Registration Form">
+              <div className="p-landing-page__form">
+                <EventRegistrationForm
+                    formName    = "user-registration-form"
+                    header      = "Register now"
+                    lightTheme  = { true }
+                    subHeader   = "Enter your information below and we'll get back to you with how to attend the event." />
+              </div>
+            </section>
           </div>
         </div>
       </article>

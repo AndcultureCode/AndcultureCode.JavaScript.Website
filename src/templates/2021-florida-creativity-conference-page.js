@@ -4,10 +4,8 @@ import Layout                             from 'components/Layout';
 import heroDesktop                        from 'static/img/florida-creativity-conference/hero-desktop.jpg';
 import heroMobile                         from 'static/img/florida-creativity-conference/hero-mobile.jpg';
 import headshot                           from "static/img/florida-creativity-conference/stephanie-krell.png";
-import squiggleImage                      from "../../static/img/pink-squiggle.png";
 import FloridaCreativityConferenceContent from "../components/organisms/FloridaCreativityConference";
 import '../assets/scss/app.scss';
-
 
 const FloridaCreativityConferencePage = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark;
@@ -56,24 +54,6 @@ const FloridaCreativityConferencePage = ({ data }) => {
               </p>
             </div>
           </div>
-          {/*<div className="o-landing-page__container">*/}
-          {/*  <div className="o-rhythm__container">*/}
-          {/*    <div className="o-landing-page__wrapper">*/}
-          {/*      <div className="o-landing-page__image">*/}
-          {/*        <img src = { headshot } alt = "Headshot" />*/}
-          {/*      </div>*/}
-          {/*      <div className="o-landing-page__intro">*/}
-          {/*        <p>*/}
-          {/*          Stephanie Krell is a Human-Centered Design specialist with a focus in Service Design,*/}
-          {/*          Design Thinking, and Design Strategy. She has worked for Walt Disney and Universal Studios*/}
-          {/*          theme parks designing hotel and entertainment experiences before moving on to both commercial*/}
-          {/*          and federal consulting where she has focused on product, service, systems, and experience design*/}
-          {/*          for brands across the globe.*/}
-          {/*        </p>*/}
-          {/*      </div>*/}
-          {/*    </div>*/}
-          {/*  </div>*/}
-          {/*</div>*/}
           <FloridaCreativityConferenceContent />
         </div>
     </Layout>
