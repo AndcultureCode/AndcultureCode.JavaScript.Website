@@ -76,9 +76,9 @@ const FloridaCreativityConferenceContent = (props) => {
               <div className="p-landing-page__form">
                 <EventRegistrationForm
                     formName    = "user-registration-form"
-                    header      = "Register now"
+                    header      = "Join the Event"
                     lightTheme  = { true }
-                    subHeader   = "Enter your information below and we'll get back to you with how to attend the event." />
+                    subHeader   = "Enter your information below and we'll get back to you with more details." />
               </div>
             </section>
           </div>
