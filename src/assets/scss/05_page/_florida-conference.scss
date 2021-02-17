@@ -9,8 +9,17 @@
 
     &__header {
         @include margin-top(60px);
+        @include margin-bottom(55px);
+
+        @include breakpoints("laptop") {
+            @include margin-bottom(15px);
+        }
 
         @include breakpoints("desktop") {
+            margin-bottom: 0;
+        }
+
+        @include breakpoints("lg-desktop") {
             @include margin-bottom(15px);
         }
     }
@@ -169,7 +178,6 @@
         h1 {
             @include font-size(32px);
             @include line-height(45px);
-            @include margin-bottom(40px);
             color: get-color-primary("fresh-dark");
 
             @include breakpoints("phone") {
@@ -182,21 +190,8 @@
                 @include line-height(61px);
             }
 
-            @include breakpoints("laptop") {
-                @include margin-bottom(10px);
-            }
-
-            @include breakpoints("desktop") {
-                margin-bottom: 0;
-            }
-
             @include breakpoints("lg-desktop") {
-                @include margin-bottom(10px);
                 @include font-size(50px);
-            }
-
-            @include breakpoints("xl-desktop") {
-                margin-bottom: 0;
             }
         }
 
@@ -214,7 +209,7 @@
             }
 
             @include breakpoints("laptop") {
-                @include margin-top(50px);
+                @include margin-top(30px);
                 @include font-size("large");
                 @include line-height(60px);
             }
