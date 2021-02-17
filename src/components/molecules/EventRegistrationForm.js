@@ -1,5 +1,8 @@
 import React from "react";
-import { EMAILPATTERN } from "../../constants/data-validation-patterns";
+import {
+    EMAILPATTERN,
+    PHONEPATTERN
+}            from "../../constants/data-validation-patterns";
 import Input from "../atoms/Input";
 
 const EventRegistrationForm = class extends React.Component {
@@ -24,8 +27,16 @@ const EventRegistrationForm = class extends React.Component {
     }
 
     _validateFormData = () => {
-        const isValid = EMAILPATTERN.test(this.state.formData.email);
-        this.setState({ formIsValid: isValid });
+        const { formData } = this.state;
+
+        const isNameValid  = formData.name != null && formData.name.length > 0;
+        const isPhoneValid = formData.phone == null || formData.phone.length === 0 || PHONEPATTERN.test(formData.phone);
+        const isEmailValid = EMAILPATTERN.test(formData.email);
+
+        console.log(formData);
+        const isDataValid = isNameValid && isPhoneValid && isEmailValid;
+
+        this.setState({ formIsValid: isDataValid });
     }
 
     _setInputValue = (name, value) => {
@@ -104,8 +115,8 @@ const EventRegistrationForm = class extends React.Component {
                                             lightTheme         = { this.props.lightTheme }
                                             value              = { this.state.formData.email }/>
                                         <Input
-                                            type               = "number"
-                                            name               = "phoneNumber"
+                                            type               = "text"
+                                            name               = "phone"
                                             id                 = "registration_form_phone_number_input"
                                             inputValueCallback = { this._setInputValue }
                                             isRequired         = { false }
