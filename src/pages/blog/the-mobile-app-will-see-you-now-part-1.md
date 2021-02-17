@@ -2,7 +2,8 @@
 createPage: true
 templateKey: blog-post
 title: the mobile app will see you now - part 1
-author: Lauren McAteer
+author:
+- Lauren McAteer
 date: 2016-11-22
 featured: false
 featuredColor: -violet-blue

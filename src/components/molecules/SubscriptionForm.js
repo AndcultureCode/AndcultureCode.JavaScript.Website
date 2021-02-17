@@ -3,6 +3,9 @@ import Input                     from '../atoms/Input';
 import Textarea                  from '../atoms/Textarea';
 import { submitLandingFormOne }  from '../../../lambda/fauna-create';
 
+// hubspotFormUrl is built using https://api.hsforms.com/submissions/v3/integration/submit/portalId/formId
+const hubspotFormUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${process.env.GATSBY_HUBSPOT_PORTAL_KEY}/${process.env.GATSBY_HUBSPOT_FORM_KEY}`;
+
 const SubscriptionForm = class extends React.Component {
     constructor(props) {
         super(props);
@@ -14,14 +17,48 @@ const SubscriptionForm = class extends React.Component {
         }
     }
 
+    _submitUserFingerprint = (email, fingerprint, pageName) => {
+        const userData = { email: email, fingerprint: fingerprint };
+
+        return fetch("/.netlify/functions/submit-landing-form",
+        {
+            method: 'POST',
+            body: JSON.stringify({ data: userData, page: pageName })
+        });
+    }
+
+    _submitContactForm = (email, pageUri, pageName) => {
+        const pageContext = { pageUri: pageUri, pageName: pageName };
+        const requestBody = {
+            skipValidation: true,
+            fields: [
+                {
+                    name: "email",
+                    value: email,
+                }
+            ],
+            context: pageContext,
+        };
+
+        return fetch(hubspotFormUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(requestBody)
+        });
+    }
+
     _onSubmitClick = (e) => {
         e.preventDefault();
 
         if (!this.state.formIsValid) {
             return;
         }
+/*---- fingerprinting has been disabled for now ----
+        this._submitUserFingerprint(this.state.formData.email, this.props.fingerprint, "about-page");
+*/
+        this._submitContactForm(this.state.formData.email, window.location.href, document.title);
 
-        //submitLandingFormOne(this.state.formData.email, this.props.fingerprint);
+       // submitLandingFormOne(this.state.formData.email, this.props.fingerprint);
         this.setState({ submitted: true });
     }
 

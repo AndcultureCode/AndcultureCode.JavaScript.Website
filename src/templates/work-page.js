@@ -11,7 +11,7 @@ const WorkPage = ({ data }) => {
   const pageData = data.markdownRemark.frontmatter;
 
   return (
-      <Layout pageTitle="Work" data={pageData} pageClassName="p-work" showFooterDividerLine={true}>
+      <Layout pageTitle="work" data={pageData} pageClassName="p-work" showFooterDividerLine={true}>
           <main className="p-interior-page">
               <InteriorHero
                   image={ImageHero}

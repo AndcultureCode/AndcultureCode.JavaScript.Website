@@ -1,29 +1,34 @@
-import React         from 'react';
-import CustomSlider  from 'components/molecules/CustomSlider';
-import timelineImg   from 'static/img/case-studies/cca/timeline.jpg';
-import studentImg    from 'static/img/case-studies/cca/girl_laptop.png';
-import laptopImg     from 'static/img/case-studies/cca/Macbook_CCA.png';
-import backgroundImg from 'static/img/case-studies/cca/background.jpg';
-import rainbow       from 'static/img/case-studies/cca/rainbow_doodle.png';
-import traingle      from 'static/img/case-studies/cca/doodle_triangle.png';
-import dots          from 'static/img/case-studies/cca/yellow_dots.png';
-import block         from 'static/img/case-studies/cca/doodle_block.png';
-import dotsTwo       from 'static/img/case-studies/cca/yellow_dots.png';
-import dotsSmall     from 'static/img/case-studies/cca/dotted_area.png';
-import sliderImage1  from 'static/img/case-studies/cca/gallery_CCA_mtg.jpg';
-import sliderImage2  from 'static/img/case-studies/cca/gallery_exercise.jpg';
-import sliderImage3  from 'static/img/case-studies/cca/gallery_homeschool.jpg';
-import sliderImage4  from 'static/img/case-studies/cca/gallery_look_feel_cards.jpg';
-import sliderImage5  from 'static/img/case-studies/cca/gallery_tele_teaching.jpg';
-import sliderImage6  from 'static/img/case-studies/cca/gallery_wireframe.jpg';
-import studyImg      from 'static/img/case-studies/cca/studying.jpg';
-import ipadLargeImg  from 'static/img/case-studies/cca/cca_ipad_large.jpg';
-import nextImg       from 'static/img/case-studies/pulse/nurse_hallway.png';
+import React          from 'react';
+import CustomSlider   from 'components/molecules/CustomSlider';
+import timelineImg    from 'static/img/case-studies/cca/timeline.jpg';
+import studentImg     from 'static/img/case-studies/cca/girl_laptop.png';
+import laptopImg      from 'static/img/case-studies/cca/Macbook_CCA.png';
+import backgroundImg  from 'static/img/case-studies/cca/background.jpg';
+import rainbow        from 'static/img/case-studies/cca/rainbow_doodle.png';
+import traingle       from 'static/img/case-studies/cca/doodle_triangle.png';
+import dots           from 'static/img/case-studies/cca/yellow_dots.png';
+import block          from 'static/img/case-studies/cca/doodle_block.png';
+import dotsTwo        from 'static/img/case-studies/cca/yellow_dots.png';
+import dotsSmall      from 'static/img/case-studies/cca/dotted_area.png';
+import sliderImage1   from 'static/img/case-studies/cca/gallery_CCA_mtg.jpg';
+import sliderImage2   from 'static/img/case-studies/cca/gallery_exercise.jpg';
+import sliderImage3   from 'static/img/case-studies/cca/gallery_homeschool.jpg';
+import sliderImage4   from 'static/img/case-studies/cca/gallery_look_feel_cards.jpg';
+import sliderImage5   from 'static/img/case-studies/cca/gallery_tele_teaching.jpg';
+import sliderImage6   from 'static/img/case-studies/cca/gallery_wireframe.jpg';
+import studyImg       from 'static/img/case-studies/cca/studying.jpg';
+import ipadLargeImg   from 'static/img/case-studies/cca/cca_ipad_large.jpg';
+import nextImg        from 'static/img/case-studies/pulse/nurse_hallway.png';
+import { RouteUtils } from "../../utils/routeUtils";
 
 
 const CCA = class extends React.Component {
     constructor(props) {
         super(props);
+    }
+
+    handleNextCaseStudyClick = () => {
+        RouteUtils.goToUrl("/case-studies/pulse/");
     }
 
     render() {
@@ -81,7 +86,7 @@ const CCA = class extends React.Component {
                 </div>
                 <CustomSlider images = { sliderImages } />
                 <div className = "o-rhythm__container">
-                    <div className = "m-case-study-page-content__copy-section -image-right">
+                    <div className = "m-case-study-page-content__copy-section -image-right -cca-synthesis">
                         <div className = "content__header -mobile-only">Synthesis</div>
                         <header className = "-push-three">we pulled all of that sweet research together and made a plan.</header>
                         <div className = "o-rhythm__row">
@@ -116,7 +121,7 @@ const CCA = class extends React.Component {
                 </div>
                 <div className = "o-rhythm__container">
                     <div className = "m-case-study-page-content__copy-section">
-                        <header className = "-push-three">getting the word out</header>
+                        <header className = "-push-three -cca-section-header">getting the word out</header>
                         <div className = "o-rhythm__row">
                             <div className = "content__copy">
                                 <p>In the meantime, we launched a preliminary website to help Commonwealth Charter Academy shout from the rooftops that they’ve got a new name but the same incredible mission of innovative education for students throughout the state. Even as a preliminary site, we still made sure to include the basic info, media information and upcoming events to make this media friendly (gotta get that buzz going in the news).</p>
@@ -157,7 +162,7 @@ const CCA = class extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className = "m-case-study-page-content__next m-case-study -pulse">
+                <div className = "m-case-study-page-content__next m-case-study -pulse" onClick={ this.handleNextCaseStudyClick }>
                     <div className = "-background-image__container">
                         <div
                             style     = { nextImageBlockStyle }

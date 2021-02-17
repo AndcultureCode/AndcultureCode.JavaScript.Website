@@ -248,6 +248,8 @@
             }
 
             img {
+                margin-right: 10%;
+                max-width: 80%;
                 margin-left: 10%;
             }
         }
@@ -398,6 +400,12 @@
                         }
                     }
                 }
+
+                &.-site-home-page {
+                    @include breakpoints("phone","xl-desktop") {
+                        text-align: center;
+                    }
+                }
             }
         }
 
@@ -437,16 +445,10 @@
                 &__last {
                     @include span-col(12);
 
-                    @include breakpoints("sm-desktop") {
+                    @include breakpoints("xl-desktop") {
                         @include span-col(6);
                         @include push-col(0);
-                    }
-
-                    @include breakpoints("desktop") {
-                        @include span-col(5);
-                        @include push-col(1);
-
-                        margin-top: 100px;
+                        @include margin-top(100px);
                     }
 
                     header {
@@ -457,13 +459,31 @@
                     }
 
                     &-image {
-                        @include breakpoints("sm-desktop") {
+                        @include breakpoints("xl-desktop") {
                             @include span-col(6);
                             @include push-col(0);
                         }
 
-                        @include breakpoints("desktop") {
-                            @include span-col(6);
+                        .kd-image.-site-home-page {
+                            img {
+                                @include breakpoints("xl-desktop") {
+                                    max-width: none;
+                                }
+                            }
+                        }
+                    }
+
+                    .m-case-study-page-content__copy-section {
+                        &.-with-image {
+                            @include breakpoints("lg-desktop","xl-desktop") {
+                                width: 65%;
+                                margin: 0 auto;
+                            }
+
+                            @include breakpoints("desktop", "lg-desktop") {
+                                margin: 0 auto;
+                                width: 75%;
+                            }
                         }
                     }
 
@@ -581,6 +601,14 @@
 
         &.-image-right {
             padding-top: 0;
+
+            &.-cca-synthesis {
+                padding-bottom: 0;
+
+                @include breakpoints("tablet") {
+                    @include padding-bottom(40px);
+                }
+            }
         }
 
         @include breakpoints("sm-tablet") {
@@ -724,18 +752,19 @@
             position: relative;
             padding-right: 0;
 
-            @include breakpoints("sm-tablet") {
-                padding-right: 90px;
+            @include breakpoints("desktop") {
+                @include padding-right(90px);
             }
 
             img {
-                position: absolute;
+                @include breakpoints("desktop") {
+                    position: absolute;
+                }
                 left: calc(100% - 100px);
                 top: 0;
             }
 
             header {
-                padding-right: 90px;
 
                 @include breakpoints("sm-tablet") {
                     padding-right: 0px;
@@ -744,7 +773,6 @@
 
             p {
                 &:first-of-type {
-                    padding-right: 90px;
 
                     @include breakpoints("sm-tablet") {
                         padding-right: 0px;
@@ -818,6 +846,16 @@
             @include font-size(40px);
             @include line-height(44px);
             margin-bottom: 32px;
+
+            &.-cca-section-header {
+                @include breakpoints("sm-tablet") {
+                    margin-left: 0;
+                }
+
+                @include breakpoints("desktop") {
+                    margin-left: 25%;
+                }
+            }
 
             @include breakpoints("tablet") {
                 @include span-col(10);
@@ -1105,6 +1143,7 @@
     &__next {
         padding: 0;
         display: block;
+        cursor: pointer;
 
         &.-career-link {
             a.a-button {

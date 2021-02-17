@@ -383,6 +383,11 @@
             @include breakpoints("sm-desktop") {
                 max-height: none;
             }
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
         }
     }
 }

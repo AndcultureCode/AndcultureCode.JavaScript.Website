@@ -1,18 +1,19 @@
 import faunadb from 'faunadb' /* Import faunaDB sdk */
-
+import _ from "lodash";
 /* configure faunaDB Client with our secret */
 const q = faunadb.query;
 
 const client = new faunadb.Client({
-  secret: process.env.GATSBY_FAUNADB_KEY,
+  secret: 'fnAD8ACvJ0ACAjhiL19AsuZeNvadoPoy1hHCMpa0',
 })
 
 /* export our lambda function as named "handler" export */
 export const postFingerprint = async (data, page) => {
     const fingerprint = await checkFingerprint(data);
 
-
-    if(fingerprint.matchCount > 6){
+    if( fingerprint.value !== null &&
+        fingerprint.matchCount > 8 &&
+        data.ip === fingerprint.value.data.ip){
         addSiteHistory(fingerprint.value.data, { page, date: new Date().toISOString(), action: 'landed on page' });
         return null;
     }
@@ -40,14 +41,31 @@ export const checkFingerprint = async (createFingerprintDto) => {
           )
     );
 
+//     const ipCheck = returnedQueryResults.data.find((val) => val.data.ip === fingerprint.ip);
+
+// if(ipCheck !== undefined){
+//     return {value: ipCheck, matchCount: 1, ip: fingerprint.ip}
+// }
+
+    // const finalResult = returnedQueryResults.data.reduce((prevValue, curVal) => {
+    //     const matches = keys.map(k => curVal[k] === fingerprint[k]);
+    //     if (matches.length > prevValue.matchCount) {
+    //         console.log('curval', curVal);
+    //         return {value: curVal, matchCount: matches.length, ip: curVal.data.ip};
+    //     }
+    //     return prevValue;
+    // }, {value: null, matchCount: 0, ip: null});
+
     const finalResult = returnedQueryResults.data.reduce((prevValue, curVal) => {
-        const matches = keys.map(k => curVal[k] === fingerprint[k]);
-        if (matches.length > prevValue.matchCount) {
-            return {value: curVal, matchCount: matches.length};
+        const curData = curVal.data;
+        const matches = keys.map(k => _.isEqual(curData[k], fingerprint[k]));
+        const numMatch = matches.filter(m => m === true).length;
+        if (numMatch > prevValue.matchCount) {
+            return {value: curVal, matchCount: numMatch};
         }
         return prevValue;
     }, {value: null, matchCount: 0});
-
+     console.log('final result', finalResult);
     return finalResult;
 }
 
@@ -60,6 +78,7 @@ export const addSiteHistory = async (createFingerprintDto, createSiteHistoryDto)
     )
     .then((ret) => console.log(ret))
     .catch((err) => console.log(err));
+
 }
 
 export const createUser = (data) => {

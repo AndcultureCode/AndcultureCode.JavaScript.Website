@@ -2,7 +2,8 @@
 createPage: true
 templateKey: blog-post
 title: modular CSS with ITCSS and SCSS
-author: Shane Shearer
+author:
+- Shane Shearer
 date: 2018-05-01
 featured: false
 featuredColor: -violet-blue

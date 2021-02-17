@@ -93,6 +93,12 @@
             }
         }
 
+        &.-work {
+            @include breakpoints("tablet") {
+                left: calc(3% + 90px);
+            }
+        }
+
         &:not(.-home) {
             svg {
                 display: block;
@@ -114,7 +120,7 @@
         @include breakpoints("tablet") {
             position: absolute;
             display: block;
-            left: calc(3% + 90px);
+            left: calc(3% + 76px);
             top: 66px;
         }
 

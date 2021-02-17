@@ -1,3 +1,7 @@
+import {
+    EMAILPATTERN,
+    PHONEPATTERN
+}            from "../../constants/data-validation-patterns";
 import React from 'react';
 
 const Input = class extends React.Component {
@@ -8,8 +12,9 @@ const Input = class extends React.Component {
         this.state = {
             inputValue:       '',
             fieldActive:      false,
-            placeholderValue: this.props.name,
+            placeholderValue: this.props.placeholder ?? this.props.name,
             error:            false,
+            isInvalidInput:   false,
         }
 
         this._updateInputValue = this._updateInputValue.bind(this);
@@ -21,23 +26,17 @@ const Input = class extends React.Component {
         this.setState({
             fieldActive:      true,
             placeholderValue: '',
+            error:            false,
+            isInvalidInput:   false,
         })
     }
 
     _disableField(e) {
-        if (this.props.type === "email") {
-            const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            if (!pattern.test(e.target.value)) {
-                this.setState({
-                    error: true,
-                })
-                return;
-            }
-        }
         if (e.target.value === "") {
             this.setState({
                 fieldActive:      false,
-                placeholderValue: this.props.name,
+                placeholderValue: this.props.placeholder ?? this.props.name,
+                isInvalidInput:   false,
             })
 
             if (this.props.isRequired) {
@@ -46,9 +45,26 @@ const Input = class extends React.Component {
                 })
             }
         } else {
+            if (this.props.type === "email") {
+                if (!EMAILPATTERN.test(e.target.value)) {
+                    this.setState({
+                        isInvalidInput: true,
+                    })
+                    return;
+                }
+            }
+            if (this.props.name === "phone") {
+                if (!PHONEPATTERN.test(e.target.value)) {
+                    this.setState({
+                        isInvalidInput: true,
+                    })
+                    return;
+                }
+            }
             if (this.props.isRequired) {
                 this.setState({
-                    error: false,
+                    error:          false,
+                    isInvalidInput: false,
                 })
             }
         }
@@ -56,6 +72,13 @@ const Input = class extends React.Component {
 
     _updateInputValue(e) {
         this.setState({ inputValue: e.target.value }, () => this.props.inputValueCallback(this.props.name, this.state.inputValue));
+    }
+
+    _handleKeydown = (e) => {
+        if (!this.props.onKeydownPress) {
+            return;
+        }
+        this.props.onKeydownPress(e);
     }
 
     render() {
@@ -78,23 +101,28 @@ const Input = class extends React.Component {
                 <label
                     className = { cssClassName }
                     htmlFor   = { this.props.id }>
-                    { this.props.name }
+                    { this.props.placeholder ?? this.props.name }
                 </label>
                 <input
                     { ...inputProps }
                     aria-label  = { this.props.description }
-                    value       = { this.props.value }
+                    className   = { inputClassName }
+                    id          = { this.props.id }
+                    name        = { this.props.name }
                     onFocus     = { this._activateField }
                     onBlur      = { this._disableField }
                     onChange    = { this._updateInputValue }
-                    className   = { inputClassName }
-                    type        = { this.props.type }
-                    name        = { this.props.name }
+                    onKeyDown   = { this._handleKeydown }
                     placeholder = { this.state.placeholderValue }
-                    id          = { this.props.id } />
+                    type        = { this.props.type }
+                    value       = { this.props.value }/>
                 { // if
                     this.state.error &&
                     <span className = "a-label__error">please enter your { this.props.name }</span>
+                }
+                { // if
+                    this.state.isInvalidInput &&
+                    <span className = "a-label__error">please enter a valid { this.props.name }</span>
                 }
             </fieldset>
         )

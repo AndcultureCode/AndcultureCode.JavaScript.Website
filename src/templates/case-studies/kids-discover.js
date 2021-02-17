@@ -1,26 +1,31 @@
-import React from 'react';
-import teacherClassRoom from '../../../static/img/case-studies/kids-discover/teacher-classroom.jpg';
-import magazines from '../../../static/img/case-studies/kids-discover/magazines.jpg';
-import phone from '../../../static/img/case-studies/kids-discover/phone.png';
-import teacherStudents from '../../../static/img/case-studies/kids-discover/teacher-students.jpg';
-import applePencil from '../../../static/img/case-studies/kids-discover/apple-pencil.png';
-import homePageFeed from '../../../static/img/case-studies/kids-discover/homepage-feed.jpg';
-import dotGrid from '../../../static/img/case-studies/kids-discover/dot-grid.png';
-import studentHomework from '../../../static/img/case-studies/kids-discover/student-homework.jpg';
-import feedLockup from '../../../static/img/case-studies/kids-discover/feed-lockup.png';
-import discoverMap from '../../../static/img/case-studies/kids-discover/discovermap.jpg';
-import cubeDoodle from '../../../static/img/case-studies/kids-discover/cube-doodle.png';
-import editorScreens from '../../../static/img/case-studies/kids-discover/editor_screens.png';
-import siteHomePage from '../../../static/img/case-studies/kids-discover/site-home-page.png';
-import triangleDoodle from '../../../static/img/case-studies/kids-discover/triangle_doodle.png';
-import nextImg from '../../../static/img/case-studies/hackerone/billboard.jpg';
-import collageMaps from '../../../static/img/case-studies/kids-discover/collage-mags.png';
+import React              from 'react';
+import teacherClassRoom   from '../../../static/img/case-studies/kids-discover/teacher-classroom.jpg';
+import magazines          from '../../../static/img/case-studies/kids-discover/magazines.jpg';
+import phone              from '../../../static/img/case-studies/kids-discover/phone.png';
+import teacherStudents    from '../../../static/img/case-studies/kids-discover/teacher-students.jpg';
+import applePencil        from '../../../static/img/case-studies/kids-discover/apple-pencil.png';
+import homePageFeed       from '../../../static/img/case-studies/kids-discover/homepage-feed.jpg';
+import dotGrid            from '../../../static/img/case-studies/kids-discover/dot-grid.png';
+import studentHomework    from '../../../static/img/case-studies/kids-discover/student-homework.jpg';
+import feedLockup         from '../../../static/img/case-studies/kids-discover/feed-lockup.png';
+import discoverMap        from '../../../static/img/case-studies/kids-discover/discovermap.jpg';
+import cubeDoodle         from '../../../static/img/case-studies/kids-discover/cube-doodle.png';
+import editorScreens      from '../../../static/img/case-studies/kids-discover/editor_screens.png';
+import siteHomePage       from '../../../static/img/case-studies/kids-discover/site-home-page.png';
+import triangleDoodle     from '../../../static/img/case-studies/kids-discover/triangle_doodle.png';
+import nextImg            from '../../../static/img/case-studies/hackerone/billboard.jpg';
+import collageMaps        from '../../../static/img/case-studies/kids-discover/collage-mags.png';
 import whiteBoardSketches from '../../../static/img/case-studies/kids-discover/sketches.png';
+import { RouteUtils }     from '../../utils/routeUtils';
 
 
 const KidsDiscover = class extends React.Component {
     constructor(props) {
         super(props);
+    }
+
+    handleNextCaseStudyClick = () => {
+        RouteUtils.goToUrl("/case-studies/hackerone/");
     }
 
     render() {
@@ -252,7 +257,7 @@ const KidsDiscover = class extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className = "m-case-study-page-content__next m-case-study -h1">
+                <div className = "m-case-study-page-content__next m-case-study -h1" onClick={ this.handleNextCaseStudyClick }>
                     <div className = "-background-image__container">
                         <div
                             style     = { nextImageBlockStyle }

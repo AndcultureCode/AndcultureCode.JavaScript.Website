@@ -22,30 +22,37 @@ const CatamaranForm = class extends React.Component {
         this._onNextClick       = this._onNextClick.bind(this);
         this._onBackClick       = this._onBackClick.bind(this);
         this._onSubmitClick     = this._onSubmitClick.bind(this);
-        this._caclulateProgress = this._caclulateProgress.bind(this);
+        this._calculateProgress = this._calculateProgress.bind(this);
         this._setInputValue     = this._setInputValue.bind(this);
+        this._onKeydownPress    = this._onKeydownPress.bind(this);
     }
 
-    _onNextClick() {
+    _onNextClick(e) {
+        // prevent processing with keyboard when form input is invalid
+        if (this._isFormDataInvalid()) {
+            e.preventDefault();
+            return;
+        }
+
         if (this.state.activeQuestion === this.state.totalQuestions) {
-            this._caclulateProgress(1);
+            this._calculateProgress(1);
             return;
         }
 
         this.setState({
             activeQuestion:  this.state.activeQuestion + 1,
-        }, this._caclulateProgress(1));
+        }, this._calculateProgress(1));
     }
 
     _onBackClick() {
         if (this.state.activeQuestion === 1) {
-            this._caclulateProgress(0);
+            this._calculateProgress(0);
             return;
         }
 
         this.setState({
             activeQuestion:  this.state.activeQuestion  - 1,
-        }, this._caclulateProgress(0));
+        }, this._calculateProgress(0));
     }
 
     _onSubmitClick(e) {
@@ -55,14 +62,14 @@ const CatamaranForm = class extends React.Component {
             body: encode({ "form-name": "contact-catamaran", ...this.state.formData })
         })
             .then(() =>
-                this._caclulateProgress(1)
+                this._calculateProgress(1)
             )
             .catch(error => alert(error));
 
         e.preventDefault();
     }
 
-    _validateFormData() {
+    _isFormDataInvalid() {
         const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (this.state.activeQuestion === 1 && this.state.formData.name && this.state.formData.name !== "") {
             return false;
@@ -83,8 +90,8 @@ const CatamaranForm = class extends React.Component {
         return true;
     }
 
-    _caclulateProgress(direction) {
-        let percentComplete = this.state.activeQuestion / this.state.totalQuestions * 100;
+    _calculateProgress(direction) {
+        let percentComplete = (this.state.activeQuestion / this.state.totalQuestions) * 100;
         if (this.state.activeQuestion === this.state.totalQuestions && direction === 1) {
             this.props.isSubmittedCallback(true);
         }
@@ -94,7 +101,7 @@ const CatamaranForm = class extends React.Component {
         }
 
         if (direction === 0) {
-            percentComplete = (this.state.activeQuestion - 2) / this.state.totalQuestions * 100;
+            percentComplete = ((this.state.activeQuestion - 2) / this.state.totalQuestions) * 100;
         }
 
         this._sendData(percentComplete);
@@ -108,6 +115,19 @@ const CatamaranForm = class extends React.Component {
         this.setState({ formData: {...this.state.formData, [name]: value }});
     }
 
+    _onKeydownPress(e) {
+        if (e.keyCode === 13) {
+            // allow Interest field dropdown to progress on enter
+            // if no option is selected, press enter will open the dropdown
+            // otherwise, press enter will move on to the next step
+            if (this.state.activeQuestion === 3 && this.state.formData.interest == null) {
+                return;
+            }
+
+            this._onNextClick(e);
+        }
+    }
+
     render() {
         let formClass   = 'o-contact-form';
         formClass += this.props.isActive ? ' -active' : '';
@@ -116,13 +136,8 @@ const CatamaranForm = class extends React.Component {
         buttonClass += this.props.lightTheme ? ' -light ' : '';
 
         let nextButtonClass = 'a-button';
-        formClass += this.props.isActive ? ' -active' : '';
 
-        if (this.state.activeQuestion === this.state.totalQuestions) {
-            buttonClass += ' -active'
-        }
-
-        if (this._validateFormData()) {
+        if (this._isFormDataInvalid()) {
             nextButtonClass += ' -disabled'
         }
 
@@ -136,59 +151,67 @@ const CatamaranForm = class extends React.Component {
                         <Input
                             className          = { this.state.activeQuestion === 1 ? '-active': '' }
                             description        = "Enter your name for the catamaran form submission"
-                            type               = "text"
-                            name               = "name"
+                            id                 = "catamaran-name"
                             inputValueCallback = { this._setInputValue }
                             isRequired         = { true }
                             lightTheme         = { this.props.lightTheme }
-                            value              = { this.state.formData.name }
-                            id                 = "catamaran-name" />
+                            name               = "name"
+                            onKeydownPress     = { this._onKeydownPress }
+                            type               = "text"
+                            value              = { this.state.formData.name } />
                         <Input
                             className          = { this.state.activeQuestion === 2 ? '-active': '' }
                             description        = "Enter your email for the catamaran form submission"
-                            type               = "email"
-                            name               = "email"
+                            id                 = "catamaran-email"
                             inputValueCallback = { this._setInputValue }
                             isRequired         = { true }
                             lightTheme         = { this.props.lightTheme }
-                            value              = { this.state.formData.email }
-                            id                 = "catamaran-email" />
+                            name               = "email"
+                            onKeydownPress     = { this._onKeydownPress }
+                            type               = "email"
+                            value              = { this.state.formData.email } />
                         <Select
                             className          = { this.state.activeQuestion === 3 ? '-active': '' }
                             description        = "Select an interest that most aligns to you for the catamaran form submission"
+                            id                 = "catamaran-interest"
+                            inputValueCallback = { this._setInputValue }
+                            lightTheme         = { this.props.lightTheme }
                             name               = "interest"
-                            inputValueCallback = { this._setInputValue }
-                            lightTheme         = { this.props.lightTheme }
-                            value              = { this.state.formData.interest }
-                            id                 = "catamaran-interest" />
+                            onKeydownPress     = { this._onKeydownPress }
+                            value              = { this.state.formData.interest } />
                         <Textarea
-                            className          = { this.state.activeQuestion === 4 ? '-active': '' }
+                            className          = { `-form-message ${this.state.activeQuestion === 4 ? '-active' : ''}` }
                             description        = "Enter the message that you would like sent to Catamaran"
-                            name               = "message"
+                            id                 = "catamaran-message"
                             inputValueCallback = { this._setInputValue }
-                            value              = { this.state.formData.message }
                             lightTheme         = { this.props.lightTheme }
-                            id                 = "catamaran-message" />
+                            name               = "message"
+                            value              = { this.state.formData.message } />
                         <div className = "o-contact-form__buttons">
-                            <a
+                            <button
+                                className = { buttonClass }
                                 onClick   = { this._onBackClick }
-                                className = { buttonClass }>
+                                type      = "button">
                                 Go Back
-                            </a>
+                            </button>
                             {  // if
                                 this.state.activeQuestion !== this.state.totalQuestions &&
-                                <a
+                                <button
+                                    className = { nextButtonClass }
                                     onClick   = { this._onNextClick }
-                                    className = { nextButtonClass }>
+                                    type      = "button">
                                     Next
-                                </a>
+                                </button>
                             }
-                            <button
-                                type      = "submit"
-                                onClick   = { this._onSubmitClick }
-                                className = { buttonClass }>
-                                Submit
-                            </button>
+                            { // if
+                                this.state.activeQuestion === this.state.totalQuestions &&
+                                <button
+                                    className = { buttonClass }
+                                    onClick   = { this._onSubmitClick }
+                                    type      = "submit">
+                                    Submit
+                                </button>
+                            }
                         </div>
                     </div>
                 </div>

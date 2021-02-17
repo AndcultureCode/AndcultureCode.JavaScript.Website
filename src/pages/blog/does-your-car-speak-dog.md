@@ -2,7 +2,8 @@
 createPage: true
 templateKey: blog-post
 title: does your car speak dog?
-author: Evan Keller
+author:
+- Evan Keller
 date: 2014-04-30
 featured: false
 featuredColor: -violet-blue

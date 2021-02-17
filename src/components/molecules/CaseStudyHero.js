@@ -21,7 +21,7 @@ const CaseStudyHero = class extends React.Component {
         <div className = "o-rhythm__container">
           <div className = "o-rhythm__row">
             <div className = "o-hero__title">
-              <h6 className = "-mobile-only">{ this.props.partnerName }</h6>
+              <h6 className = "-mobile-and-tablet-only">{ this.props.partnerName }</h6>
               <h1>{ this.props.title }</h1>
             </div>
             <div className = "o-hero__image">

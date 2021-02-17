@@ -1,19 +1,24 @@
-import React from 'react';
+import React                   from 'react';
 import CaseStudyFullBleedImage from 'components/molecules/CaseStudyFullBleedImage';
 import CaseStudyContentSection from 'components/molecules/CaseStudyContentSection';
-import imgJobSearch from 'static/img/case-studies/career-link/jobsearch.jpg';
-import imgPACapitol from 'static/img/case-studies/career-link/pa_capitol.jpg';
-import imgResourceCenter from 'static/img/case-studies/career-link/resource_center.jpg';
-import imgPennsylvania from 'static/img/case-studies/career-link/pennsylvania.png';
-import imgWhiteboard from 'static/img/case-studies/career-link/whiteboard.png';
-import imgWomaniPad from 'static/img/case-studies/career-link/woman_iPad.jpg';
-import imgDotGrid from 'static/img/case-studies/career-link/dot_grid.png';
-import nextImg from 'static/img/case-studies/kids-discover/student-homework.png';
+import imgJobSearch            from 'static/img/case-studies/career-link/jobsearch.jpg';
+import imgPACapitol            from 'static/img/case-studies/career-link/pa_capitol.jpg';
+import imgResourceCenter       from 'static/img/case-studies/career-link/resource_center.jpg';
+import imgPennsylvania         from 'static/img/case-studies/career-link/pennsylvania.png';
+import imgWhiteboard           from 'static/img/case-studies/career-link/whiteboard.png';
+import imgWomaniPad            from 'static/img/case-studies/career-link/woman_iPad.jpg';
+import imgDotGrid              from 'static/img/case-studies/career-link/dot_grid.png';
+import nextImg                 from 'static/img/case-studies/kids-discover/student-homework.png';
+import { RouteUtils }          from '../../utils/routeUtils';
 
 
 const PACareerLink = class extends React.Component {
     constructor(props) {
         super(props);
+    }
+
+    handleNextCaseStudyClick = () => {
+        RouteUtils.goToUrl("/case-studies/kids-discover/");
     }
 
     render() {
@@ -101,7 +106,7 @@ const PACareerLink = class extends React.Component {
                         <p>Another value we have at andculture is optimism. And while the present outlook is trending negative, we're optimistic that, together, we can build a future that's better. Better prepared. Better crafted. Better for all. </p>
                     </CaseStudyContentSection>
                 </div>
-                <div className="m-case-study-page-content__next m-case-study -kd">
+                <div className="m-case-study-page-content__next m-case-study -kd" onClick={ this.handleNextCaseStudyClick }>
                     <div className="-background-image__container">
                         <div
                             style={nextImageBlockStyle}

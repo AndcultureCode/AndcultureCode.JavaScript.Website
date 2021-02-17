@@ -33,17 +33,18 @@
         }
 
         &__logo {
+            @include rem-fallback(width, 50px);
+            @include rem-fallback(top, 10px);
+            @include rem-fallback(perspective, 200px);
             display: block;
-            width: 50px;
             position: fixed;
-            top: 50px;
-            perspective: 200px;
             transition: opacity .4s cubic-bezier(.165,.84,.44,1);
             -webkit-transform: translateZ(0);
             transform: translateZ(0);
 
             @include breakpoints("tablet") {
-                width: 60px;
+                @include rem-fallback(width, 60px);
+                @include rem-fallback(top, 50px);
             }
 
             svg {
@@ -112,26 +113,26 @@
             transform: translateX(100%);
             opacity: 0;
             will-change: transform,opacity;
-            transition: opacity .6s cubic-bezier(.77,0,.175,1) 0.25s, transform .9s cubic-bezier(.77,0,.175,1) 0.25s;
+            transition: opacity .6s cubic-bezier(.77,0,.175,1) 0.2s, transform .9s cubic-bezier(.77,0,.175,1) 0.2s;
 
             &:nth-of-type(2) {
-                transition-delay: 0.5s, 0.5s;
+                transition-delay: 0.35s, 0.35s;
             }
 
             &:nth-of-type(3) {
-                transition-delay: 0.75s, 0.75s;
+                transition-delay: 0.5s, 0.5s;
             }
 
             &:nth-of-type(4) {
-                transition-delay: 1s, 1s;
+                transition-delay: 0.65s, 0.65s;
             }
 
             &:nth-of-type(5) {
-                transition-delay: 1.25s, 1.25s;
+                transition-delay: 0.8s, 0.8s;
             }
 
             &:nth-of-type(6) {
-                transition-delay: 1.5s, 1.5s;
+                transition-delay: 0.95s, 0.95s;
             }
 
             &:hover {

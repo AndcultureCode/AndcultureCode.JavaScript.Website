@@ -56,9 +56,10 @@ collections:
       - {label: "Create Page", name: "createPage", widget: "hidden", default: true}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Headline", name: "headline", widget: "string", required: false}
-      - label: "Author"
+      - label: "Authors"
         name: "author"
         widget: "select"
+        multiple: true
         required: true
         options:
          - { label: "Andy Shaw", value: "Andy Shaw" }

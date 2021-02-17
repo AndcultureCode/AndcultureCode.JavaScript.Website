@@ -12,6 +12,13 @@ import useComponentSize                       from '@rehooks/component-size';
 import { postFingerprint }                    from '../../lambda/fauna-create';
 import Fingerprint2                           from '@fingerprintjs/fingerprintjs';
 import 'resize-observer-polyfill';
+// import IPData from 'ipdata';
+// const ipdata = new IPData('8ed5ac6c21f6b51557bdb60c5ec26f2d371856cc1b674913c106c475');
+const ipdataUrl = `https://api.ipdata.co?api-key=8ed5ac6c21f6b51557bdb60c5ec26f2d371856cc1b674913c106c475`;
+
+const json = () => {
+  return fetch(ipdataUrl).then(res => res.json());
+}
 
 export const BlogPostTemplate = (props) => {
   const properties                                      = props.properties;
@@ -98,10 +105,14 @@ export const BlogPostTemplate = (props) => {
                 <span aria-hidden="true">{ properties.category }</span>
               </p>
               <h1>{ properties.title }</h1>
-              <BlogAuthor
-                author       = { props.author }
-                postDate     = { properties.date }
-                postLongDate = { properties.longDate } />
+              <div aria-label={ `Posted on ${ properties.longDate }` } className="m-blog-post__date">
+                <div aria-hidden="true">{ properties.date }</div>
+              </div>
+              {
+                props.authors.map((author) => (
+                  <BlogAuthor author={ author } />
+                ))
+              }
               {properties.headline &&
                 <h2>{ properties.headline }</h2>
               }
@@ -177,22 +188,48 @@ const BlogPost = ({ data }) => {
       setScrollTop(e.target.documentElement.scrollTop);
     };
 
+/*---- fingerprinting has been disabled for now ----
     if (window.requestIdleCallback && fingerprint === false) {
       requestIdleCallback(() => {
+        json().then(data => {
+
           Fingerprint2.get( (components) => {
+
             const obj = {
               visitHistory: [],
-              userAgent: components[0].value,
-              webdriver: components[1].value,
-              language: components[2].value,
-              screenRes: components[6].value,
-              timezone: components[9].value,
-              platform: components[16].value,
+              userAgent:    components[0].value,
+              webdriver:    components[1].value,
+              language:     components[2].value,
+              screenRes:    components[6].value,
+              timezone:     components[9].value,
+              platform:     components[16].value,
+              ip:           data.ip,
+              city:         data.city,
+              state:        data.region_code,
+              postal:       data.postal,
+              isp:          data.asn.name,
+              country:      data.continent_name,
             };
-            // postFingerprint(obj, 'specific blog');
+            fetch("/.netlify/functions/post-fingerprint",
+    {
+      method: 'POST',
+      body: JSON.stringify({data: obj, page: 'specific blog'})
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } else if(response.status === 404) {
+        return Promise.reject('Netlify was not found')
+      } else {
+        return Promise.reject('Netlify error: ' + response.status)
+      }
+    })
+    .then(console.log);
+           // postFingerprint(obj, 'specific blog');
             setFingerprintObject(obj)
             setFingerprint(true);
           });
+        });
       })
   } else {
       setTimeout( () => {
@@ -201,6 +238,7 @@ const BlogPost = ({ data }) => {
           })
       }, 500)
   }
+*/
 
     window.addEventListener("scroll", onScroll);
 
@@ -223,7 +261,7 @@ const BlogPost = ({ data }) => {
       showFooterDividerLine = { true }>
       <main aria-label="Main content">
         <BlogPostTemplate
-          author         = { _getAuthor(data.authors, postProperties.author) }
+          authors        = { _getAuthors(data.authors, postProperties.author) }
           fingerprintObj = { fingerprintObject }
           html           = { postHtml }
           nextPostUrl    = { _getNextPostUrl(data.posts, data.post.id) }
@@ -240,15 +278,17 @@ const BlogPost = ({ data }) => {
 // Private Methods
 // --------------------------------------------------------
 
-const _getAuthor = (authors, authorName) => {
-  const author = authors.edges
-                  .find(author => author.node.frontmatter.name === authorName);
+const _getAuthors = (authors, authorNames) => {
+  const results = [];
 
-  if (!author) {
-    return null;
-  }
+  authorNames.forEach(authorName => {
+    const author = authors.edges.find(author => author.node.frontmatter.name === authorName);
+    if (author) {
+      results.push(author.node.frontmatter);
+    }
+  });
 
-  return author.node.frontmatter;
+  return results;
 };
 
 const _getNextPostUrl = (posts, blogPostId) => {

@@ -9,7 +9,13 @@ import {postFingerprint}                      from '../../lambda/fauna-create';
 import Fingerprint2                           from '@fingerprintjs/fingerprintjs';
 import 'resize-observer-polyfill';
 import '../assets/scss/app.scss'
+// import IPData from 'ipdata';
+// const ipdata = new IPData('8ed5ac6c21f6b51557bdb60c5ec26f2d371856cc1b674913c106c475');
+const ipdataUrl = `https://api.ipdata.co?api-key=8ed5ac6c21f6b51557bdb60c5ec26f2d371856cc1b674913c106c475`;
 
+const json = () => {
+  return fetch(ipdataUrl).then(res => res.json());
+}
 export const BlogPageTemplate = ({
     title,
     secondaryTitle,
@@ -55,7 +61,31 @@ export const BlogPageTemplate = ({
       window.addEventListener("scroll", onScroll);
       if (window.requestIdleCallback && fingerprint === false) {
         requestIdleCallback(() => {
+          json().then(data => {
+
             Fingerprint2.get( (components) => {
+              fetch("/.netlify/functions/post-fingerprint",
+        {
+        method: 'POST',
+        body: JSON.stringify({data: {
+        visitHistory: [],
+        userAgent: components[0].value,
+        webdriver: components[1].value,
+        language: components[2].value,
+        screenRes: components[6].value,
+        timezone: components[9].value,
+        platform: components[16].value,
+        ip:       data.ip,
+        city:     data.city,
+        state:    data.region_code,
+        postal:   data.postal,
+        isp:      data.asn.name,
+        country:  data.continent_name,
+
+      }, page: 'blog-page'})
+    })
+    .then(response => response.json())
+    .then(console.log);
               // postFingerprint({
               //   visitHistory: [],
               //   userAgent: components[0].value,
@@ -64,10 +94,18 @@ export const BlogPageTemplate = ({
               //   screenRes: components[6].value,
               //   timezone: components[9].value,
               //   platform: components[16].value,
+              //   ip:       data.ip,
+              //   city:     data.city,
+              //   state:    data.region_code,
+              //   postal:   data.postal,
+              //   isp:      data.asn.name,
+              //   country:  data.continent_name,
+
               // }, 'blog-page');
 
               setFingerprint(true);
             });
+          });
         })
     } else {
         setTimeout( () => {

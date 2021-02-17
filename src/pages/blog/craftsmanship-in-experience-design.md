@@ -2,7 +2,8 @@
 createPage: true
 templateKey: blog-post
 title: craftsmanship in experience design
-author: Dominic Prestifilippo
+author:
+- Dominic Prestifilippo
 date: 2017-06-16
 featured: false
 featuredColor: -violet-blue
