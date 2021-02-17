@@ -64,7 +64,7 @@ export default FloridaCreativityConferencePage;
 
 export const pageQuery = graphql`
   query FloridaCreativityConferencePage {
-    markdownRemark(frontmatter: { templateKey: { eq: "2021-florida-creativity-conference-page" } }) {
+    markdownRemark(frontmatter: { templateKey: { eq: "florida-creativity-conference-page" } }) {
       html
       frontmatter {
         title

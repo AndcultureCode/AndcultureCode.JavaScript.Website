@@ -30,9 +30,10 @@ const EventRegistrationForm = class extends React.Component {
         const { formData } = this.state;
 
         const isNameValid  = formData.name != null && formData.name.length > 0;
-        const isPhoneValid = PHONEPATTERN.test(formData.phone);
+        const isPhoneValid = formData.phone == null || formData.phone.length === 0 || PHONEPATTERN.test(formData.phone);
         const isEmailValid = EMAILPATTERN.test(formData.email);
 
+        console.log(formData);
         const isDataValid = isNameValid && isPhoneValid && isEmailValid;
 
         this.setState({ formIsValid: isDataValid });
@@ -118,7 +119,7 @@ const EventRegistrationForm = class extends React.Component {
                                             name               = "phone"
                                             id                 = "registration_form_phone_number_input"
                                             inputValueCallback = { this._setInputValue }
-                                            isRequired         = { true }
+                                            isRequired         = { false }
                                             lightTheme         = { this.props.lightTheme }
                                             placeholder        = "phone number"
                                             value              = { this.state.formData.phoneNumber }/>

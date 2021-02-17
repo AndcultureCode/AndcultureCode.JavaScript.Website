@@ -357,7 +357,7 @@ collections:
         label: "2021 Florida Creativity Conference"
         name: "2021-florida-creativity-conference"
         fields:
-          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "2021-florida-creativity-conference-page" }
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "florida-creativity-conference-page" }
           - { label: "Create Page", name: "createPage", widget: "hidden", default: true }
           - { label: Title, name: title, widget: string }
           - { label: Secondary, name: secondaryTitle, widget: string }

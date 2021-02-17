@@ -1,6 +1,6 @@
 ---
 createPage: true
-templateKey: 2021-florida-creativity-conference-page
+templateKey: florida-creativity-conference-page
 title: Stephanie Krell to speak at 2021 Florida Creativity Conference
 seo:
   metaTitle: Stephanie Krell to speak at 2021 Florida Creativity Conference | andculture
