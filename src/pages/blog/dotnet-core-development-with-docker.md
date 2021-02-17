@@ -1,4 +1,4 @@
----
+ ---
 createPage: true
 templateKey: blog-post
 title: .NET Core development with Docker
