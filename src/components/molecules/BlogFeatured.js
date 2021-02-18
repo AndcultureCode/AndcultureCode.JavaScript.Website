@@ -1,5 +1,6 @@
 import React                    from 'react';
 import { graphql, StaticQuery } from 'gatsby'
+import { StringUtils }          from '../../utils/stringUtils';
 
 
 // Primary Component
@@ -38,7 +39,7 @@ const BlogFeatured = React.forwardRef((props, ref) => {
             <div className="m-blog-featured__title">
                 <h1><span>{ featuredPost.title }</span></h1>
                 <div className="m-blog-featured__title__author">
-                    by { featuredPost.author.join(" & ") }
+                    by { StringUtils.concatenate(featuredPost.author) }
                 </div>
             </div>
         </a>
