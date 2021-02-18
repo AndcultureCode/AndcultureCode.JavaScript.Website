@@ -6,4 +6,4 @@ export const EMAILPATTERN = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)
 export const PHONEPATTERN = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
 
 // phone extension pattern
-export const PHONEEXTENSIONPATTERN = /^[1-9][0-9]*$/;
+export const PHONEEXTENSIONPATTERN = /^\d+$/;

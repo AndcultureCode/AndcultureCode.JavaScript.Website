@@ -60,9 +60,9 @@
 
     &__input {
         &-container {
-            //@include breakpoints("sm-tablet") {
-            //    display: flex;
-            //}
+            @include breakpoints("sm-tablet") {
+                display: flex;
+            }
 
             fieldset {
                 @include margin-bottom(60px);
@@ -85,37 +85,18 @@
                     }
                 }
             }
-            .-top {
+
+            .-left {
                 @include breakpoints("sm-tablet") {
-                    display: flex;
-
-                    .-left {
-                        @include padding-right(25px);
-                        width: 50%;
-                    }
-
-                    .-right {
-                        width: 50%;
-                    }
+                    @include padding-right(25px);
+                    width: 50%;
                 }
             }
 
-            .-bottom {
-                //.-phone-extension {
-                    fieldset {
-                        display: inline-block;
-                        margin-top: 0;
-                    }
-
-                    .-phone {
-                        @include padding-right(25px);
-                        width: 50%;
-                    }
-
-                    .-extension {
-                        width: 50%;
-                    }
-                //}
+            .-right {
+                @include breakpoints("sm-tablet") {
+                    width: 50%;
+                }
             }
         }
     }

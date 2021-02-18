@@ -1,9 +1,10 @@
-import React from "react";
+import React           from "react";
 import {
     EMAILPATTERN, PHONEEXTENSIONPATTERN,
     PHONEPATTERN
-} from "../../constants/data-validation-patterns";
-import Input from "../atoms/Input";
+}                      from "../../constants/data-validation-patterns";
+import Input           from "../atoms/Input";
+import { StringUtils } from '../../utils/stringUtils';
 
 const EventRegistrationForm = class extends React.Component {
     constructor(props) {
@@ -29,21 +30,27 @@ const EventRegistrationForm = class extends React.Component {
     _validateFormData = () => {
         const { formData } = this.state;
 
-        const isNameValid  = formData.name != null && formData.name.length > 0;
-        const isPhoneValid = formData.phone == null || formData.phone.length === 0 || PHONEPATTERN.test(formData.phone);
-        const isExtensionValid = formData.phoneExtension == null || formData.phoneExtension.length === 0 || PHONEEXTENSIONPATTERN.test(formData.phoneExtension);
+        const isNameValid      = StringUtils.hasValue(formData.name);
+        const isPhoneValid     = StringUtils.isEmpty(formData.phone) || PHONEPATTERN.test(formData.phone);
+        const isExtensionValid = StringUtils.isEmpty(formData.extension) || PHONEEXTENSIONPATTERN.test(formData.extension);
+        const isEmailValid     = EMAILPATTERN.test(formData.email);
 
-        console.log(PHONEEXTENSIONPATTERN.test(formData.phoneExtension));
-
-        const isEmailValid = EMAILPATTERN.test(formData.email);
-
-        console.log(formData);
-        const isDataValid = isNameValid && isPhoneValid && isEmailValid;
+        const isDataValid = isNameValid && isPhoneValid && isExtensionValid && isEmailValid;
 
         this.setState({ formIsValid: isDataValid });
     }
 
     _setInputValue = (name, value) => {
+        // clear phone extension when phone field is empty
+        if (name.toString() === "phone" && StringUtils.isEmpty(value)) {
+            this.setState({
+                formData: {...this.state.formData,
+                    phone:     "",
+                    extension: ""
+                }});
+            return;
+        }
+
         this.setState({ formData: {...this.state.formData, [name]: value }});
     }
 
@@ -131,13 +138,12 @@ const EventRegistrationForm = class extends React.Component {
                                         <Input
                                             className          = "-extension"
                                             type               = "text"
-                                            name               = "phoneExtension"
+                                            name               = "extension"
                                             id                 = "registration_form_phone_extension_input"
                                             inputValueCallback = { this._setInputValue }
                                             isRequired         = { false }
                                             lightTheme         = { this.props.lightTheme }
-                                            placeholder        = "phone extension"
-                                            value              = { this.state.formData.phoneExtension }/>
+                                            value              = { this.state.formData.extension }/>
                                     </div>
                                 </div>
                                 <div className = "o-registration-form__buttons">

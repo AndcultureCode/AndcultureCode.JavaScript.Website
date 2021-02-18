@@ -25,6 +25,14 @@ const concatenate = (stringArray, otherSeparators, lastSeparator) => {
     return stringArray.slice(0, stringArray.length - 1).join(otherSeparators) + lastSeparator + stringArray[stringArray.length - 1];
 }
 
+// toString is called to check if the string is empty
+const isEmpty = (value) => ( value == null || value.toString().trim() === "" );
+
+// hasValue is called to check if a string is non empty
+const hasValue = (value) => (value != null && value.toString().trim() !== "")
+
 export const StringUtils = {
     concatenate,
+    isEmpty,
+    hasValue
 }

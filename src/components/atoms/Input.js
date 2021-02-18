@@ -1,8 +1,9 @@
 import {
-    EMAILPATTERN,
+    EMAILPATTERN, PHONEEXTENSIONPATTERN,
     PHONEPATTERN
-}            from "../../constants/data-validation-patterns";
-import React from 'react';
+}                      from "../../constants/data-validation-patterns";
+import React           from 'react';
+import { StringUtils } from '../../utils/stringUtils';
 
 const Input = class extends React.Component {
 
@@ -20,6 +21,18 @@ const Input = class extends React.Component {
         this._updateInputValue = this._updateInputValue.bind(this);
         this._activateField    = this._activateField.bind(this);
         this._disableField     = this._disableField.bind(this);
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.state.fieldActive === true &&
+            StringUtils.hasValue(prevProps.value) &&
+            StringUtils.isEmpty(this.props.value)){
+            this.setState({
+                fieldActive:      false,
+                placeholderValue: this.props.placeholder ?? this.props.name,
+                isInvalidInput:   false,
+            })
+        }
     }
 
     _activateField() {
@@ -55,6 +68,14 @@ const Input = class extends React.Component {
             }
             if (this.props.name === "phone") {
                 if (!PHONEPATTERN.test(e.target.value)) {
+                    this.setState({
+                        isInvalidInput: true,
+                    })
+                    return;
+                }
+            }
+            if (this.props.name === "extension") {
+                if (!PHONEEXTENSIONPATTERN.test(e.target.value)) {
                     this.setState({
                         isInvalidInput: true,
                     })
