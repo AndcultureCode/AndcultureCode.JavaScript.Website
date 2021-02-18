@@ -1,5 +1,18 @@
 .m-case-study-page-content {
 
+    &__wrapper {
+        @include breakpoints("tablet", "lg-desktop") {
+            .o-slider {
+                @include push-col(1);
+            }
+        }
+        @include breakpoints("tablet", 1280px) {
+            .o-slider__container {
+                @include margin-left(20px);
+            }
+        }
+    }
+
     img {
         box-shadow: none !important;
     }
@@ -858,8 +871,8 @@
             }
 
             @include breakpoints("tablet") {
-                @include span-col(10);
-                @include push-col(2);
+                @include span-col(12);
+                @include push-col(0);
                 @include font-size(60px);
                 @include line-height(65px);
                 margin-bottom: 48px;
@@ -1007,7 +1020,6 @@
                 }
 
                 &.-left {
-
                     @include breakpoints("tablet") {
                         @include push-col(0);
                         @include span-col(7);

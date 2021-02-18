@@ -28,7 +28,7 @@ const PACareerLink = class extends React.Component {
         }
 
         return (
-            <div>
+            <div class="m-case-study-page-content__wrapper">
                 <CaseStudyFullBleedImage
                     altText="Job Search"
                     image={imgJobSearch} />
