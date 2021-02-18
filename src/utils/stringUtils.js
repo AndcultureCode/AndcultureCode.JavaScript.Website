@@ -29,7 +29,7 @@ const concatenate = (stringArray, otherSeparators, lastSeparator) => {
 const isEmpty = (value) => ( value == null || value.toString().trim() === "" );
 
 // hasValue is called to check if a string is non empty
-const hasValue = (value) => (value != null && value.toString().trim() !== "")
+const hasValue = (value) => (!isEmpty(value));
 
 export const StringUtils = {
     concatenate,
