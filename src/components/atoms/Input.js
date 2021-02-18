@@ -25,11 +25,10 @@ const Input = class extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (this.state.fieldActive === true &&
+        if (this.state.fieldActive === false &&
             StringUtils.hasValue(prevProps.value) &&
             StringUtils.isEmpty(this.props.value)){
             this.setState({
-                fieldActive:      false,
                 placeholderValue: this.props.placeholder ?? this.props.name,
                 isInvalidInput:   false,
             })
@@ -59,6 +58,9 @@ const Input = class extends React.Component {
                 })
             }
         } else {
+            // remove focus on blur
+            this.setState({fieldActive: false});
+
             if (this.props.type === "email") {
                 if (!EMAILPATTERN.test(e.target.value)) {
                     this.setState({
@@ -106,7 +108,7 @@ const Input = class extends React.Component {
     render() {
         let cssClassName = 'a-label';
 
-        if (this.state.fieldActive) {
+        if (this.state.fieldActive || StringUtils.hasValue(this.props.value)) {
             cssClassName += ' -field-active';
         }
 
