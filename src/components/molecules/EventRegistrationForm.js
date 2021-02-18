@@ -1,8 +1,8 @@
 import React from "react";
 import {
-    EMAILPATTERN,
+    EMAILPATTERN, PHONEEXTENSIONPATTERN,
     PHONEPATTERN
-}            from "../../constants/data-validation-patterns";
+} from "../../constants/data-validation-patterns";
 import Input from "../atoms/Input";
 
 const EventRegistrationForm = class extends React.Component {
@@ -31,6 +31,10 @@ const EventRegistrationForm = class extends React.Component {
 
         const isNameValid  = formData.name != null && formData.name.length > 0;
         const isPhoneValid = formData.phone == null || formData.phone.length === 0 || PHONEPATTERN.test(formData.phone);
+        const isExtensionValid = formData.phoneExtension == null || formData.phoneExtension.length === 0 || PHONEEXTENSIONPATTERN.test(formData.phoneExtension);
+
+        console.log(PHONEEXTENSIONPATTERN.test(formData.phoneExtension));
+
         const isEmailValid = EMAILPATTERN.test(formData.email);
 
         console.log(formData);
@@ -115,6 +119,7 @@ const EventRegistrationForm = class extends React.Component {
                                             lightTheme         = { this.props.lightTheme }
                                             value              = { this.state.formData.email }/>
                                         <Input
+                                            className          = "-phone"
                                             type               = "text"
                                             name               = "phone"
                                             id                 = "registration_form_phone_number_input"
@@ -122,7 +127,17 @@ const EventRegistrationForm = class extends React.Component {
                                             isRequired         = { false }
                                             lightTheme         = { this.props.lightTheme }
                                             placeholder        = "phone number"
-                                            value              = { this.state.formData.phoneNumber }/>
+                                            value              = { this.state.formData.phone }/>
+                                        <Input
+                                            className          = "-extension"
+                                            type               = "text"
+                                            name               = "phoneExtension"
+                                            id                 = "registration_form_phone_extension_input"
+                                            inputValueCallback = { this._setInputValue }
+                                            isRequired         = { false }
+                                            lightTheme         = { this.props.lightTheme }
+                                            placeholder        = "phone extension"
+                                            value              = { this.state.formData.phoneExtension }/>
                                     </div>
                                 </div>
                                 <div className = "o-registration-form__buttons">
