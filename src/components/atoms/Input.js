@@ -1,5 +1,6 @@
 import {
-    EMAILPATTERN, PHONEEXTENSIONPATTERN,
+    EMAILPATTERN,
+    PHONEEXTENSIONPATTERN,
     PHONEPATTERN
 }                      from "../../constants/data-validation-patterns";
 import React           from 'react';
