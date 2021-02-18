@@ -3,17 +3,15 @@ templateKey: careers-detail-page
 createPage: true
 title: Copywriter
 function: Strategy
-description: >-
-  Copywriters turn the dial with words. Words in the form of TV and radio
-  scripts, OOH executions, website pages, social posts, and everything in
+description: Copywriters turn the dial with words. Words in the form of TV and
+  radio scripts, OOH executions, website pages, social posts, and everything in
   between.
-applicationUrl: >-
-  https://recruiting.paylocity.com/recruiting/jobs/Details/335272/andculture-Inc/Copywriter
-active: true
+applicationUrl: https://recruiting.paylocity.com/recruiting/jobs/Details/335272/andculture-Inc/Copywriter
+active: false
 seo:
-  metaDescription: 'Work at andculture, a design company based in Harrisburg, PA'
+  metaDescription: Work at andculture, a design company based in Harrisburg, PA
   metaTitle: copywriter | careers | andculture
-  socialShareCopy: 'Work at andculture, a design company based in Harrisburg, PA'
+  socialShareCopy: Work at andculture, a design company based in Harrisburg, PA
 ---
 At andculture, you might even find yourself working on naming options, brand tone-of-voice approaches, digital messaging strategy, or contest mechanics in collaboration with strategists. The copywriter will be a key force for great communication, with special emphasis on breathing life into consumer campaigns—and driving engagement.
 

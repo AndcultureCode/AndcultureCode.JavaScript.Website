@@ -1,10 +1,14 @@
 import React           from "react";
 import {
-    EMAILPATTERN, PHONEEXTENSIONPATTERN,
+    EMAILPATTERN,
+    PHONEEXTENSIONPATTERN,
     PHONEPATTERN
 }                      from "../../constants/data-validation-patterns";
 import Input           from "../atoms/Input";
 import { StringUtils } from '../../utils/stringUtils';
+
+// hubspotFormUrl is built using https://api.hsforms.com/submissions/v3/integration/submit/portalId/formId
+const hubspotFormUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${process.env.GATSBY_HUBSPOT_PORTAL_KEY}/${process.env.GATSBY_HUBSPOT_EVENT_REGISTRATION_FORM_KEY}`;
 
 const EventRegistrationForm = class extends React.Component {
     constructor(props) {
@@ -23,8 +27,45 @@ const EventRegistrationForm = class extends React.Component {
         if (!this.state.formIsValid) {
             return;
         }
-
+        this._submitRegistrationForm(this.state.formData, window.location.href, document.title);
         this.setState({ submitted: true });
+    }
+
+    _submitRegistrationForm = (formData, pageUri, pageName) => {
+        const pageContext = { pageUri: pageUri, pageName: pageName };
+
+        const requestBody = {
+            skipValidation: true,
+            fields: [
+                {
+                    name: "name",
+                    value: formData.name,
+                },
+                {
+                    name: "email",
+                    value: formData.email
+                },
+                {
+                    name: "jobtitle",
+                    value: formData.title
+                },
+                {
+                    name: "phone",
+                    value: formData.phone
+                },
+                {
+                    name: "company",
+                    value: formData.companyName
+                }
+            ],
+            context: pageContext,
+        };
+
+        return fetch(hubspotFormUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(requestBody)
+        });
     }
 
     _validateFormData = () => {
