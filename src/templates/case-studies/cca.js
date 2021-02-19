@@ -100,7 +100,7 @@ const CCA = class extends React.Component {
                     </div>
                 </div>
                 <div className = "m-case-study-page-content__mosaic">
-                    <div className = "-with-border">
+                    <div className = "-with-border -cca-student">
                         <img src = { studentImg } alt = "Student" />
                     </div>
                 </div>
