@@ -252,6 +252,20 @@
                 max-width: 80%;
                 margin-left: 10%;
             }
+
+            &.-cca-student {
+                img {
+                    @include breakpoints("desktop") {
+                        margin-left: 20%;
+                    }
+                }
+
+                &:after {
+                    @include breakpoints("desktop") {
+                        @include rem-fallback(bottom, 100px);
+                    }
+                }
+            }
         }
     }
 
@@ -607,6 +621,10 @@
 
                 @include breakpoints("tablet") {
                     @include padding-bottom(40px);
+                }
+
+                @include breakpoints("desktop") {
+                    @include padding-top(100px);
                 }
             }
         }
