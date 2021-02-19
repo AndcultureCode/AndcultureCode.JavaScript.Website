@@ -60,6 +60,14 @@ address {
     }
 }
 
+.-mobile-and-sm-desktop-only {
+    display: block;
+
+    @include breakpoints("desktop") {
+        display: none !important;
+    }
+}
+
 .-tablet-and-desktop-only {
     display: none;
 

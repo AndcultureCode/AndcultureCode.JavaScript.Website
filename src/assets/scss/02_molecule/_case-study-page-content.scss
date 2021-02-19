@@ -961,7 +961,7 @@
                 font-weight: 600;
                 letter-spacing: 0.2em;
 
-                @include breakpoints("tablet") {
+                @include breakpoints("desktop") {
                     @include font-size("small");
                     @include line-height(30px);
                     @include span-col(2);
