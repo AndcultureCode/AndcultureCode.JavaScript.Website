@@ -36,7 +36,7 @@ const Input = class extends React.Component {
             return;
         }
 
-        // Revert to original state of it is
+        // Revert to original state if it is
         this.setState({
             placeholderValue: this.props.placeholder ?? this.props.name,
             isInvalidInput:   false,

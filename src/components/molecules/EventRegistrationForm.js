@@ -132,59 +132,57 @@ const EventRegistrationForm = class extends React.Component {
                                 <div className = { `${formClass}__input-container` }>
                                     <div className= "-left">
                                         <Input
-                                            type               = "text"
-                                            name               = "name"
                                             id                 = "registration_form_name_input"
                                             inputValueCallback = { this._setInputValue }
                                             isRequired         = { true }
                                             lightTheme         = { this.props.lightTheme }
+                                            name               = "name"
+                                            type               = "text"
                                             value              = { this.state.formData.name }/>
                                         <Input
-                                            type               = "text"
-                                            name               = "title"
                                             id                 = "registration_form_title_input"
                                             inputValueCallback = { this._setInputValue }
                                             isRequired         = { false }
                                             lightTheme         = { this.props.lightTheme }
+                                            name               = "title"
+                                            type               = "text"
                                             value              = { this.state.formData.title }/>
                                         <Input
-                                            type               = "text"
-                                            name               = "companyName"
                                             id                 = "registration_form_company_name_input"
                                             inputValueCallback = { this._setInputValue }
                                             isRequired         = { false }
                                             lightTheme         = { this.props.lightTheme }
+                                            name               = "companyName"
                                             placeholder        = "company name"
+                                            type               = "text"
                                             value              = { this.state.formData.companyName }/>
                                     </div>
                                     <div className = "-right">
                                         <Input
-                                            type               = "email"
-                                            name               = "email"
                                             id                 = "registration_form_email_input"
                                             inputValueCallback = { this._setInputValue }
                                             isRequired         = { true }
                                             lightTheme         = { this.props.lightTheme }
+                                            name               = "email"
+                                            type               = "email"
                                             value              = { this.state.formData.email }/>
                                         <Input
-                                            className          = "-phone"
-                                            type               = "text"
-                                            name               = "phone"
                                             id                 = "registration_form_phone_number_input"
                                             inputValueCallback = { this._setInputValue }
                                             isRequired         = { false }
                                             lightTheme         = { this.props.lightTheme }
+                                            name               = "phone"
                                             placeholder        = "phone number"
+                                            type               = "text"
                                             value              = { this.state.formData.phone }/>
                                         <Input
-                                            className          = "-extension"
-                                            isDisabled         = { StringUtils.isEmpty(this.state.formData.phone) }
-                                            type               = "text"
-                                            name               = "extension"
                                             id                 = "registration_form_phone_extension_input"
                                             inputValueCallback = { this._setInputValue }
+                                            isDisabled         = { StringUtils.isEmpty(this.state.formData.phone) }
                                             isRequired         = { false }
                                             lightTheme         = { this.props.lightTheme }
+                                            name               = "extension"
+                                            type               = "text"
                                             value              = { this.state.formData.extension }/>
                                     </div>
                                 </div>
