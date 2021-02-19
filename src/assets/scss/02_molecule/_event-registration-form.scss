@@ -82,14 +82,35 @@
                 input {
                     &.a-input {
                         background-color: #f5f5f5;
+
+                        &.-field-disabled {
+                            &::placeholder {
+                                color: get-color-neutral("light-gray");
+                            }
+
+                            &::-webkit-input-placeholder {
+                                color: get-color-neutral("light-gray");
+                            }
+
+                            &::-moz-placeholder {
+                                color: get-color-neutral("light-gray");
+                            }
+
+                            &:-ms-input-placeholder {
+                                color: get-color-neutral("light-gray");
+                            }
+
+                            &:-moz-placeholder {
+                                color: get-color-neutral("light-gray");
+                            }
+                        }
                     }
                 }
             }
 
             .-left {
-                @include padding-right(25px);
-
                 @include breakpoints("sm-tablet") {
+                    @include padding-right(25px);
                     width: 50%;
                 }
             }
