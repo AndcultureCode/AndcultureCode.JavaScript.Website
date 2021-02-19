@@ -25,14 +25,22 @@ const Input = class extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (this.state.fieldActive === false &&
-            StringUtils.hasValue(prevProps.value) &&
-            StringUtils.isEmpty(this.props.value)){
-            this.setState({
-                placeholderValue: this.props.placeholder ?? this.props.name,
-                isInvalidInput:   false,
-            })
+        // select a non active field that was previously filled and then deleted
+        // (i.e. extension is deleted automatically when phone field is deleted)
+        const isNonActiveFieldDeleted = this.state.fieldActive === false &&
+                                StringUtils.hasValue(prevProps.value) &&
+                                StringUtils.isEmpty(this.props.value);
+
+        // return if it is not the case
+        if (!isNonActiveFieldDeleted){
+            return;
         }
+
+        // Revert to original state of it is
+        this.setState({
+            placeholderValue: this.props.placeholder ?? this.props.name,
+            isInvalidInput:   false,
+        })
     }
 
     _activateField() {
@@ -59,7 +67,7 @@ const Input = class extends React.Component {
             }
         } else {
             // remove focus on blur
-            this.setState({fieldActive: false});
+            this.setState({ fieldActive: false });
 
             if (this.props.type === "email") {
                 if (!EMAILPATTERN.test(e.target.value)) {
@@ -108,12 +116,17 @@ const Input = class extends React.Component {
     render() {
         let cssClassName = 'a-label';
 
-        if (this.state.fieldActive || StringUtils.hasValue(this.props.value)) {
+        if (this.state.fieldActive) {
             cssClassName += ' -field-active';
         }
 
+        if (StringUtils.hasValue(this.props.value)) {
+            cssClassName += ' -field-filled';
+        }
+
         let inputClassName = 'a-input';
-        inputClassName += this.props.lightTheme ? ' -light ' : '';
+        inputClassName += this.props.lightTheme ? ' -light' : '';
+        inputClassName += this.props.isDisabled ? ' -field-disabled' : '';
         let inputProps = {};
 
         if (this.props.isRequired) {
@@ -132,6 +145,7 @@ const Input = class extends React.Component {
                     aria-label  = { this.props.description }
                     className   = { inputClassName }
                     id          = { this.props.id }
+                    disabled    = { this.props.isDisabled ?? false}
                     name        = { this.props.name }
                     onFocus     = { this._activateField }
                     onBlur      = { this._disableField }

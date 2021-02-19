@@ -92,12 +92,6 @@ const EventRegistrationForm = class extends React.Component {
             return;
         }
 
-        // prevent user from entering extension when phone field is empty
-        if (name.toString() === "extension" &&
-            StringUtils.isEmpty(this.state.formData.phone)) {
-            return;
-        }
-
         this.setState({ formData: {...this.state.formData, [name]: value }});
     }
 
@@ -184,6 +178,7 @@ const EventRegistrationForm = class extends React.Component {
                                             value              = { this.state.formData.phone }/>
                                         <Input
                                             className          = "-extension"
+                                            isDisabled         = { StringUtils.isEmpty(this.state.formData.phone) }
                                             type               = "text"
                                             name               = "extension"
                                             id                 = "registration_form_phone_extension_input"
