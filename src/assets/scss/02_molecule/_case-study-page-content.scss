@@ -254,7 +254,6 @@
             }
 
             &.-cca-student {
-
                 img {
                     @include breakpoints("desktop") {
                         margin-left: 20%;
@@ -620,12 +619,12 @@
             &.-cca-synthesis {
                 padding-bottom: 0;
 
-                @include breakpoints("desktop") {
-                    @include padding-top(100px);
-                }
-
                 @include breakpoints("tablet") {
                     @include padding-bottom(40px);
+                }
+
+                @include breakpoints("desktop") {
+                    @include padding-top(100px);
                 }
             }
         }
