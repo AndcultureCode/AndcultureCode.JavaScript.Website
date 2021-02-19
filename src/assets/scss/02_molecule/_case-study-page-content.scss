@@ -62,6 +62,27 @@
         &.-hackerone {
             padding: 0;
 
+            &.-collage-container {
+                @include padding(0, 32px);
+
+                @include breakpoints("laptop", "desktop") {
+                    margin-top: 0;
+                }
+    
+                @include breakpoints("desktop") {
+                    padding: 0;
+                }
+
+                .-collage {
+                    @include breakpoints("desktop") {
+                        @include margin-top(-158px);
+                        @include padding-bottom(125px);
+                        float: right;
+                        display: block;
+                    }
+                }
+            }
+
             .-dots {
                 position: absolute;
                 right: 0;

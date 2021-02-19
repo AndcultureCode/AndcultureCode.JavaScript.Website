@@ -5,14 +5,13 @@ import CaseStudyBodyIntro      from 'components/molecules/CaseStudyBodyIntro';
 import CaseStudyContentSection from 'components/molecules/CaseStudyContentSection';
 import billboardImg            from 'static/img/case-studies/hackerone/billboard.jpg';
 import cardsImg                from 'static/img/case-studies/hackerone/social_cards.jpg';
+import collageImg              from 'static/img/case-studies/hackerone/h1_collage.png';
+import dotTexture              from 'static/img/case-studies/hackerone/dot_grid_copy.png';
+import hackerImg               from 'static/img/case-studies/hackerone/rainbow_shirt.jpg';
+import nextImg                 from 'static/img/case-studies/cca/studying.jpg';
+import skateboardImg           from 'static/img/case-studies/hackerone/skateboard.png';
 import stickerOne              from 'static/img/case-studies/hackerone/H1-213_sticker.png';
 import stickerTwo              from 'static/img/case-studies/hackerone/h1_was_here_sticker.png';
-import hackerImg               from 'static/img/case-studies/hackerone/rainbow_shirt.jpg';
-import skateboardImg           from 'static/img/case-studies/hackerone/skateboard.png';
-import dotTexture              from 'static/img/case-studies/hackerone/dot_grid_copy.png';
-import stickerImg              from 'static/img/case-studies/hackerone/604_logo.png';
-import posterImg               from 'static/img/case-studies/hackerone/h1604_poster.jpg';
-import bannerImg               from 'static/img/case-studies/hackerone/h1604_banner.jpg';
 import sliderImage1            from 'static/img/case-studies/hackerone/Security1.jpg';
 import sliderImage2            from 'static/img/case-studies/hackerone/Security2.jpg';
 import sliderImage3            from 'static/img/case-studies/hackerone/Security3.jpg';
@@ -26,7 +25,6 @@ import sliderImage10           from 'static/img/case-studies/hackerone/Security1
 import sliderImage11           from 'static/img/case-studies/hackerone/Security16.jpg';
 import sliderImage12           from 'static/img/case-studies/hackerone/Security21.jpg';
 import sliderImage13           from 'static/img/case-studies/hackerone/Security25.jpg';
-import nextImg                 from 'static/img/case-studies/cca/studying.jpg';
 import { RouteUtils }          from '../../utils/routeUtils';
 
 const Hackerone = class extends React.Component {
@@ -77,13 +75,8 @@ const Hackerone = class extends React.Component {
                     title  = "how did we tackle it?">
                         <p>Each event is unique. We take inspiration from the type of challenge, the geography and, well, bugs. Because really it’s all about finding critical vulnerabilities, which in hacker lingo are bugs. Capturing the intense energy, collaborative spirit and competitive nature of the events is part of the equation. It’s also no small task to try to stay as relevant and cool as hackers are.</p>
                 </CaseStudyContentSection>
-                <div className = "m-case-study-page-content__mosaic -hackerone">
-                    <img src = { posterImg } className = "-poster -mobile-only" alt = "Poster" />
-                    <div className = "o-rhythm__container">
-                        <img src = { posterImg } className = "-poster -desktop-only" alt = "Poster" />
-                    </div>
-                    <img src = { stickerImg } className = "-sticker" alt = "Sticker" />
-                    <img src = { bannerImg } className = "-banner" alt = "Banner" />
+                <div className = "m-case-study-page-content__mosaic -hackerone -collage-container">
+                    <img src = { collageImg } className = "-collage" alt = "Poster" />
                     <img src = { dotTexture } className = "-dots -left" alt = "Dots" />
                 </div>
                 <CaseStudyContentSection
