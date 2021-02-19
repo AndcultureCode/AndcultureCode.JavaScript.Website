@@ -76,7 +76,7 @@ const Hackerone = class extends React.Component {
                         <p>Each event is unique. We take inspiration from the type of challenge, the geography and, well, bugs. Because really it’s all about finding critical vulnerabilities, which in hacker lingo are bugs. Capturing the intense energy, collaborative spirit and competitive nature of the events is part of the equation. It’s also no small task to try to stay as relevant and cool as hackers are.</p>
                 </CaseStudyContentSection>
                 <div className = "m-case-study-page-content__mosaic -hackerone -collage-container">
-                    <img src = { collageImg } className = "-collage" alt = "Poster" />
+                    <img src = { collageImg } className = "-collage" alt = "Collage" />
                     <img src = { dotTexture } className = "-dots -left" alt = "Dots" />
                 </div>
                 <CaseStudyContentSection
