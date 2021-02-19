@@ -60,7 +60,7 @@ const Hackerone = class extends React.Component {
         }
 
         return (
-            <div>
+            <div class="m-case-study-page-content__wrapper">
                 <div className="m-case-study-page-content__image">
                     <img src = { billboardImg } alt = "Billboard" />
                 </div>

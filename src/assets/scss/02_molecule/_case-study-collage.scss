@@ -19,7 +19,7 @@
         padding-left: 0;
 
         @include breakpoints("laptop") {
-            padding-left: 15%;
+            padding-left: 8.3333%;
         }
     }
 
@@ -30,6 +30,7 @@
         color: get-color-primary("fresh-dark");
 
         @include breakpoints("laptop") {
+            max-width: 45%;
             padding-left: 25%;
             width: 455px;
         }
