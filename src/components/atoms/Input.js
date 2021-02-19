@@ -1,8 +1,10 @@
 import {
     EMAILPATTERN,
+    PHONEEXTENSIONPATTERN,
     PHONEPATTERN
-}            from "../../constants/data-validation-patterns";
-import React from 'react';
+}                      from "../../constants/data-validation-patterns";
+import React           from 'react';
+import { StringUtils } from '../../utils/stringUtils';
 
 const Input = class extends React.Component {
 
@@ -20,6 +22,25 @@ const Input = class extends React.Component {
         this._updateInputValue = this._updateInputValue.bind(this);
         this._activateField    = this._activateField.bind(this);
         this._disableField     = this._disableField.bind(this);
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        // select a non active field that was previously filled and then deleted
+        // (i.e. extension is deleted automatically when phone field is deleted)
+        const isNonActiveFieldDeleted = this.state.fieldActive === false &&
+                                StringUtils.hasValue(prevProps.value) &&
+                                StringUtils.isEmpty(this.props.value);
+
+        // return if it is not the case
+        if (!isNonActiveFieldDeleted){
+            return;
+        }
+
+        // Revert to original state if it is
+        this.setState({
+            placeholderValue: this.props.placeholder ?? this.props.name,
+            isInvalidInput:   false,
+        })
     }
 
     _activateField() {
@@ -45,6 +66,9 @@ const Input = class extends React.Component {
                 })
             }
         } else {
+            // remove focus on blur
+            this.setState({ fieldActive: false });
+
             if (this.props.type === "email") {
                 if (!EMAILPATTERN.test(e.target.value)) {
                     this.setState({
@@ -55,6 +79,14 @@ const Input = class extends React.Component {
             }
             if (this.props.name === "phone") {
                 if (!PHONEPATTERN.test(e.target.value)) {
+                    this.setState({
+                        isInvalidInput: true,
+                    })
+                    return;
+                }
+            }
+            if (this.props.name === "extension") {
+                if (!PHONEEXTENSIONPATTERN.test(e.target.value)) {
                     this.setState({
                         isInvalidInput: true,
                     })
@@ -88,8 +120,13 @@ const Input = class extends React.Component {
             cssClassName += ' -field-active';
         }
 
+        if (StringUtils.hasValue(this.props.value)) {
+            cssClassName += ' -field-filled';
+        }
+
         let inputClassName = 'a-input';
-        inputClassName += this.props.lightTheme ? ' -light ' : '';
+        inputClassName += this.props.lightTheme ? ' -light' : '';
+        inputClassName += this.props.isDisabled ? ' -field-disabled' : '';
         let inputProps = {};
 
         if (this.props.isRequired) {
@@ -108,6 +145,7 @@ const Input = class extends React.Component {
                     aria-label  = { this.props.description }
                     className   = { inputClassName }
                     id          = { this.props.id }
+                    disabled    = { this.props.isDisabled ?? false}
                     name        = { this.props.name }
                     onFocus     = { this._activateField }
                     onBlur      = { this._disableField }
