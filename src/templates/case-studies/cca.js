@@ -46,7 +46,7 @@ const CCA = class extends React.Component {
         }
 
         return (
-            <div>
+            <div class="m-case-study-page-content__wrapper">
                 <div className="m-case-study-page-content__image">
                     <img src = { studyImg } alt = "Studying" />
                 </div>
@@ -63,7 +63,7 @@ const CCA = class extends React.Component {
                 </div>
                 <div className = "o-rhythm__container">
                     <div className = "m-case-study-page-content__copy-section">
-                        <div className = "content__header -mobile-only">Research</div>
+                        <div className = "content__header -mobile-and-sm-desktop-only">Research</div>
                         <header className = "-push-three">we don’t work solo.</header>
                         <div className = "o-rhythm__row">
                             <div className = "content__header -desktop-only">Research</div>
@@ -87,7 +87,7 @@ const CCA = class extends React.Component {
                 <CustomSlider images = { sliderImages } />
                 <div className = "o-rhythm__container">
                     <div className = "m-case-study-page-content__copy-section -image-right -cca-synthesis">
-                        <div className = "content__header -mobile-only">Synthesis</div>
+                        <div className = "content__header -mobile-and-sm-desktop-only">Synthesis</div>
                         <header className = "-push-three">we pulled all of that sweet research together and made a plan.</header>
                         <div className = "o-rhythm__row">
                             <div className = "content__header -desktop-only">Synthesis</div>
@@ -106,7 +106,7 @@ const CCA = class extends React.Component {
                 </div>
                 <div className = "o-rhythm__container">
                     <div className = "m-case-study-page-content__copy-section">
-                        <div className = "content__header -mobile-only">Design &amp; Development</div>
+                        <div className = "content__header -mobile-and-sm-desktop-only">Design &amp; Development</div>
                         <header className = "-push-three">our client partner loves the design phase because they can start seeing the whole picture.</header>
                         <div className = "o-rhythm__row">
                             <div className = "content__header -desktop-only">Design &amp; Development</div>
@@ -141,7 +141,7 @@ const CCA = class extends React.Component {
                         <img src = { dots } className = "-background-texture -dots" alt = "Dots" aria-hidden="true" />
                         <img src = { block } className = "-background-texture -block" alt = "Block" aria-hidden="true" />
                         <div className = "o-rhythm__container">
-                            <div className = "content__header -mobile-only">Deployment &amp; Testing</div>
+                            <div className = "content__header -mobile-and-sm-desktop-only">Deployment &amp; Testing</div>
                             <header className = "-push-three">launch...and it doesn’t end there.</header>
                             <div className = "o-rhythm__row">
                                 <div className = "content__header -desktop-only">Deployment &amp; Testing</div>
