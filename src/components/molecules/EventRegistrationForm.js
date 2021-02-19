@@ -56,6 +56,10 @@ const EventRegistrationForm = class extends React.Component {
                 {
                     name: "company",
                     value: formData.companyName
+                },
+                {
+                    name: "extension",
+                    value: formData.extension
                 }
             ],
             context: pageContext,
