@@ -1,6 +1,12 @@
 .p-landing-page {
-    &__image {
-        @include margin-top(75px);
+    &__bgImage {
+        @include margin-top(80px);
+        background-color: #f5f5f5;
+
+        @include breakpoints("sm-tablet") {
+            @include padding-top(30px);
+            @include padding-bottom(30px);
+        }
 
         @include breakpoints("tablet") {
             margin-top: 0;
@@ -9,7 +15,7 @@
 
     &__header {
         @include margin-top(60px);
-        @include margin-bottom(55px);
+        @include margin-bottom(35px);
 
         @include breakpoints("laptop") {
             @include margin-bottom(15px);
@@ -22,162 +28,10 @@
         @include breakpoints("lg-desktop") {
             @include margin-bottom(15px);
         }
-    }
 
-    &__intro {
-        @include clearfix();
-        margin-left: auto;
-        margin-right: auto;
-
-        .o-hero__left {
-            @media (max-width: 940px) {
-                @include span-col(12);
-                @include padding-right(25px);
-                margin-left: auto;
-                text-align: center;
-
-                img {
-                    @include rem-fallback(max-width, 250px);
-                    @include rem-fallback(height, 250px);
-
-                    @include breakpoints("tablet", "laptop") {
-                        @include rem-fallback(max-width, 350px);
-                        @include rem-fallback(height, 350px);
-                    }
-                }
-            }
-
-            @include breakpoints("laptop") {
-                position: relative;
-
-                img {
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
-                }
-            }
-
-            @include breakpoints("laptop", "desktop") {
-                @include span-col(3);
-                margin-left: 10%;
-            }
-
-            @include breakpoints("sm-desktop") {
-                img {
-                    max-width: 80%;
-                }
-            }
-
-            @include breakpoints("desktop") {
-                @include span-col(2);
-                margin-left: 13%;
-
-                img {
-                    max-width: 100%;
-                }
-            }
-
-            @include breakpoints("lg-desktop"){
-                @include rem-fallback(max-width, 200px);
-                img {
-                    max-width: 80%;
-                }
-            }
-        }
-
-        .o-hero__right {
-            @media (max-width: 768px) {
-                @include span-col(10);
-                @include margin-left(45px);
-                @include margin-top(35px);
-            }
-
-            @include breakpoints("tablet") {
-                @include margin-top(35px);
-                @include span-col(8);
-                @include margin-left(125px);
-            }
-
-            @include breakpoints("laptop", "desktop") {
-                @include span-col(6);
-                @include margin-left(35px);
-            }
-
-            @include breakpoints("desktop") {
-                @include span-col(6);
-                @include margin-left(35px);
-            }
-
-            @include breakpoints("lg-desktop") {
-                @include margin-left(10px);
-            }
-
-            @include breakpoints("xl-desktop") {
-                @include rem-fallback(max-width, 880px);
-            }
-
-            p {
-                @include font-size("base");
-                @include line-height(30px);
-                font-weight: 500;
-                margin-block-start: 0;
-
-                @include breakpoints("sm-tablet") {
-                    @include font-size("small");
-                    @include line-height(40px);
-                }
-            }
-        }
-    }
-
-    &__wrapper,
-    &__header {
-        @include breakpoints("tablet", "laptop") {
-            .o-rhythm__row {
-                @include margin-left(80px);
-            }
-        }
-
-        @include breakpoints("laptop") {
-            @include rem-fallback(max-width, 768px);
-        }
-
-        @include breakpoints("sm-desktop") {
-            @include rem-fallback(max-width, 800px);
-        }
-
-        @include breakpoints("desktop") {
-            @include rem-fallback(max-width, 900px);
-        }
-
-        @include breakpoints("lg-desktop") {
-            @include rem-fallback(max-width, 1000px);
-        }
-
-        @include breakpoints("xl-desktop") {
-            @include rem-fallback(max-width, 1200px);
-        }
-    }
-
-    &__content,
-    &__form {
-        @include span-col(12);
-        @include margin-left(14px);
-
-        @include breakpoints("tablet") {
-            @include span-col(10);
-        }
-
-        @include breakpoints("laptop", "lg-desktop") {
-            @include span-col(12);
-        }
-    }
-
-    &__content {
         h1 {
-            @include font-size(32px);
-            @include line-height(45px);
+            @include font-size(34px);
+            @include line-height(44px);
             color: get-color-primary("fresh-dark");
 
             @include breakpoints("phone") {
@@ -191,13 +45,135 @@
             }
 
             @include breakpoints("lg-desktop") {
-                @include font-size(50px);
+                @include font-size(53px);
+                @include line-height(66px);
+            }
+        }
+    }
+
+    &__intro {
+        @include clearfix();
+
+        .o-hero__left {
+            @include span-col(12);
+            text-align: center;
+
+            @media (max-width: 768px) {
+                img {
+                    @include rem-fallback(max-width, 225px);
+                    @include rem-fallback(height, 225px);
+                }
+            }
+
+            @include breakpoints("tablet", "laptop") {
+                img {
+                    @include rem-fallback(max-width, 250px);
+                    @include rem-fallback(height, 250px);
+                }
+            }
+
+            @include breakpoints("laptop") {
+                position: relative;
+                @include span-col(3);
+
+                img {
+                    @include rem-fallback(max-width, 165px);
+                    @include rem-fallback(height, 165px);
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            @include breakpoints("lg-desktop") {
+                img {
+                    @include rem-fallback(max-width, 169px);
+                    @include rem-fallback(height, 169px);
+                }
+            }
+
+            @include breakpoints("xl-desktop") {
+                @include rem-fallback(max-width, 220px);
             }
         }
 
+        .o-hero__right {
+            @media (max-width: 600px) {
+                @include span-col(12);
+                @include margin-top(35px);
+            }
+
+            @include breakpoints("sm-tablet"){
+                @include margin-top(35px);
+                @include span-col(10);
+                margin-left: 8.3333%;
+            }
+
+            @include breakpoints("laptop") {
+                @include span-col(8);
+                @include margin-left(30px);
+            }
+
+            @include breakpoints("lg-desktop") {
+                @include margin-left(10px);
+            }
+
+            @include breakpoints("xl-desktop") {
+                @include span-col(9);
+            }
+
+            p {
+                @include font-size("smaller");
+                @include line-height(30px);
+                font-weight: 500;
+                margin-block-start: 0;
+
+                @include breakpoints("sm-tablet") {
+                    @include font-size(21px);
+                    @include line-height(35px);
+                }
+            }
+        }
+    }
+
+    &__body {
+        @include breakpoints("laptop") {
+            @include rem-fallback(max-width, 768px);
+        }
+
+        @include breakpoints("sm-desktop") {
+            @include rem-fallback(max-width, 900px);
+        }
+
+        @include breakpoints("lg-desktop") {
+            @include rem-fallback(max-width, 1000px);
+        }
+
+        @include breakpoints("xl-desktop") {
+            @include rem-fallback(max-width, 1200px);
+        }
+    }
+
+    &__header,
+    &__content,
+    &__form {
+        @include span-col(12);
+
+        @include breakpoints("sm-tablet") {
+            @include span-col(10);
+            margin-left: 8.3333%;
+        }
+
+        @include breakpoints("lg-laptop", "lg-desktop") {
+            @include span-col(12);
+        }
+    }
+
+    &__content {
         h2 {
-            @include font-size("medium");
-            @include line-height(40px);
+            @include font-size(24px);
+            @include line-height(30px);
             @include margin-top(15px);
             @include margin-bottom(10px);
             color: get-color-primary("fresh-dark");
@@ -215,18 +191,23 @@
             }
 
             @include breakpoints("lg-desktop") {
-                @include font-size("largish");
+                @include line-height(50px);
             }
         }
 
         p {
-            @include font-size("base");
-            @include line-height(30px);
+            @include font-size(16px);
+            @include line-height(26px);
             margin-block-start: 0;
 
             @include breakpoints("sm-tablet") {
-                @include font-size("medium-small");
-                @include line-height(40px);
+                @include font-size("small");
+                @include line-height(34px);
+            }
+
+            @include breakpoints("sm-desktop") {
+                @include font-size(24px);
+                @include line-height(39px);
             }
 
             + p,
@@ -265,8 +246,7 @@
         }
     }
 
-    section.-article-form {
-        @include margin-top(30px);
-        width: 100%;
+    &__form {
+        @include margin-top(45px);
     }
 }
