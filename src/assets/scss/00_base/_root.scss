@@ -21,7 +21,7 @@ address {
 }
 
 .-push-one {
-@include span-col(12);
+    @include span-col(12);
 
     @include breakpoints("tablet") {
         @include span-col(8);
@@ -34,7 +34,7 @@ address {
     @include breakpoints("tablet") {
         @include push-col(3);
     }
-  }
+}
 
 .-phone-only {
     display: block;
@@ -60,6 +60,14 @@ address {
     }
 }
 
+.-mobile-and-sm-desktop-only {
+    display: block;
+
+    @include breakpoints("desktop") {
+        display: none !important;
+    }
+}
+
 .-tablet-and-desktop-only {
     display: none;
 
@@ -71,7 +79,7 @@ address {
 .-desktop-only {
     display: none;
 
-    @include breakpoints("tablet") {
+    @include breakpoints("desktop") {
         display: block;
     }
 }

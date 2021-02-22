@@ -34,7 +34,7 @@ const KidsDiscover = class extends React.Component {
         }
 
         return (
-            <div>
+            <div class="m-case-study-page-content__wrapper">
                 <div className = "m-case-study-page-content__image-container">
                     <div className = "m-case-study-page-content__image">
                         <img src = { teacherClassRoom } alt = "Teacher in a classroom" />
@@ -62,7 +62,7 @@ const KidsDiscover = class extends React.Component {
                 </div>
                 <div className = "o-rhythm__container">
                     <div className = "m-case-study-page-content__copy-section">
-                        <div className = "content__header -mobile-only">Research</div>
+                        <div className = "content__header -mobile-and-sm-desktop-only">Research</div>
                         <header className = "">okay, so how did andculture tackle the problem?</header>
                         <div className = "o-rhythm__row">
                             <div className = "content__header -desktop-only">Research</div>
@@ -95,7 +95,7 @@ const KidsDiscover = class extends React.Component {
                 </div>
                 <div className = "o-rhythm__container">
                     <div className = "m-case-study-page-content__copy-section">
-                        <div className = "content__header -mobile-only">Takeaway</div>
+                        <div className = "content__header -mobile-and-sm-desktop-only">Takeaway</div>
                         <header className = "">students needed to be at the center.</header>
                         <div className = "o-rhythm__row">
                             <div className = "content__header -desktop-only">Takeaway</div>
@@ -131,7 +131,7 @@ const KidsDiscover = class extends React.Component {
                 </div>
                 <div className = "o-rhythm__container">
                     <div className = "m-case-study-page-content__copy-section -kd_data">
-                        <div className = "content__header -mobile-only">Synthesis</div>
+                        <div className = "content__header -mobile-and-sm-desktop-only">Synthesis</div>
                         <header className = "">turning data into a plan</header>
                         <div className = "o-rhythm__row">
                         <div className = "content__header -desktop-only">Synthesis</div>
@@ -157,7 +157,7 @@ const KidsDiscover = class extends React.Component {
                 </div>
                 <div className = "o-rhythm__container">
                     <div className = "m-case-study-page-content__copy-section">
-                        <div className = "content__header -mobile-only">design &amp; development</div>
+                        <div className = "content__header -mobile-and-sm-desktop-only">design &amp; development</div>
                         <header className = "">bringing magazines — and learning — to life</header>
                         <div className = "o-rhythm__row">
                             <div className = "content__header -desktop-only">design &amp; development</div>
@@ -203,7 +203,7 @@ const KidsDiscover = class extends React.Component {
                         <div className = "o-rhythm__row -space-between">
                             <div className = "o-rhythm__col -kd-color-block__first">
                                 <div className = "m-case-study-page-content__copy-section">
-                                    <div className = "content__header -mobile-only">deployment &amp; testing</div>
+                                    <div className = "content__header -mobile-and-sm-desktop-only">deployment &amp; testing</div>
                                     <header className = "">time for final exams</header>
                                     <div className = "o-rhythm__row">
                                         <div className = "content__header -desktop-only">deployment &amp; testing</div>
