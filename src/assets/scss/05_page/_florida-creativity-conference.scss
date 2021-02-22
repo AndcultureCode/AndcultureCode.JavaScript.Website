@@ -58,7 +58,7 @@
             @include span-col(12);
             text-align: center;
 
-            @media (max-width: 768px) {
+            @include breakpoints(300px, "tablet") {
                 img {
                     @include rem-fallback(max-width, 225px);
                     @include rem-fallback(height, 225px);
@@ -99,7 +99,7 @@
         }
 
         .o-hero__right {
-            @media (max-width: 600px) {
+            @include breakpoints(300px, "sm-tablet") {
                 @include span-col(12);
                 @include margin-top(35px);
             }
