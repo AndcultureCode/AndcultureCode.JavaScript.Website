@@ -26,7 +26,7 @@ const FloridaCreativityConferencePage = ({ data }) => {
           data                  = { frontmatter }
           pageClassName         = "p-landing-page"
           scrollTop             = { scrollTop }
-          showFooterDividerLine = { false }>
+          showFooterDividerLine = { true }>
         <article className = "p-landing-page__wrapper">
           <div className = "p-landing-page__bgImage">
             <div className = "o-rhythm__container">

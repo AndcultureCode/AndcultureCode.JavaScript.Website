@@ -251,16 +251,29 @@
     }
 
     footer {
-        .o-rhythm__row {
-            @include span-col(12);
+        .o-rhythm__container {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 60px;
 
-            @include breakpoints("sm-tablet") {
-                @include span-col(10);
-                margin-left: 8.3333%;
+            @include breakpoints("tablet") {
+                margin-top: 100px;
             }
 
-            @include breakpoints("lg-laptop", "lg-desktop") {
-                @include span-col(12);
+            @include breakpoints("laptop") {
+                @include rem-fallback(max-width, 768px);
+            }
+
+            @include breakpoints("sm-desktop") {
+                @include rem-fallback(max-width, 900px);
+            }
+
+            @include breakpoints("lg-desktop") {
+                @include rem-fallback(max-width, 1000px);
+            }
+
+            @include breakpoints("xl-desktop") {
+                @include rem-fallback(max-width, 1200px);
             }
         }
     }
