@@ -249,4 +249,19 @@
     &__form {
         @include margin-top(45px);
     }
+
+    footer {
+        .o-rhythm__row {
+            @include span-col(12);
+
+            @include breakpoints("sm-tablet") {
+                @include span-col(10);
+                margin-left: 8.3333%;
+            }
+
+            @include breakpoints("lg-laptop", "lg-desktop") {
+                @include span-col(12);
+            }
+        }
+    }
 }

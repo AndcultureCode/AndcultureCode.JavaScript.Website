@@ -4,7 +4,7 @@ import EventRegistrationForm from 'components/molecules/EventRegistrationForm';
 
 const FloridaCreativityConferenceContent = (props) => {
   return (
-      <div className="p-landing-page__wrapper o-rhythm__row">
+      <div className="o-rhythm__row">
         <section className="p-landing-page__content" aria-label="Article content">
           <h2>
             Creating a Human-Centric Business Culture
