@@ -34,7 +34,7 @@ const SubscriptionForm = class extends React.Component {
             fields: [
                 {
                     name: "email",
-                    value: email,
+                    value: email ?? "",
                 }
             ],
             context: pageContext,
