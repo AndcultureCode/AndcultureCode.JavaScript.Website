@@ -39,27 +39,27 @@ const EventRegistrationForm = class extends React.Component {
             fields: [
                 {
                     name: "name",
-                    value: formData?.name ?? "",
+                    value: formData.name ?? "",
                 },
                 {
                     name: "email",
-                    value: formData?.email ?? "",
+                    value: formData.email ?? "",
                 },
                 {
                     name: "jobtitle",
-                    value: formData?.title ?? "",
+                    value: formData.title ?? "",
                 },
                 {
                     name: "phone",
-                    value: formData?.phone ?? "",
+                    value: formData.phone ?? "",
                 },
                 {
                     name: "extension",
-                    value: formData?.extension ?? "",
+                    value: formData.extension ?? "",
                 },
                 {
                     name: "company",
-                    value: formData?.companyName ?? "",
+                    value: formData.companyName ?? "",
                 }
             ],
             context: pageContext,
@@ -199,7 +199,7 @@ const EventRegistrationForm = class extends React.Component {
                                         onClick   = { this._onSubmitClick }
                                         className = { buttonClass }>
                                         Submit
-                                    </button>
+                                    </button>gi
                                 </div>
                             </React.Fragment>
                         }
