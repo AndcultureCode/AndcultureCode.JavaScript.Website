@@ -5,7 +5,7 @@
 
     &__container {
         @include clearfix();
-        @include padding(60px, 30px);
+        @include padding(45px, 30px);
         position: relative;
 
         h2 {
