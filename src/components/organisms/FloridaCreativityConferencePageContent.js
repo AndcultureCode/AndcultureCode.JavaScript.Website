@@ -2,7 +2,7 @@ import React                 from 'react';
 import EventRegistrationForm from 'components/molecules/EventRegistrationForm';
 
 
-const FloridaCreativityConferenceContent = (props) => {
+const FloridaCreativityConferencePageContent = (props) => {
   return (
       <div className="o-rhythm__row">
         <section className="p-marketing-page__content" aria-label="Article content">
@@ -79,4 +79,4 @@ const FloridaCreativityConferenceContent = (props) => {
   );
 };
 
-export default FloridaCreativityConferenceContent;
+export default FloridaCreativityConferencePageContent;
