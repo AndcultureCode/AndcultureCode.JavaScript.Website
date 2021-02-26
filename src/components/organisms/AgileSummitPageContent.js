@@ -33,7 +33,7 @@ const AgileSummitPageContent = (props) => {
               <a href = { blogPostLink } target="_blank">Agile as a Methodology for Getting Work Done and Being Human</a>
             </li>
             <li>
-              <a href = { mediumLink } target="_blank">The Surprising Power of Liberating Structures to Unleash Team Potential</a>
+              <a href = { mediumLink } target="_blank" rel = "noopener noreferrer">The Surprising Power of Liberating Structures to Unleash Team Potential</a>
             </li>
           </ul>
         </section>
