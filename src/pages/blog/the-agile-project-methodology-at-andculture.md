@@ -2,12 +2,12 @@
 templateKey: blog-post
 createPage: true
 title: agile as a methodology for getting work done and being human
-headline: 'In a nutshell: Life happens. Let’s do this thing.'
+headline: "In a nutshell: Life happens. Let’s do this thing."
 author:
-- Nic Easton
+  - Nic Easton
 date: 2020-07-23T00:00:00.000Z
 featured: false
-featuredColor: '-violet-blue'
+featuredColor: -violet-blue
 tileImage:
   description: Tile image for agile as a methodology
   image: /img/post_default_dark_4.jpg
@@ -16,15 +16,13 @@ postImage:
   image: /img/header_default_dark_4.jpg
 category: Agency
 seo:
-  metaDescription: >-
-    As a human-centered design company, our team of designers, engineers,
-    strategists, analysts, and QA specialists breathes agility in every project
-    we take on.
+  metaDescription: As a human-centered design company, our team of designers,
+    engineers, strategists, analysts, and QA specialists breathes agility in
+    every project we take on.
   metaTitle: The Agile Project Management Methodology at andculture
-  socialShareCopy: >-
-    An agile approach to projects at andculture guarantees high-quality work is
-    delivered to client partners quickly in a way that allows for flexibility
-    when things don’t work exactly as expected.
+  socialShareCopy: An agile approach to projects at andculture guarantees
+    high-quality work is delivered to client partners quickly in a way that
+    allows for flexibility when things don’t work exactly as expected.
 ---
 Agility is the ability to move quickly and easily. In the world of human-centered design (and tech), though, it’s not just a way of working. In these industries, agility is first and foremost a mindset. It’s also a culture, a set of values, and various processes. An Agile approach to projects easily allows us to be flexible and adapt to changes in the market through ongoing testing and measuring.
 
@@ -42,7 +40,7 @@ An agile approach is the best way to produce high-quality work quickly in a way 
 
 In a traditional waterfall project approach, each phase depends on the deliverables of the previous one, meaning you wouldn’t know what the product is going to look like until the end. Both parties are blocked in by the constraints of the contract and there’s less room for innovation and discovery  (‘Aha!’ moments as we call them). A partnership is better supported when using agility, where flexibility and adaptability are bolstered, especially when the end deliverable isn’t clearly in sight yet.
 
-Client partners have the opportunity to embrace the flexibility agility gives them while keeping their vision of the product as the north star of operations. With regular reviews of work to ensure progress, clients have the opportunity to shape the work more closely. They can provide more feedback, ensure the product is providing value, and play an active role in prioritizing what is worked on. Ultimately, for clients,  an agile workflow means regular deliverables, efficient work, and more collaboration and control on the final product.
+Client partners have the opportunity to embrace the flexibility agility gives them while keeping their vision of the product as the north star of operations. With regular reviews of work to ensure progress, clients have the opportunity to shape the work more closely. They can provide more feedback, ensure the product is providing value, and play an active role in prioritizing what is worked on. Ultimately, for clients, an agile workflow means early and often delivery, efficient work and more collaboration and control on the final product.
 
 Working in this way practitioners collaboratively decide what can be accomplished in a small time frame and break it down into smaller tasks to accomplish. This gives the people doing the work (the most understanding of what’s happening) the power to guide the process, be reasonable, and use their knowledge effectively. It instills trust and accountability, so that the project becomes a labor of love.
 
@@ -59,7 +57,7 @@ By bringing team members together from different disciplines we improve the way 
 * **Client partner collaboration** over contract negotiation
 * **Responding to change** over following a plan
 
-While there is value in the items on the right, Agile values the items on the left more ([https://agilemanifesto.org/](https://agilemanifesto.org/)). Embodying these values makes it easier for us to connect with client partners and develop solutions everyone can be proud of.  It also allows us to move past the mindset of “this is just how it is.” Instead, plans evolve as discoveries are made. When a project has many moving parts, it can be difficult to know what’s going to happen in the future. Instead of looking to what needs to happen, agile working relies on what practitioners have already experienced as the basis for decision making-- from project-specific experiences to accrued industry knowledge.
+While there is value in the items on the right, Agile values the items on the left more (<https://agilemanifesto.org/>). Embodying these values makes it easier for us to connect with client partners and develop solutions everyone can be proud of.  It also allows us to move past the mindset of “this is just how it is.” Instead, plans evolve as discoveries are made. When a project has many moving parts, it can be difficult to know what’s going to happen in the future. Instead of looking to what needs to happen, agile working relies on what practitioners have already experienced as the basis for decision making-- from project-specific experiences to accrued industry knowledge.
 
 In one such instance, we signed a contract with a client partner to build a software product. The project essentially outlines 10 features we would build-- we prioritized it together and began to work on the first item on the list.
 
