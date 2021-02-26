@@ -24,7 +24,7 @@ const FloridaCreativityConferencePage = ({ data }) => {
   return (
       <Layout
           data                  = { frontmatter }
-          pageClassName         = "__florida-creativity-conference p-marketing-page"
+          pageClassName         = "__florida-creativity-conference-page p-marketing-page"
           scrollTop             = { scrollTop }
           showFooterDividerLine = { true }>
         <article className = "p-marketing-page__wrapper">

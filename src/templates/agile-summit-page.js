@@ -24,7 +24,7 @@ const AgileSummitPage = ({ data }) => {
   return (
       <Layout
           data                  = { frontmatter }
-          pageClassName         = "__agile-summit p-marketing-page"
+          pageClassName         = "__agile-summit-page p-marketing-page"
           scrollTop             = { scrollTop }
           showFooterDividerLine = { true }>
         <article className = "p-marketing-page__wrapper">
