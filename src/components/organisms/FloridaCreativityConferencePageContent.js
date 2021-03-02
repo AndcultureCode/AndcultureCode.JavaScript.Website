@@ -1,7 +1,5 @@
 import React                        from 'react';
 import EventRegistrationForm        from 'components/molecules/EventRegistrationForm';
-import { EventRegistrationFormKey } from "../../constants/event-registration-form-key";
-
 
 const FloridaCreativityConferencePageContent = (props) => {
   return (
@@ -71,7 +69,7 @@ const FloridaCreativityConferencePageContent = (props) => {
         </section>
         <section className="p-marketing-page__form" aria-label = "Article Registration Form">
           <EventRegistrationForm
-              formKey     = { EventRegistrationFormKey.floridaCreativityConference }
+              formKey     = { process.env.GATSBY_HUBSPOT_FLORIDA_CREATIVITY_CONFERENCE_REGISTRATION_FORM_KEY }
               formName    = "user-registration-form"
               header      = "join the event"
               lightTheme  = { true }

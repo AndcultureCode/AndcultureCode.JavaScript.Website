@@ -1,7 +1,5 @@
 import React                        from 'react';
 import EventRegistrationForm        from 'components/molecules/EventRegistrationForm';
-import { EventRegistrationFormKey } from "../../constants/event-registration-form-key";
-
 
 const AgileSummitPageContent = (props) => {
   const blogPostLink = "/blog/the-agile-project-methodology-at-andculture/";
@@ -40,7 +38,7 @@ const AgileSummitPageContent = (props) => {
         </section>
         <section className="p-marketing-page__form" aria-label = "Article Registration Form">
           <EventRegistrationForm
-              formKey     = { EventRegistrationFormKey.agileSummit }
+              formKey     = { process.env.GATSBY_HUBSPOT_AGILE_SUMMIT_REGISTRATION_FORM_KEY }
               formName    = "user-registration-form"
               header      = "want to learn more?"
               lightTheme  = { true }
