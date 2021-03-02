@@ -1,5 +1,6 @@
-import React                 from 'react';
-import EventRegistrationForm from 'components/molecules/EventRegistrationForm';
+import React                        from 'react';
+import EventRegistrationForm        from 'components/molecules/EventRegistrationForm';
+import { EventRegistrationFormKey } from "../../constants/event-registration-form-key";
 
 
 const AgileSummitPageContent = (props) => {
@@ -39,6 +40,7 @@ const AgileSummitPageContent = (props) => {
         </section>
         <section className="p-marketing-page__form" aria-label = "Article Registration Form">
           <EventRegistrationForm
+              formKey     = { EventRegistrationFormKey.agileSummit }
               formName    = "user-registration-form"
               header      = "want to learn more?"
               lightTheme  = { true }

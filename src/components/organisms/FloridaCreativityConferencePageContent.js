@@ -1,5 +1,6 @@
-import React                 from 'react';
-import EventRegistrationForm from 'components/molecules/EventRegistrationForm';
+import React                        from 'react';
+import EventRegistrationForm        from 'components/molecules/EventRegistrationForm';
+import { EventRegistrationFormKey } from "../../constants/event-registration-form-key";
 
 
 const FloridaCreativityConferencePageContent = (props) => {
@@ -70,6 +71,7 @@ const FloridaCreativityConferencePageContent = (props) => {
         </section>
         <section className="p-marketing-page__form" aria-label = "Article Registration Form">
           <EventRegistrationForm
+              formKey     = { EventRegistrationFormKey.floridaCreativityConference }
               formName    = "user-registration-form"
               header      = "join the event"
               lightTheme  = { true }
