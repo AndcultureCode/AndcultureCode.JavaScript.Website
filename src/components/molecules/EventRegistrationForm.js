@@ -36,8 +36,6 @@ const EventRegistrationForm = class extends React.Component {
         // hubspotFormUrl is built using https://api.hsforms.com/submissions/v3/integration/submit/portalId/formId
         const hubspotFormUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
 
-
-
         const requestBody = {
             skipValidation: true,
             fields: [
