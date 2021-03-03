@@ -1,11 +1,10 @@
-import React                 from 'react';
-import EventRegistrationForm from 'components/molecules/EventRegistrationForm';
+import React                        from 'react';
+import EventRegistrationForm        from 'components/molecules/EventRegistrationForm';
 
-
-const FloridaCreativityConferenceContent = (props) => {
+const FloridaCreativityConferencePageContent = (props) => {
   return (
       <div className="o-rhythm__row">
-        <section className="p-landing-page__content" aria-label="Article content">
+        <section className="p-marketing-page__content" aria-label="Article content">
           <h2>
             Creating a Human-Centric Business Culture
           </h2>
@@ -68,8 +67,9 @@ const FloridaCreativityConferenceContent = (props) => {
             <li>Employees understand the customers better in order to deliver better customer experiences.</li>
           </ul>
         </section>
-        <section className="p-landing-page__form" aria-label = "Article Registration Form">
+        <section className="p-marketing-page__form" aria-label = "Article Registration Form">
           <EventRegistrationForm
+              formKey     = { process.env.GATSBY_HUBSPOT_FLORIDA_CREATIVITY_CONFERENCE_REGISTRATION_FORM_KEY }
               formName    = "user-registration-form"
               header      = "join the event"
               lightTheme  = { true }
@@ -79,4 +79,4 @@ const FloridaCreativityConferenceContent = (props) => {
   );
 };
 
-export default FloridaCreativityConferenceContent;
+export default FloridaCreativityConferencePageContent;
