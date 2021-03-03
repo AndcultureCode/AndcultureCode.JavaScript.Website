@@ -10,7 +10,7 @@
 
         h2 {
             @include font-size(30px);
-            color: get-color("primary", "fresh-dark");
+            color: get-color-primary("fresh");
 
             @include breakpoints("tablet") {
                 @include font-size("medium-large");
@@ -18,7 +18,7 @@
             }
 
             &.-light {
-                color: get-color("primary", "fresh-dark");
+                color: get-color-primary("fresh");
             }
         }
 
@@ -27,7 +27,7 @@
         }
 
         &.-light {
-            background: get-color("primary", "white");
+            background: get-color-primary("white");
 
             h2 {
                 color: get-color-primary("after-hours");

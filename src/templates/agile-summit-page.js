@@ -1,13 +1,13 @@
-import React, { useEffect, useState }         from 'react';
-import { graphql }                            from 'gatsby';
-import Layout                                 from 'components/Layout';
-import heroDesktop                            from 'static/img/florida-creativity-conference/hero-desktop.jpg';
-import heroMobile                             from 'static/img/florida-creativity-conference/hero-mobile.jpg';
-import headshot                               from "static/img/florida-creativity-conference/stephanie-krell.png";
-import FloridaCreativityConferencePageContent from "../components/organisms/FloridaCreativityConferencePageContent";
+import React, { useEffect, useState }     from 'react';
+import { graphql }                        from 'gatsby';
+import Layout                             from 'components/Layout';
+import heroDesktop                        from 'static/img/agile-summit/hero-desktop.jpg';
+import heroMobile                         from 'static/img/agile-summit/hero-mobile.jpg';
+import headshot                           from 'static/img/agile-summit/nic-easton.png';
+import AgileSummitPageContent             from "../components/organisms/AgileSummitPageContent";
 import '../assets/scss/app.scss';
 
-const FloridaCreativityConferencePage = ({ data }) => {
+const AgileSummitPage = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark;
 
   const [scrollTop, setScrollTop] = useState(0);
@@ -24,7 +24,7 @@ const FloridaCreativityConferencePage = ({ data }) => {
   return (
       <Layout
           data                  = { frontmatter }
-          pageClassName         = "__florida-creativity-conference-page p-marketing-page"
+          pageClassName         = "__agile-summit-page p-marketing-page"
           scrollTop             = { scrollTop }
           showFooterDividerLine = { true }>
         <article className = "p-marketing-page__wrapper">
@@ -38,7 +38,7 @@ const FloridaCreativityConferencePage = ({ data }) => {
             <div className = "p-marketing-page__header">
               <div className="o-rhythm__row">
                 <h1>
-                  Stephanie Krell to speak at 2021 Florida Creativity Conference
+                  Thanks for attending the Paul College 2021 Agile Summit
                 </h1>
               </div>
             </div>
@@ -49,27 +49,28 @@ const FloridaCreativityConferencePage = ({ data }) => {
                 </div>
                 <div className="o-hero__right">
                   <p>
-                    Stephanie Krell is a Human-Centered Design specialist with a focus in Service Design,
-                    Design Thinking, and Design Strategy. She has worked for Walt Disney and Universal Studios
-                    theme parks designing hotel and entertainment experiences before moving on to both commercial
-                    and federal consulting where she has focused on product, service, systems, and experience design
-                    for brands across the globe.
+                    Nic Easton is the Executive Director, Agility at andculture in Harrisburg, Pennsylvania.
+                    He has a demonstrated history of enabling and enacting change and takes an outcome based
+                    approach to delivering, measuring, and maximizing value. Promotion of a culture of continuous
+                    improvement through empiricism and experimentation is the foundation on which he helps teams
+                    and organizations. His background and experiences include healthcare, nuclear power plant
+                    simulation, and human centered design.
                   </p>
                 </div>
               </div>
             </div>
-            <FloridaCreativityConferencePageContent />
+            <AgileSummitPageContent />
           </div>
         </article>
       </Layout>
   )
 }
 
-export default FloridaCreativityConferencePage;
+export default AgileSummitPage;
 
 export const pageQuery = graphql`
-  query FloridaCreativityConferencePage {
-    markdownRemark(frontmatter: { templateKey: { eq: "florida-creativity-conference-page" } }) {
+  query AgileSummitPage {
+    markdownRemark(frontmatter: { templateKey: { eq: "agile-summit-page" } }) {
       html
       frontmatter {
         title

@@ -7,9 +7,6 @@ import {
 import Input           from "../atoms/Input";
 import { StringUtils } from '../../utils/stringUtils';
 
-// hubspotFormUrl is built using https://api.hsforms.com/submissions/v3/integration/submit/portalId/formId
-const hubspotFormUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${process.env.GATSBY_HUBSPOT_PORTAL_KEY}/${process.env.GATSBY_HUBSPOT_EVENT_REGISTRATION_FORM_KEY}`;
-
 const EventRegistrationForm = class extends React.Component {
     constructor(props) {
         super(props);
@@ -33,6 +30,11 @@ const EventRegistrationForm = class extends React.Component {
 
     _submitRegistrationForm = (formData, pageUri, pageName) => {
         const pageContext = { pageUri: pageUri, pageName: pageName };
+        const portalId    = process.env.GATSBY_HUBSPOT_PORTAL_KEY;
+        const formId      = this.props.formKey;
+
+        // hubspotFormUrl is built using https://api.hsforms.com/submissions/v3/integration/submit/portalId/formId
+        const hubspotFormUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
 
         const requestBody = {
             skipValidation: true,
