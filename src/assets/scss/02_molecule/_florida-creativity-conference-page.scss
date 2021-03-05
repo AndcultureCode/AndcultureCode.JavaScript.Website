@@ -32,8 +32,7 @@
             a {
                 color: get-color-primary("fresh");
                 font-family: $font-primary;
-                text-decoration: underline;
-                text-decoration-color: get-color-primary("fresh");
+                text-decoration: underline get-color-primary("fresh");
                 transition: color 0.3s ease;
 
                 &:hover {
