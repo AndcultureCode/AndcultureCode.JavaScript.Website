@@ -38,7 +38,7 @@ const FloridaCreativityConferencePage = ({ data }) => {
             <div className = "p-marketing-page__header">
               <div className="o-rhythm__row">
                 <h1>
-                  Stephanie Krell to speak at 2021 Florida Creativity Conference
+                  andculture’s Stephanie Krell to speak at 2021 Florida Creativity Conference
                 </h1>
               </div>
             </div>
@@ -49,11 +49,12 @@ const FloridaCreativityConferencePage = ({ data }) => {
                 </div>
                 <div className="o-hero__right">
                   <p>
-                    Stephanie Krell is a Human-Centered Design specialist with a focus in Service Design,
-                    Design Thinking, and Design Strategy. She has worked for Walt Disney and Universal Studios
-                    theme parks designing hotel and entertainment experiences before moving on to both commercial
-                    and federal consulting where she has focused on product, service, systems, and experience design
-                    for brands across the globe.
+                    Stephanie Krell is a Human-Centered Design (HCD) expert  with a focus in Service Design,
+                    Design Thinking, and Design Strategy. Currently, she is Executive Director of Strategy
+                    and HCD at andculture after having worked for Walt Disney and Universal Studios theme parks
+                    designing hotel and entertainment experiences. Her background includes extensive commercial
+                    and federal consulting experience where she has focused on product, service, systems,
+                    and experience design for brands across the globe.
                   </p>
                 </div>
               </div>
