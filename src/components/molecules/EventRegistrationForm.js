@@ -201,7 +201,7 @@ const EventRegistrationForm = class extends React.Component {
                                         onClick   = { this._onSubmitClick }
                                         className = { buttonClass }>
                                         Submit
-                                    </button>gi
+                                    </button>
                                 </div>
                             </React.Fragment>
                         }

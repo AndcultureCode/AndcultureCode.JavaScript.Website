@@ -3,5 +3,44 @@
         &__bgImage {
             background-color: #f5f5f5;
         }
+
+        &__content {
+            .-sub-header {
+                p,
+                a {
+                    @include font-size("small");
+                    @include line-height(28px);
+                    margin-block-start: 0;
+
+                    @include breakpoints("sm-tablet") {
+                        @include font-size("medium-small");
+                        @include line-height(34px);
+                    }
+
+                    @include breakpoints("sm-desktop") {
+                        @include font-size(27px);
+                        @include line-height(39px);
+                    }
+                }
+            }
+
+            .-extra-space {
+                @include margin-top(15px);
+                @include margin-bottom(40px);
+            }
+
+            a {
+                color: get-color-primary("fresh");
+                font-family: $font-primary;
+                text-decoration: underline;
+                text-decoration-color: get-color-primary("fresh");
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: get-color-primary("fresh-dark");
+                    opacity: 1;
+                }
+            }
+        }
     }
 }

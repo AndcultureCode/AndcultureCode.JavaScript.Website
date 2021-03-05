@@ -198,6 +198,7 @@
             }
         }
 
+        a,
         p {
             @include font-size(16px);
             @include line-height(26px);
@@ -212,11 +213,6 @@
                 @include font-size(24px);
                 @include line-height(39px);
             }
-
-            &.-bold-text {
-                font-weight: 600;
-            }
-
         }
 
         ul {
@@ -224,18 +220,6 @@
 
             @include breakpoints("tablet") {
                 @include margin-left(20px);
-            }
-
-            a {
-                @include font-size("base");
-                color: get-color-primary("after-hours");
-                font-family: $font-primary;
-                text-decoration: underline;
-                transition: color 0.3s ease;
-
-                @include breakpoints("sm-tablet") {
-                    @include font-size("medium-small");
-                }
             }
 
             li {

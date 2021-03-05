@@ -3,5 +3,16 @@
         &__bgImage {
             background-color: #003591;
         }
+
+        &__content {
+            ul {
+                a {
+                    color: get-color-primary("after-hours");
+                    font-family: $font-primary;
+                    text-decoration: underline;
+                    transition: color 0.3s ease;
+                }
+            }
+        }
     }
 }
