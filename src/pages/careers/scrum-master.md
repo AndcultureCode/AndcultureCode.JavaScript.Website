@@ -9,7 +9,7 @@ description: >-
   theory, practices, rules, and values.
 applicationUrl: >-
   https://recruiting.paylocity.com/recruiting/jobs/Details/368712/andculture-Inc/Scrum-Master
-active: false
+active: true
 seo:
   metaDescription: 'Work at andculture, a design company based in Harrisburg, PA'
   metaTitle: scrum master | careers | andculture
