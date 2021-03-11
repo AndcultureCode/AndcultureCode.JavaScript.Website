@@ -371,22 +371,22 @@ collections:
              - {label: "Meta Description", name: "metaDescription", widget: "string"}
              - {label: "Social Sharing Copy", name: "socialShareCopy", widget: "string"}
       - file: "src/pages/2021-agile-summit.md"
-          label: "2021 Agile Summit"
-          name: "2021-agile-summit"
-          fields:
-            - { label: "Template Key", name: "templateKey", widget: "hidden", default: "agile-summit-page" }
-            - { label: "Create Page", name: "createPage", widget: "hidden", default: true }
-            - { label: Title, name: title, widget: string }
-            - { label: Secondary, name: secondaryTitle, widget: string }
-            - { label: Subtitle, name: subTitle, widget: string }
-            - { label: "Body", name: "body", widget: "markdown", buttons: [ "bold", "italic", "code", "link", "heading-three", "quote", "bulleted-list", "numbered-list" ] }
-            - label: "SEO"
-              name: "seo"
-              widget: "object"
-              fields:
-                - { label: "Meta Title", name: "metaTitle", widget: "string" }
-                - { label: "Meta Description", name: "metaDescription", widget: "string" }
-                - { label: "Social Sharing Copy", name: "socialShareCopy", widget: "string" }
+        label: "2021 Agile Summit"
+        name: "2021-agile-summit"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "agile-summit-page" }
+          - { label: "Create Page", name: "createPage", widget: "hidden", default: true }
+          - { label: Title, name: title, widget: string }
+          - { label: Secondary, name: secondaryTitle, widget: string }
+          - { label: Subtitle, name: subTitle, widget: string }
+          - { label: "Body", name: "body", widget: "markdown", buttons: [ "bold", "italic", "code", "link", "heading-three", "quote", "bulleted-list", "numbered-list" ] }
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Meta Title", name: "metaTitle", widget: "string" }
+              - { label: "Meta Description", name: "metaDescription", widget: "string" }
+              - { label: "Social Sharing Copy", name: "socialShareCopy", widget: "string" }
   - name: "clients"
     label: "Clients"
     label_singular: "Client"
