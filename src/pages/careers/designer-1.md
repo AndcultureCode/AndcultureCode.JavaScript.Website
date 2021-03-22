@@ -7,7 +7,8 @@ description: "You’ll be joining us as a Designer on our Design team, where we
   believe that magic only happens when we push to make a difference through
   conceptual and informed design, to ultimately create great brand experiences
   for people. "
-applicationUrl: https://recruiting.paylocity.com/recruiting/jobs/All/e7380839-fded-41d5-a35e-65aed589389c/andculture-Inc
+applicationUrl: https://recruiting.paylocity.com/recruiting/jobs/Details/499280/andculture-Inc/Designer
+active: true
 seo:
   metaDescription: Work at andculture, a design company based in Harrisburg, PA
   socialShareCopy: Work at andculture, a design company based in Harrisburg, PA
