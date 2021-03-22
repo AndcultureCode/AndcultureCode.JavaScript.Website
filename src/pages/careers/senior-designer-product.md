@@ -7,7 +7,8 @@ description: You’ll be joining us as a Sr. Designer, Product on our Design tea
   We believe we can fearlessly design to change the world and culture around us,
   one experience at a time, by delivering beautiful experiences, strategies, and
   products.
-applicationUrl: https://recruiting.paylocity.com/recruiting/jobs/All/e7380839-fded-41d5-a35e-65aed589389c/andculture-Inc
+applicationUrl: https://recruiting.paylocity.com/recruiting/jobs/Apply/499291/andculture-Inc/Sr-Designer-Product
+active: true
 seo:
   metaDescription: Work at andculture, a design company based in Harrisburg, PA
   socialShareCopy: Work at andculture, a design company based in Harrisburg, PA
