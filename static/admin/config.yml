@@ -147,15 +147,15 @@ collections:
         required: false
         widget: "object"
         fields:
-         - {label: "Image", name: "image", widget: "image"}
-         - {label: "Description", name: "description", widget: "string"}
+         - {label: "Image", name: "image", required: false, widget: "image"}
+         - {label: "Description", name: "description", required: false, widget: "string"}
       - label: "Team Expanded Photo"
         name: "teamExpandedPhoto"
         required: false
         widget: "object"
         fields:
-         - {label: "Image", name: "image", widget: "image"}
-         - {label: "Description", name: "description", widget: "string"}
+         - {label: "Image", name: "image", required: false, widget: "image"}
+         - {label: "Description", name: "description", required: false, widget: "string"}
       - label: "Social Links"
         label_singular: "Link"
         name: "socialLinks"
