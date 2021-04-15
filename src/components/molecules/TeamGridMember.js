@@ -23,17 +23,31 @@ const TeamGridMember = (props) => {
         setHasMouseMoved(false);
     };
 
+    const getEmployeeTeamGridPhoto = () => {
+        let photoComponent;
+
+        if (employee.teamGridPhoto != null){
+            photoComponent = <Img
+                fluid={employee.teamGridPhoto?.image.childImageSharp.fluid}
+                alt={employee.teamGridPhoto?.description}
+                loading="eager"/>
+        }
+        else {
+            photoComponent = <img
+                alt = {employee.name}
+                src = "/img/team/grid-photos/placeholder6_sm.jpg" />;
+        }
+
+        return photoComponent;
+    }
+
     return (
         <div
             onMouseDown={onMouseDown}
             onMouseMove={onMouseMove}
             onMouseUp={onMouseUp}
             className="team-grid-member">
-            <Img
-                fluid={employee.teamGridPhoto.image.childImageSharp.fluid}
-                alt={employee.teamGridPhoto.description}
-                loading="eager"
-            />
+            {getEmployeeTeamGridPhoto()}
             <div className="gradient"></div>
             <div className="green-gradient"></div>
         </div>

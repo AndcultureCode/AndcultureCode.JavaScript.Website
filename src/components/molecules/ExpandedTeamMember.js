@@ -53,9 +53,11 @@ const calculateFinalImagePosValue = () => {
 }
 
 const ExpandedTeamMember = (props) => {
+    const {employee} = props;
+
     useEffect(() => {
         // fades in the expanded team member view
-        if (!props.isExpanded || props.employee === null) {
+        if (!props.isExpanded || employee === null) {
             return;
         }
 
@@ -126,7 +128,7 @@ const ExpandedTeamMember = (props) => {
             { opacity: 0.9, duration: 0.35 }
         );
 
-    }, [props.employee]);
+    }, [employee]);
 
     useEffect(() => {
         // fades out the expanded team member view
@@ -188,8 +190,29 @@ const ExpandedTeamMember = (props) => {
     }
 
     // If no employee is selected, don't render this component:
-    if (props.employee == null) {
+    if (employee == null) {
         return null;
+    }
+
+    const getEmployeeTeamExpandedPhoto = () => {
+        let photoComponent;
+
+        if (employee.teamExpandedPhoto != null){
+            photoComponent = <Img
+                alt={employee.teamExpandedPhoto.description}
+                className="expanded-team-member-image"
+                durationFadeIn={50}
+                fluid={employee.teamExpandedPhoto?.image.childImageSharp.fluid}
+                loading="eager"/>
+        }
+        else {
+            photoComponent = <img
+                alt = {employee.name}
+                className="expanded-team-member-image"
+                src = "/img/team/expanded-photos/placeholder6_lg.jpg" />;
+        }
+
+        return photoComponent;
     }
 
     return (
@@ -198,32 +221,23 @@ const ExpandedTeamMember = (props) => {
             onClick={handleClick}>
             <div className="expanded-team-member-text">
                 <p className="expanded-team-member-text-name">
-                    {props.employee.name}{" "}
+                    {employee.name}{" "}
                     <sup>
                         <img src={asteriskImg} alt="Asterisk" />
                     </sup>
                 </p>
                 <p className="expanded-team-member-text-position">
-                    {props.employee.position}
+                    {employee.position}
                 </p>
                 <p className="expanded-team-member-text-egg">
                     <sup>
                         <img src={asteriskImg} alt="Asterisk" />{" "}
                     </sup>
-                    {props.employee.easterEgg}
+                    {employee.easterEgg}
                 </p>
             </div>
             <div className="expanded-team-member-image-div">
-                <Img
-                    alt={props.employee.teamExpandedPhoto.description}
-                    className="expanded-team-member-image"
-                    durationFadeIn={50}
-                    fluid={
-                        props.employee.teamExpandedPhoto.image.childImageSharp
-                            .fluid
-                    }
-                    loading="eager"
-                />
+                {getEmployeeTeamExpandedPhoto()}
                 <img
                     alt="close button"
                     className="expanded-team-member-close-button"
