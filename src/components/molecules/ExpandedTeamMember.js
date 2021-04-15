@@ -215,11 +215,11 @@ const ExpandedTeamMember = (props) => {
             </div>
             <div className="expanded-team-member-image-div">
                 <Img
-                    alt={props.employee.teamExpandedPhoto.description}
+                    alt={props.employee.teamExpandedPhoto?.description}
                     className="expanded-team-member-image"
                     durationFadeIn={50}
                     fluid={
-                        props.employee.teamExpandedPhoto.image.childImageSharp
+                        props.employee.teamExpandedPhoto?.image.childImageSharp
                             .fluid
                     }
                     loading="eager"

@@ -30,8 +30,8 @@ const TeamGridMember = (props) => {
             onMouseUp={onMouseUp}
             className="team-grid-member">
             <Img
-                fluid={employee.teamGridPhoto.image.childImageSharp.fluid}
-                alt={employee.teamGridPhoto.description}
+                fluid={employee.teamGridPhoto?.image.childImageSharp.fluid}
+                alt={employee.teamGridPhoto?.description}
                 loading="eager"
             />
             <div className="gradient"></div>
