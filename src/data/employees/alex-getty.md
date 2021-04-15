@@ -2,7 +2,7 @@
 createPage: false
 templateKey: "employee"
 name: Alex Getty
-position: catamaran
+position: sr. designer
 easterEgg: paper, pixels, code, & caffeine
 teamGridPhoto:
   image: /img/team/grid-photos/Getty_Alex.jpg
