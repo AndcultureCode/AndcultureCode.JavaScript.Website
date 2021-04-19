@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Josh Hughes
 position: software engineer
+status: active
 easterEgg: sarcasm & seltzer
 teamGridPhoto:
   image: /img/team/grid-photos/Hughes_Josh.jpg

@@ -397,6 +397,7 @@ export const pageQuery = graphql`
           id
           frontmatter {
             position
+            status
             name
             easterEgg
             socialLinks {

@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Kate Ferrara
 position: catamaran
+status: active
 easterEgg: touchtunes international icon
 teamGridPhoto:
   image: /img/team/grid-photos/Ferrara_Kate.jpg

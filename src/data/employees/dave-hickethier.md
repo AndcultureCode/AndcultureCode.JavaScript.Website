@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Dave Hickethier
 position: founder / ceo
+status: active
 easterEgg: eternally curious
 teamGridPhoto:
   image: /img/team/grid-photos/Hickethier_Dave.jpg

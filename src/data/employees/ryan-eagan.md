@@ -1,6 +1,7 @@
 ---
 createPage: false
 name: Ryan Eagan
+status: inactive
 easterEgg: zumba & outdoor adventurer
 authorPhoto:
   image: /img/authors/author-ryan-eagan.png

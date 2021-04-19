@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Ryan Palmer
 position: designer
+status: active
 easterEgg: does it have dark mode?
 teamGridPhoto:
   image: /img/team/grid-photos/Palmer_Ryan.jpg

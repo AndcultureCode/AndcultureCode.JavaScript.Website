@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Kyle Allwein
 position: quality assurance analyst
+status: active
 easterEgg: featherless biped
 teamGridPhoto:
   image: /img/team/grid-photos/Allwein_Kyle.jpg

@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Ralph McIntyre
 position: software engineer
+status: active
 easterEgg: hulkamaniac
 teamGridPhoto:
   image: /img/team/grid-photos/McIntyre_Ralph.jpg

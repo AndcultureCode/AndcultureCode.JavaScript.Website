@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Jobi Campbell
 position: IT specialist
+status: active
 easterEgg: beach lover
 teamGridPhoto:
   image: /img/team/grid-photos/placeholder2_sm.jpg

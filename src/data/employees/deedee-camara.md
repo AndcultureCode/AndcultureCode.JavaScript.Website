@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Deedee Camara
 position: sr. content strategist
+status: active
 easterEgg: lover of food & beverage shows
 teamGridPhoto:
   image: /img/team/grid-photos/placeholder1_sm.jpg

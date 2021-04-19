@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: James Gibbons
 position: designer
+status: active
 easterEgg: friendly neighborhood hooligan
 teamGridPhoto:
   image: /img/team/grid-photos/Gibbons_Jimmy.jpg

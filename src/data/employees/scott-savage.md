@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Scott Savage
 position: technical lead
+status: active
 easterEgg: coffee fueled rubyist
 teamGridPhoto:
   image: /img/team/grid-photos/Savage_Scott.jpg

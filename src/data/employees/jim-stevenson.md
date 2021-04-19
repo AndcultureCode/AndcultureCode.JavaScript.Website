@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Jim Stevenson
 position: sr. software engineer
+status: active
 easterEgg: christ, family, board games
 teamGridPhoto:
   image: /img/team/grid-photos/Stevenson_Jim.jpg

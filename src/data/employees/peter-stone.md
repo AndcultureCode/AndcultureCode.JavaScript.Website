@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Peter Stone
 position: software engineer
+status: active
 easterEgg: sun & music & woodland streams
 teamGridPhoto:
   image: /img/team/grid-photos/Stone_Peter.jpg

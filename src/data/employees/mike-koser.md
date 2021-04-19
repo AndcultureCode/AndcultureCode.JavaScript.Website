@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Mike Koser
 position: director of engineering
+status: active
 easterEgg: brews beer for the masses
 authorPhoto:
   image: /img/authors/author-mike-koser.png
