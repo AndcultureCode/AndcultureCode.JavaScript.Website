@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Paige Kowal
 position: sr. account manager
-status: active
+status: Active
 easterEgg: travel. photos. travel photos.
 teamGridPhoto:
   image: /img/team/grid-photos/placeholder1_sm.jpg

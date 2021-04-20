@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Josh Peters
 position: sr. software engineer
-status: active
+status: Active
 easterEgg: little spoon
 teamGridPhoto:
   image: /img/team/grid-photos/Peters_Josh.jpg

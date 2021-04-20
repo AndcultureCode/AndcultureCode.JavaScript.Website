@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Von Bock
 position: software engineer
-status: active
+status: Active
 easterEgg: and cat dad
 teamGridPhoto:
   image: /img/team/grid-photos/Bock_Von.jpg

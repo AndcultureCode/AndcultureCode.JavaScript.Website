@@ -104,7 +104,7 @@ export default () => (
                     filter: {
                         frontmatter: {
                             templateKey: { eq: "employee" }
-                            status: { eq: "active" }
+                            status: { eq: "Active" }
                         }
                     }
                 ) {

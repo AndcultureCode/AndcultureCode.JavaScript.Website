@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Robbie Lowman
 position: software engineer
-status: active
+status: Active
 easterEgg: locally homeomorphic to R^n
 teamGridPhoto:
   image: /img/team/grid-photos/Lowman_Robbie.jpg

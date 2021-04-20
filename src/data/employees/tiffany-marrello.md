@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Tiffany Marrello
 position: designer
-status: active
+status: Active
 easterEgg: pretzel & sweet tea devotee
 teamGridPhoto:
   image: /img/team/grid-photos/Marrello_Tiffany.jpg

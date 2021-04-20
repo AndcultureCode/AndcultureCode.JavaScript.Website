@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Aaron Weinberger
 position: Software Engineer
-status: active
+status: Active
 easterEgg: space & sneakers
 teamGridPhoto:
   image: /img/team/grid-photos/placeholder1_sm.jpg

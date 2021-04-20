@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: DJ Vanscoyoc
 position: facilities manager
-status: active
+status: Active
 easterEgg: gone fishing
 teamGridPhoto:
   image: /img/team/grid-photos/VanScoyoc_DJ.jpg

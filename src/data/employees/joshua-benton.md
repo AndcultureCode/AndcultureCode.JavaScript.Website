@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Joshua Benton
 position: partner
-status: active
+status: Active
 easterEgg: pragmagical
 teamGridPhoto:
   image: /img/team/grid-photos/Benton_Josh.jpg

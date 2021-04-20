@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Devvin Earnest
 position: scrum master
-status: active
+status: Active
 easterEgg:
 teamGridPhoto:
   image: /img/team/grid-photos/placeholder6_sm.jpg

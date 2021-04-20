@@ -1,7 +1,7 @@
 ---
 createPage: false
 name: Dominic Prestifilippo
-status: inactive
+status: Inactive
 socialLinks:
   - platform: Twitter
     url: https://twitter.com/_dominicp

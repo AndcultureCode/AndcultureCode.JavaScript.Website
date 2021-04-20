@@ -1,5 +1,5 @@
 ---
 createPage: false
 name: Heather Heigel
-status: inactive
+status: Inactive
 ---

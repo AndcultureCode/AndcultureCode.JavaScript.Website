@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Kevin Busch
 position: sr. software engineer
-status: active
+status: Active
 easterEgg: love of god, family, & hiking
 teamGridPhoto:
   image: /img/team/grid-photos/Busch_Kevin.jpg

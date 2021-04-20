@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Tabitha Daugherty
 position: executive director, sales & impact enablement
-status: active
+status: Active
 easterEgg: undercover Disney princess
 teamGridPhoto:
   image: /img/team/grid-photos/placeholder2_sm.jpg

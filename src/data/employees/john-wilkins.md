@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: John Wilkins
 position: executive director, engagement
-status: active
+status: Active
 easterEgg: uses all the pots & pans
 teamGridPhoto:
   image: /img/team/grid-photos/placeholder4_sm.jpg

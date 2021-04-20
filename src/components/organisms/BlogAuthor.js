@@ -41,7 +41,7 @@ const BlogAuthor = (props) => {
                     </div>
                     <div className="m-blog-author__divider">|</div>
                     <div className="m-blog-author__position" aria-hidden="true">
-                        {props.author.status === "active"
+                        {props.author.status === "Active"
                             ? props.author.position
                             : "alum"
                         }

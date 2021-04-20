@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Dylan Justice
 position: sr. software engineer
-status: active
+status: Active
 easterEgg: aquatic thrill seeker
 teamGridPhoto:
   image: /img/team/grid-photos/Justice_Dylan.jpg

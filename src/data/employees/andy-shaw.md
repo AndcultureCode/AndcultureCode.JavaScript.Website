@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Andy Shaw
 position: Director of Strategy
-status: active
+status: Active
 easterEgg: dad blogger. it's a thing.
 authorPhoto:
   image: /img/authors/author-andy-shaw.png

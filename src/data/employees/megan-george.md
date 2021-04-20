@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Megan George
 position: scrum master
-status: active
+status: Active
 easterEgg: swiss army knife
 teamGridPhoto:
   image: /img/team/grid-photos/George_Megan.jpg

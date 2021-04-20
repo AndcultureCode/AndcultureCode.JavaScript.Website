@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Ashley Grove
 position: project management lead
-status: active
+status: Active
 easterEgg: cappuccino enthusiast
 teamGridPhoto:
   image: /img/team/grid-photos/Grove_Ashley.jpg

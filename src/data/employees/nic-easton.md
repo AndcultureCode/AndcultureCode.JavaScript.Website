@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Nic Easton
 position: executive director, agility
-status: active
+status: Active
 easterEgg: football. the international kind.
 authorPhoto:
   image: /img/authors/author-scribble.png

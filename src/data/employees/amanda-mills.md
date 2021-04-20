@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Amanda Mills
 position: director of catamaran
-status: active
+status: Active
 easterEgg: avocado-holic
 teamGridPhoto:
   image: /img/team/grid-photos/placeholder3_sm.jpg

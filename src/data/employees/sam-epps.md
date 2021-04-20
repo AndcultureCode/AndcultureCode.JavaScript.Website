@@ -3,7 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Sam Epps
 position: partnerships associate
-status: active
+status: Active
 easterEgg: podcast fan, cat parent
 teamGridPhoto:
   image: /img/team/grid-photos/Epps_Sam.jpg
