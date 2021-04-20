@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Phil Hess
 position: catamaran
+status: Active
 easterEgg: sci-fi buff & grilling guru
 teamGridPhoto:
   image: /img/team/grid-photos/Hess_Phil.jpg

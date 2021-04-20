@@ -1,6 +1,7 @@
 ---
 createPage: false
 name: Anne Parmer
+status: Inactive
 easterEgg: connector
 authorPhoto:
   image: /img/authors/author-anne-parmer.png

@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Dori Pitzner
 position: head of engagement
+status: Active
 easterEgg: serving volleyballs & fine champagne
 teamGridPhoto:
   image: /img/team/grid-photos/Pitzner_Dori.jpg

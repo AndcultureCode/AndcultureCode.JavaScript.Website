@@ -133,7 +133,12 @@ collections:
     fields:
       - {label: "Create Page", name: "createPage", widget: "hidden", default: false}
       - {label: "Name", name: "name", widget: "string"}
-      - {label: "Job Title", name: "position", widget: "string"}
+      - { label: "Job Title", name: "position", widget: "string" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: [ "Active", "Inactive" ]
+        default: "Active"
       - {label: "Easter Egg", name: "easterEgg", widget: "string"}
       - label: "Author Photo"
         name: "authorPhoto"

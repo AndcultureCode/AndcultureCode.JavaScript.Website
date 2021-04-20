@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Drew Hendrickson
 position: sr. research designer
+status: Active
 easterEgg: things-with-wheels enthusiast
 teamGridPhoto:
   image: /img/team/grid-photos/placeholder5_sm.jpg

@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Nhinh Dao
 position: software engineer
+status: Active
 easterEgg: learning, traveling & playing
 teamGridPhoto:
   image: /img/team/grid-photos/Dao_Nhinh.jpg

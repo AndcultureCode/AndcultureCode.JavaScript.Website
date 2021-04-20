@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Madeline Pellman
 position: director of design
+status: Active
 easterEgg: mother of humans & plants
 authorPhoto:
   image: /img/authors/author-madeline-pellman.png

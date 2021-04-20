@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Shane Shearer
 position: chief operating officer
+status: Active
 easterEgg: car & sports enthusiast
 authorPhoto:
   image: /img/authors/author-shane-shearer.png

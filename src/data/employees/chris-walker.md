@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Chris Walker
 position: business analyst
+status: Active
 easterEgg: travel | cooking | music | beansery
 teamGridPhoto:
   image: /img/team/grid-photos/Walker_Chris.jpg

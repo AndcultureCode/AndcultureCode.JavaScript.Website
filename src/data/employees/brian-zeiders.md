@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Brian Zeiders
 position: design lead
+status: Active
 easterEgg: does whatever a zeiders can
 teamGridPhoto:
   image: /img/team/grid-photos/Zeiders_Brian.jpg

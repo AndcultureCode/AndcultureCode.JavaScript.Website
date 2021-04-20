@@ -3,6 +3,7 @@ createPage: false
 templateKey: "employee"
 name: Greg Cooper
 position: sr. designer
+status: Active
 easterEgg: actual unicorn
 teamGridPhoto:
   image: /img/team/grid-photos/placeholder1_sm.jpg
