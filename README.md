@@ -1,6 +1,6 @@
 # AndcultureCode.JavaScript.Website
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 Website built using GatsbyJS and NetlifyCMS.
 
@@ -39,6 +39,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://www.linkedin.com/in/nhinhdao"><img src="https://avatars.githubusercontent.com/u/27240955?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nhinh</b></sub></a><br /><a href="https://github.com/AndcultureCode/AndcultureCode.JavaScript.Website/commits?author=nhinhdao" title="Code">💻</a> <a href="#maintenance-nhinhdao" title="Maintenance">🚧</a> <a href="https://github.com/AndcultureCode/AndcultureCode.JavaScript.Website/pulls?q=is%3Apr+reviewed-by%3Anhinhdao" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://github.com/jstevenson"><img src="https://avatars.githubusercontent.com/u/91424?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jim Stevenson</b></sub></a><br /><a href="https://github.com/AndcultureCode/AndcultureCode.JavaScript.Website/commits?author=jstevenson" title="Code">💻</a> <a href="https://github.com/AndcultureCode/AndcultureCode.JavaScript.Website/pulls?q=is%3Apr+reviewed-by%3Ajstevenson" title="Reviewed Pull Requests">👀</a> <a href="#maintenance-jstevenson" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/zachmccleaf"><img src="https://avatars.githubusercontent.com/u/10623386?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zach McCleaf</b></sub></a><br /><a href="https://github.com/AndcultureCode/AndcultureCode.JavaScript.Website/commits?author=zachmccleaf" title="Code">💻</a> <a href="https://github.com/AndcultureCode/AndcultureCode.JavaScript.Website/pulls?q=is%3Apr+reviewed-by%3Azachmccleaf" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 

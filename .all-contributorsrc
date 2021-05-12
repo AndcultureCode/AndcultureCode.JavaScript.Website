@@ -26,6 +26,16 @@
         "review",
         "maintenance"
       ]
+    },
+    {
+      "login": "zachmccleaf",
+      "name": "Zach McCleaf",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10623386?v=4",
+      "profile": "https://github.com/zachmccleaf",
+      "contributions": [
+        "code",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
