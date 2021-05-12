@@ -1,6 +1,6 @@
 # AndcultureCode.JavaScript.Website
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 Website built using GatsbyJS and NetlifyCMS.
 
@@ -41,6 +41,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/jstevenson"><img src="https://avatars.githubusercontent.com/u/91424?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jim Stevenson</b></sub></a><br /><a href="https://github.com/AndcultureCode/AndcultureCode.JavaScript.Website/commits?author=jstevenson" title="Code">💻</a> <a href="https://github.com/AndcultureCode/AndcultureCode.JavaScript.Website/pulls?q=is%3Apr+reviewed-by%3Ajstevenson" title="Reviewed Pull Requests">👀</a> <a href="#maintenance-jstevenson" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://github.com/zachmccleaf"><img src="https://avatars.githubusercontent.com/u/10623386?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zach McCleaf</b></sub></a><br /><a href="https://github.com/AndcultureCode/AndcultureCode.JavaScript.Website/commits?author=zachmccleaf" title="Code">💻</a> <a href="https://github.com/AndcultureCode/AndcultureCode.JavaScript.Website/pulls?q=is%3Apr+reviewed-by%3Azachmccleaf" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://www.saidshah.com"><img src="https://avatars.githubusercontent.com/u/19719299?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Said B Shah</b></sub></a><br /><a href="https://github.com/AndcultureCode/AndcultureCode.JavaScript.Website/commits?author=SaidShah" title="Code">💻</a> <a href="https://github.com/AndcultureCode/AndcultureCode.JavaScript.Website/issues?q=author%3ASaidShah" title="Bug reports">🐛</a> <a href="https://github.com/AndcultureCode/AndcultureCode.JavaScript.Website/pulls?q=is%3Apr+reviewed-by%3ASaidShah" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/AaronW"><img src="https://avatars.githubusercontent.com/u/305252?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aaron</b></sub></a><br /><a href="https://github.com/AndcultureCode/AndcultureCode.JavaScript.Website/commits?author=AaronW" title="Code">💻</a> <a href="https://github.com/AndcultureCode/AndcultureCode.JavaScript.Website/pulls?q=is%3Apr+reviewed-by%3AAaronW" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 
