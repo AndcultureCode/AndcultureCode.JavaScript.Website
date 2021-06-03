@@ -1,0 +1,68 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "nhinhdao",
+      "name": "Nhinh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/27240955?v=4",
+      "profile": "https://www.linkedin.com/in/nhinhdao",
+      "contributions": [
+        "code",
+        "maintenance",
+        "review"
+      ]
+    },
+    {
+      "login": "jstevenson",
+      "name": "Jim Stevenson",
+      "avatar_url": "https://avatars.githubusercontent.com/u/91424?v=4",
+      "profile": "https://github.com/jstevenson",
+      "contributions": [
+        "code",
+        "review",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "zachmccleaf",
+      "name": "Zach McCleaf",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10623386?v=4",
+      "profile": "https://github.com/zachmccleaf",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    },
+    {
+      "login": "SaidShah",
+      "name": "Said B Shah",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19719299?v=4",
+      "profile": "https://www.saidshah.com",
+      "contributions": [
+        "code",
+        "bug",
+        "review"
+      ]
+    },
+    {
+      "login": "AaronW",
+      "name": "Aaron",
+      "avatar_url": "https://avatars.githubusercontent.com/u/305252?v=4",
+      "profile": "https://github.com/AaronW",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "AndcultureCode.JavaScript.Website",
+  "projectOwner": "AndcultureCode",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
