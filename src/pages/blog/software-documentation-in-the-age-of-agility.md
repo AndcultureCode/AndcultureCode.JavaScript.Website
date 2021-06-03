@@ -4,7 +4,7 @@ templateKey: blog-post
 title: software documentation in the age of agility
 author:
 - Devvin Earnest
-date: 2021-06-01
+date: 2021-06-03
 featured: false
 featuredColor: -violet-blue
 featuredImage:
