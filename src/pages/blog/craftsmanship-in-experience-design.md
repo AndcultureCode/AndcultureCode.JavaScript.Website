@@ -21,6 +21,7 @@ seo:
   metaDescription: It is difficult to qualify good craftsmanship in the context of user experience. How can we qualify the skills that map to experience design?
   socialShareCopy: It is difficult to qualify good craftsmanship in the context of user experience. How can we qualify the skills that map to experience design?
 category: "Design/UX"
+canonicalUrl: "/blog/craftsmanship-in-experience-design"
 ---
 I worked as a bicycle mechanic for years. I studied engineering. I’ve built, in one way or another, much of the furniture in my apartment. I am familiar with using tools to produce physical items. I consider myself a craftsman in many regards and I understand craftsmanship in the context of physical production.
 

@@ -21,6 +21,7 @@ seo:
   metaDescription: The new customs kiosks at a number of airports illustrate that both the task and conditions must be considered in order for good user experience to result.
   socialShareCopy: The new customs kiosks at a number of airports illustrate that both the task and conditions must be considered in order for good user experience to result.
 category: "Strategy"
+canonicalUrl: "/blog/departing-from-poor-user-experience-at-airports"
 ---
 I recently returned from a trip out of the country. As is the case with international travel, I was welcomed back by the chaos of Customs. After waiting an hour on the ground to disembark the plane, I was greeted by a coil of people waiting to get the stamp of approval from the U.S. Government.
 

@@ -21,6 +21,7 @@ seo:
   metaDescription: We must value our instincts when designing to find a balance between data-backed decisions and breathing unique life into the experience.
   socialShareCopy: We must value our instincts when designing to find a balance between data-backed decisions and breathing unique life into the experience.
 category: "Design/uX"
+canonicalUrl: "/blog/for-a-designer-not-a-robot"
 ---
 Tools of the trade posters are a trend of the past few years that still never fails to intrigue me.
 

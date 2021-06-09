@@ -21,6 +21,7 @@ seo:
   metaDescription: "Every project at andculture begins with a research phase that asks: is this idea worth creating, building, or changing? Sometimes, the answer can disappoint."
   socialShareCopy: "Every project at andculture begins with a research phase that asks: is this idea worth creating, building, or changing? Sometimes, the answer can disappoint."
 category: "Strategy"
+canonicalUrl: "/blog/the-proof-is-in-the-process"
 ---
 *“I know the world isn’t fair, but why isn’t it ever unfair in my favor?”* Bill Watterson, of Calvin and Hobbes fame, wasn’t the only person to ever ask this question, and he certainly wasn’t the only person who didn’t get a good answer.
 

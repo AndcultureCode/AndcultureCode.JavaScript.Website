@@ -15,6 +15,7 @@ postImage:
   description: Header image for agile as a methodology
   image: /img/header_default_dark_4.jpg
 category: Agency
+canonicalUrl: "/blog/the-agile-project-methodology-at-andculture"
 seo:
   metaDescription: As a human-centered design company, our team of designers,
     engineers, strategists, analysts, and QA specialists breathes agility in

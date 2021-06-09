@@ -21,6 +21,7 @@ seo:
   metaDescription: Is your website exclusive or is it inclusive? The paradigm for what is acceptable for brands is shifting in the wake of an unprecedented global crisis.
   socialShareCopy: Is your website exclusive or is it inclusive? The paradigm for what is acceptable for brands is shifting in the wake of an unprecedented global crisis.
 category: "Design/UX"
+canonicalUrl: "/blog/digital-accessibility-driven-by-global-crisis"
 ---
 The world is a much different place than it was at the beginning of the year. As I write this, I’m going on week 11 of working remotely, confined to my home with limited weekly trips to buy food and necessities that I either can’t get online or have delivered. I used to think my life was pretty digitally driven, but now I’ve leveled up, as have many, to a life where the web is my sole connection to the rest of the world.
 

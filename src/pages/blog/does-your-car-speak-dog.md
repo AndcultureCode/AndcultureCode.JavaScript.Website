@@ -21,6 +21,7 @@ seo:
   metaDescription: How smart are our devices, really? Are we taking full advantage of the opportunity to bring them together with a common language?
   socialShareCopy: How smart are our devices, really? Are we taking full advantage of the opportunity to bring them together with a common language?
 category: "Design/UX"
+canonicalUrl: "/blog/does-your-car-speak-dog"
 ---
 Last week, I put a Jawbone UP24 on my wrist as part of a new, internal andculture project. It's a lot of fun plugging things together, but the more devices I connect lately, the more I question just how "smart" they really are and if we are taking full advantage of the opportunity we have right now during the device genesis.
 

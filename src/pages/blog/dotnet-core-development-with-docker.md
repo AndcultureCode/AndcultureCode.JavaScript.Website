@@ -21,6 +21,7 @@ seo:
   metaDescription: andculture leverages continuous integration to help deliver our software projects. With .NET Core & Docker, we now have better ways to consolidate our workflow.
   socialShareCopy: andculture leverages continuous integration to help deliver our software projects. With .NET Core & Docker, we now have better ways to consolidate our workflow.
 category: "Engineering"
+canonicalUrl: "/blog/dotnet-core-development-with-docker"
 ---
 As software designers and engineers, the number of technologies we orchestrate to deliver a new project is staggering. Naturally the landscape of practices and tools we use to build these solutions is just as broad. How do we navigate this plethora of options in a way that promotes creativity and productivity while maintaining reliability in our delivery?
 

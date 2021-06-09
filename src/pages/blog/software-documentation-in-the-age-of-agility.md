@@ -21,6 +21,7 @@ seo:
   metaDescription: Creating good, useful documentation in an agile environment can be difficult. This article provides a few useful DOs and DON’Ts to help get you started.
   socialShareCopy: Are your teams having trouble creating documentation that works well in an agile environment? Check out this article for a few tips on upping your documentation game.
 category: "Agency"
+canonicalUrl: "/blog/software-documentation-in-the-age-of-agility"
 ---
 Many teams struggle with writing documentation. How often should we document? How detailed should the documentation be? How do we keep our documentation up to date? These are important questions and getting it wrong can waste time and drain efficiency. I recently coached a team that spent 10 hours per sprint updating documentation that never got read. In this article, I'll share some helpful DOs and DON'Ts for managing documentation in an agile environment.
 

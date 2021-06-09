@@ -21,6 +21,7 @@ seo:
   metaDescription: Dr. Aanand Naik discusses patient engagement outcomes, the role of technology in achieving these goals, and what providers should do to support them.
   socialShareCopy: Dr. Aanand Naik discusses patient engagement outcomes, the role of technology in achieving these goals, and what providers should do to support them.
 category: "Strategy"
+canonicalUrl: "/blog/the-mobile-app-will-see-you-now-part-2"
 ---
 Part 2 in our series of discussions with Synced Care founder [Dr. Aanand Naik](https://www.bcm.edu/people/view/aanand-naik-m-d/b15a0cd5-ffed-11e2-be68-080027880ca6), associate professor of medicine, health policy, and behavioral medicine at Baylor College of Medicine, explores the unburdening of patients through the creation of outcome goals that guide care planning for chronic disease patients.
 

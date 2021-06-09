@@ -21,6 +21,7 @@ seo:
   metaDescription: At andculture, we use the ITCSS project architecture to help order CSS in the most efficient way. Breaking apart structure & files helps simplify redundant CSS.
   socialShareCopy: At andculture, we use the ITCSS project architecture to help order CSS in the most efficient way. Breaking apart structure & files helps simplify redundant CSS.
 category: "Engineering"
+canonicalUrl: "/blog/modular-css-with-itcss-and-scss"
 ---
 We use the [ITCSS](https://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528) project architecture to help order CSS in the most effective and least wasteful way. The breaking apart of structure and files for ITCSS really helps to organize and simplify redundant CSS.
 

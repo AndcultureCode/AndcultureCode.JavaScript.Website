@@ -21,6 +21,7 @@ seo:
   metaDescription: Dr. James Suliburk discusses patient engagement outcomes, the role of technology in achieving these goals, and what providers should do to support them.
   socialShareCopy: Dr. James Suliburk discusses patient engagement outcomes, the role of technology in achieving these goals, and what providers should do to support them.
 category: "Strategy"
+canonicalUrl: "/blog/the-mobile-app-will-see-you-now-part-3"
 ---
 Part 3 in our series with Synced Care founder [Dr. James Suliburk](https://www.bcm.edu/people/view/james-suliburk-m-d-facs/b264d8d6-ffed-11e2-be68-080027880ca6), assistant professor of surgery at Baylor College of Medicine, focuses on his work on an educational model designed to build patient engagement around surgical episodes of care and how technology might accelerate this approach.
 

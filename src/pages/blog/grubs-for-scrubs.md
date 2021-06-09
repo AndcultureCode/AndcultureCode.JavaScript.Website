@@ -21,6 +21,7 @@ seo:
   metaDescription: Amidst fear and uncertainty, we found a way to make a difference for both small, local restaurants and the brave healthcare professionals at UPMC Pinnacle.
   socialShareCopy: What is andculture doing to support our community during the pandemic? We found a way to support both the healthcare professionals at UPMC Pinnacle and the local restaurant community.
 category: "Agency"
+canonicalUrl: "/blog/grubs-for-scrubs"
 ---
 As a company, we know that quick thinking, collaboration and spotting broken realities can be the catalyst for something bigger than ourselves.
 

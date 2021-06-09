@@ -21,6 +21,7 @@ seo:
   metaDescription: Total joint replacement surgery is among the most commonly performed inpatient procedures in the US. So why are patients so often dissatisfied after surgery?
   socialShareCopy: Total joint replacement surgery is among the most commonly performed inpatient procedures in the US. So why are patients so often dissatisfied after surgery?
 category: "Strategy"
+canonicalUrl: "/blog/reimagining-the-joint-replacement-surgery"
 ---
 Total joint replacement surgery is among the most commonly performed inpatient procedures in the United States. [More than 1,000,000](https://www.mayoclinic.org/medical-professionals/orthopedic-surgery/news/first-nationwide-prevalence-study-of-hip-and-knee-arthroplasty-shows-7-2-million-americans-living-with-implants/mac-20431170) hip and knee replacements are performed each year. And yet, studies suggest that [as many as 20 percent of patients are dissatisfied](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2795819/) with the outcomes of their procedure.
 
