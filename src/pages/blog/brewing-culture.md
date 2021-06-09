@@ -21,6 +21,7 @@ seo:
   metaDescription: How andculture turned one employee's passion for brewing into a company exercise in teamwork, branding and iterative improvement.
   socialShareCopy: How andculture turned one employee's passion for brewing into a company exercise in teamwork, branding, and iterative improvement.
 category: "Agency"
+canonicalUrl: "/blog/brewing-culture"
 ---
 Hi there! I’m Mike Koser, the director of software engineering at andculture. I’ve spent my entire career in software, but have always had a passion for things totally not-software — things like brewing beer.
 

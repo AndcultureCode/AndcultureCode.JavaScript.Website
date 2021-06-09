@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'andculture - a design company in harrisburg, PA',
     description:
-      'We are a design company in harrisburg PA that fixes broken realities through cutting edge design, strategy, and engineering solutions.', 
+      'We are a design company in harrisburg PA that fixes broken realities through cutting edge design, strategy, and engineering solutions.',
     siteUrl: 'https://andculture.com'
   },
   plugins: [
@@ -22,6 +22,12 @@ module.exports = {
     'gatsby-plugin-anchor-links',
     'gatsby-plugin-transition-link',
     'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: `https://andculture.com`,
+      },
+    },
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-smoothscroll',

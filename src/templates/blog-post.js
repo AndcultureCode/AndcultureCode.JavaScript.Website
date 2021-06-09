@@ -364,6 +364,7 @@ export const pageQuery = graphql`
       frontmatter {
         author
         category
+        canonicalUrl
         headline
         title
         postImage {

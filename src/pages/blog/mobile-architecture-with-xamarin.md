@@ -21,6 +21,7 @@ seo:
   metaDescription: At andculture, we wanted to make sure our mobile architecture was scalable, testable and maintainable. We decided to go with Xamarin.
   socialShareCopy: At andculture, we wanted to make sure our mobile architecture was scalable, testable and maintainable. We decided to go with Xamarin.
 category: "Engineering"
+canonicalUrl: "/blog/mobile-architecture-with-xamarin"
 ---
 At andculture, we constantly strive to improve our development workflow. As we continued to develop more mobile applications for clients, we wanted to make sure we architected our solutions in a way to make them scalable, testable and maintainable. We iterated over a couple of different approaches with each new project and have cultivated an architecture we’re pleased with.
 

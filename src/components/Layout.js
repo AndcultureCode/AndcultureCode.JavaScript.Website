@@ -20,6 +20,7 @@ const TemplateWrapper = ({
   const [menuToggled, setMenuToggled]           = useState(false);
   const [menuOpen, setMenuOpen]                 = useState(false);
   let modalMenuButton                           = null;
+  let canonicalUrl                              = data?.canonicalUrl != null ? data.canonicalUrl : "/";
 
   // Set all of the SEO information needed for the page.
   if (data && data.seo) {
@@ -87,7 +88,7 @@ const TemplateWrapper = ({
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content={ title } />
         <meta property="og:description" content={ socialDescription } />
-        <meta property="og:url" content="/" />
+        <meta property="og:url" content={ canonicalUrl } />
         <meta property="og:image" content="/img/og-image.png" />
       </Helmet>
       <div className={pageClassName ? pageClassName : ""} aria-hidden={menuOpen}>

@@ -21,6 +21,7 @@ seo:
   metaDescription: A company's brand identity doesn't just happen. It is a complex and intense process that demands both designer and client commit to open communication.
   socialShareCopy: A company's brand identity doesn't just happen. It is a complex and intense process that demands both designer and client commit to open communication.
 category: "Design/UX"
+canonicalUrl: "/blog/designing-an-identity-its-not-just-a-logo"
 ---
 As we surf the web for different service providers, we've all come across companies with terrible logos or brand recognition. When stumbling upon this sort of thing, I'm sure many people wonder, *“Why haven’t they done something about that?”*
 

@@ -22,6 +22,7 @@ seo:
   metaDescription: There are lots of different ways to actualize your big ideas when it comes to marketing. A gut check is always important.
   socialShareCopy: Marketing shouldn't start until you first ask, "Why do we want to do this?"
 category: "Strategy"
+canonicalUrl: "/blog/what-marketers-should-first-ask"
 ---
 Step away from your competitor’s glistening, well-curated Instagram feed.
 

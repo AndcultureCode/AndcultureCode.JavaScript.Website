@@ -21,6 +21,7 @@ seo:
   metaDescription: andculture excels in ambiguity. We are thinkers who often venture into the unknown. Fixing a broken reality requires more than a "one size fits all" solution.
   socialShareCopy: Thinking of hiring a design company? Here's what to expect — and how to have a successful relationship with us.
 category: "Agency"
+canonicalUrl: "/blog/helpful-tips-about-engaging-with-andculture"
 ---
 andculture excels in ambiguity. If you know you need to solve a complicated problem, and know the solution involves the interaction of humans and technology, but you can’t find an off-the-shelf solution, you might need a custom solution purpose-built to solve your problem.
 

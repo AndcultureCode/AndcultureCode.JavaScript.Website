@@ -14,6 +14,7 @@ postImage:
   description: Header image for why human centered design matters
   image: /img/header_default_dark_5.jpg
 category: Design/UX
+canonicalUrl: "/blog/why-human-centered-design-matters"
 seo:
   metaDescription: >-
     andculture excels in ambiguity. We are thinkers who often venture into the

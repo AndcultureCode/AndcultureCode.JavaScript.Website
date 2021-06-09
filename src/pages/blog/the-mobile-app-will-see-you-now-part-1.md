@@ -21,6 +21,7 @@ seo:
   metaDescription: Dr. Aanand Naik and Dr. James Sulibruk discuss the critical importance of patient engagement to healthcare outcomes.
   socialShareCopy: Dr. Aanand Naik and Dr. James Sulibruk discuss the critical importance of patient engagement to healthcare outcomes.
 category: "Strategy"
+canonicalUrl: "/blog/the-mobile-app-will-see-you-now-part-1"
 ---
 Patient engagement. Why is it so crucial to healthcare transformation? andculture’s Director of Innovation Transfer Acceleration, Lauren McAteer, interviews leading researchers and Synced Care founders [Dr. Aanand Naik](https://www.bcm.edu/people/view/aanand-naik-m-d/b15a0cd5-ffed-11e2-be68-080027880ca6), associate professor of medicine, health policy, and behavioral medicine at Baylor College of Medicine, and [Dr. James Suliburk](https://www.bcm.edu/people/view/james-suliburk-m-d-facs/b264d8d6-ffed-11e2-be68-080027880ca6), assistant professor of surgery at Baylor College of Medicine, as we unpack the future of patient engagement and the opportunity for novel technological solutions in this space.
 
