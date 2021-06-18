@@ -3,7 +3,7 @@ createPage: true
 templateKey: blog-post
 title: how being crushed by a stove taught me the value of empiricism
 author:
-- Autumn Hosler
+- Autum Hosler
 date: 2021-06-16
 featured: false
 featuredColor: -violet-blue
