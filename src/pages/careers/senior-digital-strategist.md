@@ -27,6 +27,7 @@ You are well aware that digital experiences and technology are not just a servic
 Like all of us at andculture, we really hope you like to do lots of fun, crazy, and exciting things in your life! Here’s a list of a few we hope you can help us with:
 
 **You will:**
+
 * Gain a deep understanding of our client partners’ business, industry and audience through research and analysis.
   
 * Develop and pitch impactful omni-channel strategies that support our client partners’ business and marketing  goals.  
